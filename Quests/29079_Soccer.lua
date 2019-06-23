@@ -44,12 +44,10 @@ end
 if (EVENT == 106) then
 	NATION = CheckNation(UID);
 	if (NATION == 1) then
-        RobItem(UID, 900349000, 10)
-		GiveItem(UID, 900362641, 1,1)
+		GiveItemLua(UID,900362641,1,1, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900349000,10, 0,0, 0,0, 0,0, 0,0);
 		SelectMsg(UID, 2, -1, 9618, NPC, 10, -1);
 	else
-		RobItem(UID, 900349000, 10)
-		GiveItem(UID, 900357640, 1,1)
+		GiveItemLua(UID,900357640,1,1, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900349000,10, 0,0, 0,0, 0,0, 0,0);
 		SelectMsg(UID, 2, -1, 9618, NPC, 10, -1);
 	end
 end
@@ -69,12 +67,10 @@ end
 if (EVENT == 108) then
 	NATION = CheckNation(UID);
 	if (NATION == 1) then
-        RobItem(UID, 900349000, 10)
-		GiveItem(UID, 929001609, 1,1)
+		GiveItemLua(UID,929001609,1,1, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900349000,10, 0,0, 0,0, 0,0, 0,0);
         SelectMsg(UID, 2, -1, 9618, NPC, 10, -1);		
 	else
-		RobItem(UID, 900349000, 10)
-		GiveItem(UID, 927001607, 1,1)
+		GiveItemLua(UID,927001607,1,1, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900349000,10, 0,0, 0,0, 0,0, 0,0);
 		SelectMsg(UID, 2, -1, 9618, NPC, 10, -1);
 	end
 end
@@ -93,12 +89,10 @@ end
 if (EVENT == 110) then
 	NATION = CheckNation(UID);
 	if (NATION == 1) then
-        RobItem(UID, 900349000, 10)
-		GiveItem(UID, 933001634, 1,1)	
+		GiveItemLua(UID,933001634,1,1, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900349000,10, 0,0, 0,0, 0,0, 0,0);
         SelectMsg(UID, 2, -1, 9618, NPC, 10, -1);		
 	else
-		RobItem(UID, 900349000, 10)
-		GiveItem(UID, 928001608, 1,1)
+		GiveItemLua(UID,928001608,1,1, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900349000,10, 0,0, 0,0, 0,0, 0,0);
 		SelectMsg(UID, 2, -1, 9618, NPC, 10, -1);
 	end
 end

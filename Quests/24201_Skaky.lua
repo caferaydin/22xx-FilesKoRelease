@@ -87,9 +87,7 @@ end
 
 if (EVENT == 537) then
 	SaveEvent(UID, 4083);
-	RobItem(UID, 810095000, 1)
-	RobItem(UID, 810090000, 1)
-	RobItem(UID, 810094000, 1)
+	GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810095000,1, 810090000,1, 810094000,1, 0,0, 0,0);
 	PromoteUser(UID)
 	SelectMsg(UID, 2, savenum, 4093, NPC, 4064, 193);
 end

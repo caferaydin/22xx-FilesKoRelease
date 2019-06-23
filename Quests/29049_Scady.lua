@@ -45,9 +45,8 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
 RunExchange(UID,1221);
-RobItem(UID, 508213000, 30)
-RobItem(UID, 508211000, 1)
-RobItem(UID, 508212000, 1)
+GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 508213000,30, 508211000,1, 508212000,1, 0,0, 0,0);
+
 end
 end
 
@@ -57,9 +56,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
 RunExchange(UID,1222);
-RobItem(UID, 508213000, 30)
-RobItem(UID, 508211000, 1)
-RobItem(UID, 508212000, 1)
+GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 508213000,30, 508211000,1, 508212000,1, 0,0, 0,0);
 end
 end
 

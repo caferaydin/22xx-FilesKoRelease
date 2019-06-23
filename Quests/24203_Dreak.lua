@@ -105,8 +105,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
       --RunExchange(UID,38)
-    GiveItem(UID, 379065000, 1)
-    RobItem(UID, 900017000, 7)
+	GiveItemLua(UID,379065000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900017000,7, 0,0, 0,0, 0,0, 0,0);
 	SaveEvent(UID, 559);
 end
 end
@@ -166,9 +165,7 @@ if (EVENT == 540) then
 end
 
 if (EVENT == 537) then
-	RobItem(UID, 810095000, 1)
-	RobItem(UID, 810091000, 1)
-	RobItem(UID, 810092000, 1)
+	GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810095000,1, 810091000,1, 810092000,1, 0,0, 0,0);
 	PromoteUser(UID)
 	SaveEvent(UID, 4107);
 end

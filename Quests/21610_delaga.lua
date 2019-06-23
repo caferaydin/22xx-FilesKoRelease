@@ -115,7 +115,7 @@ if (EVENT == 126) then
 	elseif (ItemB == 0) then
 		SelectMsg(UID, 2, savenum, 6401, NPC, 18, 245);
 	else
-		RobItem(UID, 389222000, 1)
+		GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 389222000,1, 0,0, 0,0, 0,0, 0,0);
 		GoldLose(UID, 100000000)
 		PromoteKnight(UID, 8)
 		SelectMsg(UID, 2, savenum, 6402, NPC, 10, 241);
