@@ -1,5 +1,3 @@
---Created by TheThyke-- %100 Usko Style.Special Quests
------------------------
 local NPC = 25282;
 -----------------------------------------------------
 if (EVENT == 100) then

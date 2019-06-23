@@ -1,4 +1,3 @@
---Created by TheThyke-- %100 Usko Style
 local NPC = 16047;
 ----------------------------------
 if (EVENT == 240) then
@@ -383,6 +382,3 @@ if EVENT == 5841 then
 		RunExchange(UID, found);
 	end
 end
------------------------------------------------------------
---Created by TheThyke-- %100 Usko Style
---Updated by seukaiwokeo 20.02.2019--

@@ -53,7 +53,7 @@ if (EVENT == 117) then
 	RunExchange(UID,6081)
 	SaveEvent(UID, 7857);   
 end
---Bu Luların'n satılması ve paylaşılması yasaktır.Created by TheThyke. Editör & Administrator
+
 local savenum1 = 1286;
 local talknum1 = 44136;
 
@@ -96,7 +96,7 @@ if (EVENT == 127) then
 	RunExchange(UID,6082)
 	SaveEvent(UID, 7863);   
 end
---Bu Luların'n satılması ve paylaşılması yasaktır.Created by TheThyke. Editör & Administrator
+
 local savenum2 = 1287;
 local talknum2 = 44137;
 
@@ -140,7 +140,7 @@ if (EVENT == 136) then
 	RunExchange(UID,6083)
 	SaveEvent(UID, 7869);   
 	end
---Bu Luların'n satılması ve paylaşılması yasaktır.Created by TheThyke. Editör & Administrator
+
 local savenum3 = 1288;
 local talknum3 = 44138;
 

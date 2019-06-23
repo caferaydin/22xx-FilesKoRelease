@@ -1,4 +1,3 @@
--------%100 Usko Still by Created TheThyke--------
 local Ret = 0;
 local NPC = 25019;
 
@@ -296,17 +295,17 @@ if (EVENT == 1187) then
 end
 
 if (EVENT == 1185) then
-	TheThykeMonster01 = QuestMonsterCount(UID, 1343, 1);
-	TheThykeMonster02 = QuestMonsterCount(UID, 1343, 2);
-	TheThykeMonster03 = QuestMonsterCount(UID, 1343, 3);
-	if (TheThykeMonster01 > 0 and TheThykeMonster02 > 0 and TheThykeMonster03 > 0) then 
+	Monster01 = QuestMonsterCount(UID, 1343, 1);
+	Monster02 = QuestMonsterCount(UID, 1343, 2);
+	Monster03 = QuestMonsterCount(UID, 1343, 3);
+	if (Monster01 > 0 and Monster02 > 0 and Monster03 > 0) then 
 	SelectMsg(UID, 4, 1343, 44131, NPC, 22,1186,27, 0);
 	else
-	         if (TheThykeMonster01 < 1) then
+	    if (Monster01 < 1) then
 			SelectMsg(UID, 2, 1343, 44131, NPC, 18, 1188);
-		elseif ( TheThykeMonster02 < 1) then
+		else if ( Monster02 < 1) then
 			SelectMsg(UID, 2, 1343, 44131, NPC, 18, 1189);
-		elseif ( TheThykeMonster03 < 1) then
+		else if ( Monster03 < 1) then
 			SelectMsg(UID, 2, 1343, 44131, NPC, 18, 1190);
 end
 end
@@ -351,33 +350,21 @@ if (EVENT == 1197) then
 end
 
 if (EVENT == 1195) then
-	TheThykeESC = HowmuchItem(UID, 900634000);
-	TheThykeJER = HowmuchItem(UID, 900635000);
-	TheThykeESP = HowmuchItem(UID, 900633000);
-	if (TheThykeESC > 0 and TheThykeJER > 0 and TheThykeESP > 0) then
+	ESC1 = HowmuchItem(UID, 900634000);
+	JER2 = HowmuchItem(UID, 900635000);
+	ESC3 = HowmuchItem(UID, 900633000);
+	if (ESC1 > 0 and JER2 > 0 and ESC3 > 0) then
 		SelectMsg(UID, 4, 1344, 44132, NPC, 22, 1198, 23, 0);
     else
-			if (TheThykeESC < 1) then
+		if (ESC3 < 1) then
 			SelectMsg(UID, 2, 1344, 44132, NPC, 18, 1199);
-		elseif ( TheThykeJER < 1) then
+		elseif ( JER2 < 1) then
 			SelectMsg(UID, 2, 1344, 44132, NPC, 18, 1200);
-		elseif ( TheThykeESP < 1) then
+		elseif ( ESC1 < 1) then
 			SelectMsg(UID, 2, 1344, 44132, NPC, 18, 1201);
 end
 end
 end
-
---if (EVENT == 1199) then
-	--ShowMap(UID, 736);
---end
-
---if (EVENT == 1200) then
---	ShowMap(UID, 894);
---end
-
---if (EVENT == 1201) then
---	ShowMap(UID, 738);
---end
 
 if (EVENT == 1198) then
 RunExchange(UID,6138) 

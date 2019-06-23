@@ -717,7 +717,7 @@ RunExchange(UID,1055)
 	end	 
 end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 1100) then -- 43 Level Megantilion   Premium
 	SaveEvent(UID, 2097);
 end
@@ -766,7 +766,7 @@ if (EVENT == 1108) then
 		SaveEvent(UID, 2099);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 1200) then -- 45 Level Scolar  Premium
 	SaveEvent(UID, 2121);
 end
@@ -816,7 +816,6 @@ if (EVENT == 1208) then
 	end
 end
 
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
 if (EVENT == 200) then -- 56 Level Grell  Premium
 	SaveEvent(UID, 2301);
 end
@@ -861,7 +860,7 @@ if (EVENT == 208) then
 		SaveEvent(UID, 2303);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 300) then -- 56 Level Hell Hound  Premium
 	SaveEvent(UID, 2325);
 end
@@ -906,7 +905,7 @@ if (EVENT == 308) then
 		SaveEvent(UID, 2327);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 400) then -- 58 Level Manticore  Premium
 	SaveEvent(UID, 2349);
 end
@@ -951,7 +950,7 @@ if (EVENT == 408) then
 		SaveEvent(UID, 2351);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 local savenum = 149;
 
 if (EVENT == 8950) then -- 43 Level Megantilion
@@ -1049,7 +1048,7 @@ RunExchange(UID,976)
 	end
 end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 local savenum=392
 local talknum=8760
 
@@ -1118,7 +1117,7 @@ if (EVENT == 9906) then
 	SaveEvent(UID, 1312);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 local savenum=396
 local talknum=8762
 

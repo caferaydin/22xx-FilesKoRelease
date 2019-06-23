@@ -169,7 +169,7 @@ if (EVENT == 1107) then
 	RunQuestExchange(UID,3067)
 	SaveEvent(UID, 11795);
 end
------------------------TheThyke--------------------------------------------
+
 local savenum4 = 578;
 local talknum4 = 20726;
 
@@ -212,9 +212,6 @@ if (EVENT == 1207) then
 	SaveEvent(UID, 11807);
 end
 
-
-
------------------------TheThyke--------------------------------------------
 local savenum4 = 579;
 local talknum4 = 20728;
 
@@ -257,7 +254,6 @@ if (EVENT == 1307) then
 	SaveEvent(UID, 11819);
 end
 
------------------------TheThyke--------------------------------------------
 local savenum4 = 274;
 local talknum4 = 8986;
 

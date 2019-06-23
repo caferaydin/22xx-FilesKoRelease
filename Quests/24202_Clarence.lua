@@ -565,7 +565,6 @@ RunExchange(UID, 524);
 	SaveEvent(UID, 5157); 
 end
 
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
 local savenum = 492;
 
 if (EVENT == 2000) then -- 55 Cardinal
@@ -670,7 +669,6 @@ RunExchange(UID,217)
 end
 end
 
-----------------Created by TheThyke-- %100 Usko Style.-----------------
 if (EVENT == 220) then
 	SaveEvent(UID, 3212);
 end

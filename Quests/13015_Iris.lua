@@ -1,8 +1,6 @@
 local Ret = 0;
 local NPC =13015;
 
------Lualar Sıfırdan Yazılmıştır ve  Tamamen Bana Aittir.Satılması ve Paylaşılması Yasaktır. by TheThyke
-
 if EVENT == 169 then
    Ret = 1;
 end
@@ -17,8 +15,6 @@ else
         SelectMsg(UID, 2, -1, 4135, NPC, 10, 169);
 end
 end
-
-
 
 
 if (EVENT == 180) then----1 Level ile 59 Level Arası Forgetten Temple

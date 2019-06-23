@@ -1,4 +1,3 @@
---Created by TheThyke-- %100 Usko Style
 local Ret = 0;
 local NPC = 29050;
 ----------------------------------
@@ -12,10 +11,6 @@ if (EVENT == 100) then
 		EVENT = QuestNum
 	end
 end
-
-
-
-
 
 if (EVENT == 1001) then
 SelectMsg(UID, 19, -1, 9488, NPC, 3000, 1010,3005,-1);

@@ -1,4 +1,3 @@
---Created by TheThyke-- %100 Usko Style
 local Ret = 0;
 local NPC = 14201;
 

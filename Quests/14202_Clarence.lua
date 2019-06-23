@@ -1,4 +1,3 @@
---Created by TheThyke-- %100 Usko Style
 local Ret = 0;
 local NPC = 14202;
 
@@ -128,15 +127,12 @@ if (EVENT == 540) then
 end
 --------------------------------
 if (EVENT == 537) then
-	RobItem(UID, 810095000, 1)
-	RobItem(UID, 810092000, 1)
-	RobItem(UID, 810093000, 1)
+	GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810095000,1, 810092000,1, 810093000,1, 0,0, 0,0);
 	PromoteUser(UID)
 	SaveEvent(UID, 4101);
 	SelectMsg(UID, 2, savenum, 4093, NPC, 4064, 193);
 end
 
-----------------Created by TheThyke-- %100 Usko Style.-----------------
 if (EVENT == 220) then
 	SaveEvent(UID, 3202);
 end
@@ -377,7 +373,7 @@ if (EVENT == 831) then
 end
 
 if (EVENT == 830) then
-RunExchange(UID, 330);
+	RunExchange(UID, 330);
 	SaveEvent(UID, 3424);
 end
 
@@ -605,13 +601,10 @@ if (EVENT == 1133) then
 end
 
 if (EVENT == 1130) then
-RunExchange(UID, 524);
+	RunExchange(UID, 524);
 	SaveEvent(UID, 5151); 
 end
 
-
-
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
 local savenum = 493;
 
 if (EVENT == 2000) then -- 55 Cardinal
@@ -679,10 +672,6 @@ if (EVENT == 2005) then
 	end
 end
 
---if (EVENT == 2006) then
-	--ShowMap(UID, 306);
---end
-
 if (EVENT == 2007) then
 	MonsterCount = QuestMonsterCount(UID, 493, 1);
 	if (MonsterCount < 0) then
@@ -701,16 +690,16 @@ SLOTKONTROL = CheckGiveSlot(UID, 3)
          else
 	Class = CheckClass(UID);
 	if (Class == 1 or Class == 5 or Class == 6) then
-RunExchange(UID,218)
+		RunExchange(UID,218)
 		SaveEvent(UID, 2433);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
-RunExchange(UID,219)
+		RunExchange(UID,219)
 		SaveEvent(UID, 2438);
 	elseif (Class == 3 or Class == 9 or Class == 10) then
-RunExchange(UID,220)
+		RunExchange(UID,220)
 		SaveEvent(UID, 2443);
 	elseif (Class == 4 or Class == 11 or Class == 12) then
-RunExchange(UID,221)
+		RunExchange(UID,221)
 		SaveEvent(UID, 2448);
 	end
 end
@@ -771,19 +760,19 @@ SLOTKONTROL = CheckGiveSlot(UID, 5)
          else
 	Class = CheckClass(UID);
 	if (Class == 1 or Class == 5 or Class == 6) then
-	RunExchange(UID, 3001);
+		RunExchange(UID, 3001);
 		SaveEvent(UID, 11015);
 		SaveEvent(UID, 11056);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
-	RunExchange(UID, 3002);
+		RunExchange(UID, 3002);
 		SaveEvent(UID, 11020);
 		SaveEvent(UID, 11056);
 	elseif (Class == 3 or Class == 9 or Class == 10) then
-	RunExchange(UID, 3003);
+		RunExchange(UID, 3003);
 		SaveEvent(UID, 11025);
 		SaveEvent(UID, 11056);
 	elseif (Class == 4 or Class == 11 or Class == 12) then
-	RunExchange(UID, 3004);
+		RunExchange(UID, 3004);
 	    SaveEvent(UID, 11030);
 		SaveEvent(UID, 11056);
 	end
@@ -825,9 +814,9 @@ SLOTKONTROL = CheckGiveSlot(UID, 5)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-RunExchange(UID,3005)
-SaveEvent(UID, 11057);
-SaveEvent(UID, 11068);
+	RunExchange(UID,3005)
+	SaveEvent(UID, 11057);
+	SaveEvent(UID, 11068);
 end
 end
 
@@ -895,8 +884,8 @@ SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-SelectMsg(UID, 2, -1, 23146, NPC, 10,-1);
-RunExchange(UID,3235)
+	SelectMsg(UID, 2, -1, 23146, NPC, 10,-1);
+	RunExchange(UID,3235)
 	SaveEvent(UID,13802)
 	SaveEvent(UID,13813)
 	end

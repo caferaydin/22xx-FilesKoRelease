@@ -712,7 +712,6 @@ RunExchange(UID,1059)
   end	 
 end
 
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
 if (EVENT == 1100) then -- 43 Level Megantilion   Premium
 	SaveEvent(UID, 2103);
 end
@@ -761,7 +760,7 @@ if (EVENT == 1108) then
 		SaveEvent(UID, 2105);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 1200) then -- 45 Level Scolar  Premium
 	SaveEvent(UID, 2127);
 end
@@ -810,7 +809,7 @@ if (EVENT == 1208) then
 		SaveEvent(UID, 2129);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 200) then -- 56 Level Grell  Premium
 	SaveEvent(UID, 2307);
 end
@@ -855,7 +854,7 @@ if (EVENT == 208) then
 		SaveEvent(UID, 2309);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 300) then -- 56 Level Hell Hound  Premium
 	SaveEvent(UID, 2331);
 end
@@ -900,7 +899,7 @@ if (EVENT == 308) then
 		SaveEvent(UID, 2333);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 400) then -- 58 Level Manticore  Premium
 	SaveEvent(UID, 2355);
 end
@@ -945,7 +944,7 @@ if (EVENT == 408) then
 		SaveEvent(UID, 2357);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 local savenum = 150;
 
 if (EVENT == 8950) then -- 43 Level Megantilion
@@ -1043,7 +1042,7 @@ RunExchange(UID,972)
 	end
 end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 local savenum=393
 local talknum=8761
 
@@ -1108,7 +1107,7 @@ if (EVENT == 9906) then
 	SaveEvent(UID, 1324);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 local savenum=397
 local talknum=8763
 

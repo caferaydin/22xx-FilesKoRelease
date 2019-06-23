@@ -805,8 +805,6 @@ RunExchange(UID,943)
 	SaveEvent(UID, 9089);   
 end
 
-
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
 if (EVENT == 1000) then -- 44 Level Ape  Premium
 	SaveEvent(UID, 2115);
 end
@@ -855,7 +853,7 @@ if (EVENT == 1017) then
 		SaveEvent(UID, 2117);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 1100) then -- 45 Level Kangaus  Premium
 	SaveEvent(UID, 2139);
 end
@@ -904,7 +902,7 @@ if (EVENT == 1108) then
 		SaveEvent(UID, 2141);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 1200) then -- 46 Level Burning Skeleton  Premium
 	SaveEvent(UID, 2151);
 end
@@ -953,7 +951,7 @@ if (EVENT == 1208) then
 		SaveEvent(UID, 2153);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 1300) then -- 47 Level Ash Knight  Premium
 	SaveEvent(UID, 2175);
 end
@@ -1002,7 +1000,7 @@ if (EVENT == 1309) then
 		SaveEvent(UID, 2177);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 1400) then -- Haunga  Premium
 	SaveEvent(UID, 2187);
 end
@@ -1051,7 +1049,7 @@ if (EVENT == 1409) then
 		SaveEvent(UID, 2189);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 300) then -- Dragon Tooth Skeleton Premium
 	SaveEvent(UID, 2235);
 end
@@ -1100,8 +1098,7 @@ if (EVENT == 309) then
 		SaveEvent(UID, 2237);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 local savenum = 394
 local talknum = 8765
 
@@ -1165,7 +1162,7 @@ if(EVENT == 9906 )then
 		SaveEvent(UID, 1384);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 local savenum = 399
 local talknum = 8767
 
@@ -1229,7 +1226,7 @@ if (EVENT == 9806) then
 	SaveEvent(UID, 1444);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 202) then
 	Class = CheckClass(UID);
 	if (Class == 1 or Class == 5 or Class == 6) then

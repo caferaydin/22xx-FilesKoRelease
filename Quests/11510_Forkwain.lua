@@ -1,4 +1,3 @@
---Created by TheThyke-- %100 Usko Style
 local Ret = 0;
 local NPC = 11510;
 ----------------------------------
@@ -203,7 +202,7 @@ end
 if (EVENT == 1000) then 
 	SaveEvent(UID, 2458);
 end
---Created by TheThyke-- %100 Usko Style
+
 if (EVENT == 1001) then
 	SelectMsg(UID, 4, 494, 9239, NPC, 22, 1002, 23, -1);
 end

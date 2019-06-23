@@ -22,6 +22,6 @@ Nation = CheckNation(UID);
 if (Nation == 1) then
 SelectMsg(UID, 2, -1, 1057, NPC, 23);
 else
-GiveItem(UID,900068000,1)
+GiveItemLua(UID,900068000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 end
 end

@@ -437,10 +437,7 @@ if (EVENT == 337) then
 	SaveEvent(UID, 406);
 end
 
-
-
-
-if EVENT == 338 then --TheThyke-- Armor of Descruction Görevi.
+if EVENT == 338 then 
    Class = CheckClass (UID);
        if Class == 1 or Class == 5 or Class == 6 then
       SaveEvent(UID, 411);
@@ -646,7 +643,7 @@ if EVENT == 391 then
 end
 
 
-if EVENT == 400 then --TheThyke-- Goblin Armor Görevi
+if EVENT == 400 then 
    Class = CheckClass (UID);
        if Class == 1 or Class == 5 or Class == 6 then
       SaveEvent(UID, 626);

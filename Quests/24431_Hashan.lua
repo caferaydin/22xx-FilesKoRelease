@@ -810,7 +810,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
 	end
 end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 200) then -- 50 Level Lamia Premium
 	SaveEvent(UID, 2193);
 end
@@ -856,7 +856,7 @@ if (EVENT == 209) then
 		SaveEvent(UID, 2195);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 300) then -- 51 Level Uruk Hai Premium
 	SaveEvent(UID, 2205);
 end
@@ -902,7 +902,7 @@ if (EVENT == 309) then
 		SaveEvent(UID, 2207);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 400) then -- 51 Level Treant Premium
 	SaveEvent(UID, 2241);
 end
@@ -947,7 +947,7 @@ if (EVENT == 416) then
 		SaveEvent(UID, 2243);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 500) then -- 54 Level Ancient Premium
 	SaveEvent(UID,2253);
 end
@@ -993,7 +993,6 @@ if (EVENT == 509) then
 		SaveEvent(UID, 2255);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
 
 if (EVENT == 600) then -- 55 Level Dragon Tooth Commander Premium
 	SaveEvent(UID, 2277);
@@ -1041,7 +1040,7 @@ if (EVENT == 609) then
 	end
 end
 
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
+
 if (EVENT == 700) then -- 56 Level Uruk Blade Premium
 	SaveEvent(UID, 2289);
 end
@@ -1087,4 +1086,3 @@ if (EVENT == 709) then
 		SaveEvent(UID, 2291);
 	end
 end
-----------------------------TheThyke Database & Quest [Lua] Editör--------------------------------------------
