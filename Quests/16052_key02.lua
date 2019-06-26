@@ -30,7 +30,7 @@ if (EVENT == 102) then
 		SelectMsg(UID, 2, -1, 832, NPC, 27, 168);
 	else
 		--ChangePosition(UID)
-RunExchange(UID,472)
+		RunExchange(UID,472)
 		SaveEvent(UID, 4237); 
 	end   
 end

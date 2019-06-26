@@ -12,7 +12,6 @@ SLOTKONTROL = CheckExchangeSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-      RobItem(UID, 900074000)
-      GiveItem(UID, 900035000,1)
+	  GiveItemLua(UID,900035000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900074000,1, 0,0, 0,0, 0,0, 0,0);
 end
 end

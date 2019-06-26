@@ -4,10 +4,10 @@ local Ret = 0;
 if (EVENT == 100) then
 	NATION = CheckNation(UID);
 	if (NATION == 2) then
-		GiveItem(UID, 900071000, 1)
+		GiveItemLua(UID,900071000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		SelectMsg(UID, 2, -1, 9846, NPC, 10, 101);
 	else
-	    GiveItem(UID, 900071000, 1)
+		GiveItemLua(UID,900071000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		SelectMsg(UID, 2, -1, 1028, NPC, 10, 101);
 	end	
 end

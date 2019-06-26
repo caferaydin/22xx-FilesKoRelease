@@ -27,6 +27,5 @@ if (EVENT == 202) then
 
 if (EVENT == 203) then
 GoldLose(UID, 1000000)
---RobItem(UID, 900035000, 1)
-GiveItem(UID, 900067000, 1,1)
+GiveItemLua(UID,900067000,1,1, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 end

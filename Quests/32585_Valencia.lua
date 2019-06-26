@@ -15,6 +15,6 @@ SLOTKONTROL = CheckExchangeSlot(UID, 2)
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
 SelectMsg(UID, 2, -1, 20816, NPC, 22,-1);
-GiveItem(UID, 900293000,1)
+ GiveItemLua(UID,900293000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 end
 end
