@@ -12,3 +12,7 @@ end
 if (EVENT == 102) then
 	UserEvent(UID,1)
 end
+
+if (EVENT == 104) then
+	PlayerEffect(UID,30403)
+end

@@ -1,7 +1,7 @@
 local Ret = 0;
 local NPC = 16095;
 
-if (EVENT == 100) then
+if (EVENT == 500) then
 	SelectMsg(UID, 2, -1, 4431, NPC, 10, 502)
 end
 
@@ -21,15 +21,13 @@ if (EVENT == 502) then
 end
 
 if (EVENT == 503) then
-SlotControl = CheckGiveSlot(UID,1)
-if (SlotControl == true) then
 	SaveEvent(UID, 4245);
-	ITEM_COUNTA = HowmuchItem(UID, 810943000);
-	ITEM_COUNTB = HowmuchItem(UID, 810944000);
-	ITEM_COUNTC = HowmuchItem(UID, 810948000);
-	ITEM_COUNTD = HowmuchItem(UID, 810949000);
+	ITEM_COUNTA = HowmuchItem(UID, 389160000);
+	ITEM_COUNTB = HowmuchItem(UID, 389161000);
+	ITEM_COUNTC = HowmuchItem(UID, 389162000);
+	ITEM_COUNTD = HowmuchItem(UID, 389163000);
 	if (ITEM_COUNTA > 0 and ITEM_COUNTB > 0 and ITEM_COUNTC > 0 and ITEM_COUNTD > 0) then
-		GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810943000,1, 810944000,1, 810948000,1, 810949000,1, 0,0);
+		GiveItemLua(UID,389190000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 389160000,1, 389161000,1, 389162000,1, 389163000,1, 0,0);
 	else
 		if (ITEM_COUNTA < 1) then
 			SelectMsg(UID, 2, savenum, 4433, NPC, 18, 600);
@@ -41,7 +39,6 @@ if (SlotControl == true) then
 			SelectMsg(UID, 2, savenum, 4436, NPC, 18, 603);
 		end
 	end
-end
 end
 
 if (EVENT == 600) then
@@ -67,15 +64,13 @@ if (EVENT == 505) then
 end
 
 if (EVENT == 506) then
-SlotControl = CheckGiveSlot(UID,1)
-if (SlotControl == true) then
 	SaveEvent(UID, 4246);
 	ITEM_COUNTA = HowmuchItem(UID, 389190000);
-	ITEM_COUNTB = HowmuchItem(UID, 810950000);
-	ITEM_COUNTC = HowmuchItem(UID, 810951000);
-	ITEM_COUNTD = HowmuchItem(UID, 810952000);
+	ITEM_COUNTB = HowmuchItem(UID, 389164000);
+	ITEM_COUNTC = HowmuchItem(UID, 389165000);
+	ITEM_COUNTD = HowmuchItem(UID, 389166000);
 	if (ITEM_COUNTA > 0 and ITEM_COUNTB > 0 and ITEM_COUNTC > 0 and ITEM_COUNTD > 0) then
-		GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 389190000,1, 810950000,1, 810951000,1, 810952000,1, 0,0);
+		GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 389190000,1, 389164000,1, 389165000,1, 389166000,1, 0,0);
 		ZoneChangeParty(UID, 31, 940, 186)
 	else
 		if (ITEM_COUNTA < 1) then
@@ -88,7 +83,6 @@ if (SlotControl == true) then
 			SelectMsg(UID, 2, savenum, 4440, NPC, 18, 607);
 		end
 	end
-end
 end
 
 if (EVENT == 604) then

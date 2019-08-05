@@ -19,12 +19,6 @@ if (EVENT == 101) then
 end
 
 if (EVENT == 102) then
-	Time = CheckJuraidMountainTime(UID)
-  if(Time == 8) then
-      TempleOperations(UID, 8);
-  elseif (Time == 23) then
-      TempleOperations(UID, 8);
-  else
-      SelectMsg(UID, 2, -1, 807, NPC, 10, -1);
-    end
+	RegisterEvent(UID,3)
+    SelectMsg(UID, 2, -1, 807, NPC, 10, -1);
 end
