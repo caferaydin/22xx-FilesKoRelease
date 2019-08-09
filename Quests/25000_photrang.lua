@@ -213,9 +213,9 @@ SLOTKONTROL = CheckGiveSlot(UID, 3)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-		 GiveItem(UID, 900599000, 1)
-		    SaveEvent(UID, 7364)
-		 	SaveEvent(UID, 7368)
-		SelectMsg(UID, 2, 1209, 43675, NPC, 10, 113);
+		 GiveItemLua(UID,900599000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+		 SaveEvent(UID, 7364)
+		 SaveEvent(UID, 7368)
+		 SelectMsg(UID, 2, 1209, 43675, NPC, 10, 113);
 end
 end

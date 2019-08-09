@@ -33,7 +33,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-GiveItem(UID, 900608000, 1)
+GiveItemLua(UID,900608000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 end
 end
 
@@ -86,6 +86,6 @@ SLOTKONTROL = CheckGiveSlot(UID, 2)
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
 SelectMsg(UID, 2, -1, 22273, NPC, 22,-1);
-GiveItem(UID, 900218000,1)
+GiveItemLua(UID,900218000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 end
 end

@@ -14,7 +14,7 @@ if (Mattock == 0) then
 	if (Check == -1) then
 		SelectMsg(UID, 2, -1, 832, NPC, 27, 241);
 	else
-		GiveItem(UID, 389132000, 1)
+		GiveItemLua(UID,389132000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 	end
 else	
 	SelectMsg(UID, 2, -1, 9172, NPC, 22, 150, 23, 241);
@@ -31,7 +31,7 @@ if (EVENT == 150) then
 			SelectMsg(UID, 2, -1, 832, NPC, 27, 241);
 		else
 			GoldLose(UID, 1000000)
-			GiveItem(UID, 389132000, 1)
+			GiveItemLua(UID,389132000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		end
 	end
 end

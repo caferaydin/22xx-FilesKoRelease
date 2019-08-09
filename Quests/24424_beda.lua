@@ -71,8 +71,8 @@ if (EVENT == 532) then
 end
 
 if (EVENT == 533) then
-		GiveItem(UID, 910127000, 1);
-		SaveEvent(UID, 4267);
+	GiveItemLua(UID,910127000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+	SaveEvent(UID, 4267);
 end
 
 if (EVENT == 535) then
@@ -88,7 +88,7 @@ if (EVENT == 536) then
 			if (Check == -1) then
 				SelectMsg(UID, 2, savenum, 832, NPC, 27 , 193);
 			else
-				GiveItem(UID, 910127000, 1)
+				GiveItemLua(UID,910127000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 				SelectMsg(UID, 2, savenum, 4507, NPC, 18, 538);
 			end
 		else

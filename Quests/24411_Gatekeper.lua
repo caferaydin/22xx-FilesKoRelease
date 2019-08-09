@@ -26,7 +26,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 2)
 		--RobItem(UID, 389620000, 1)
 		ExpChange(UID, 5000)
 		--SaveEvent(UID, 612);
-		GiveItem(UID, 910087000, 1)
+		GiveItemLua(UID,910087000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		SelectMsg(UID, 2, 66, 1272, NPC, 56, 193);
 	end
     end

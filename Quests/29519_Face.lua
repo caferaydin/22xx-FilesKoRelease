@@ -18,8 +18,7 @@ if (EVENT == 105) then
 end
 
 if (EVENT == 107) then
-GiveItem(UID,810333856,1,7)
-RobItem(UID, 910334000, 1)
+GiveItemLua(UID,810333856,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 910334000,1, 0,0, 0,0, 0,0, 0,0);
 end
 
 if (EVENT == 101) then

@@ -247,8 +247,7 @@ if (EVENT == 229) then
 end
 
 if (EVENT == 230) then
-	RobItem(UID, 900017000, 7)
-	GiveItem(UID, 379066000, 1)
+	GiveItemLua(UID,379066000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 900017000,7, 0,0, 0,0, 0,0);
 	SaveEvent(UID, 3094);
 	SelectMsg(UID, 2, 307, 3044, NPC, 10, 193);
 end
@@ -380,10 +379,7 @@ if (EVENT == 412) then
 end
 
 if (EVENT == 410) then
-	RobItem(UID, 320410013, 1)
-	RobItem(UID, 320410011, 1)
-	RobItem(UID, 379067000, 1)
-	GiveItem(UID, 379250000, 1)
+	GiveItemLua(UID,379250000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 320410013,1, 320410011,1, 379067000,1, 0,0);
 	SaveEvent(UID, 3134);
 end
 
@@ -529,10 +525,8 @@ if (EVENT == 632) then
 end
 
 if (EVENT == 630) then
-	RobItem(UID, 379249000, 1)
-	RobItem(UID, 379250000, 1)
+	GiveItemLua(UID,900007000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 379249000,1, 379250000,1, 0,0, 0,0);
 	GoldLose(UID, 7000000)
-	GiveItem(UID, 900007000, 1)
 	SaveEvent(UID, 3474);
 end
 
@@ -608,10 +602,8 @@ if (EVENT == 733) then
 end
 
 if (EVENT == 730) then
-	RobItem(UID, 379250000, 1)
-	RobItem(UID, 379236000, 1)
+	GiveItemLua(UID,900007000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 379250000,1, 379236000,1, 0,0, 0,0);
 	GoldLose(UID, 10000000)
-	GiveItem(UID, 900007000, 1)
 	SaveEvent(UID, 5205);   
 end
 
@@ -687,10 +679,8 @@ if (EVENT == 833) then
 end
 
 if (EVENT == 830) then
-	RobItem(UID, 379249000, 1)
-	RobItem(UID, 379236000, 1)
+	GiveItemLua(UID,900007000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 379249000,1, 379236000,1, 0,0, 0,0);
 	GoldLose(UID, 10000000)
-	GiveItem(UID, 900007000, 1)
 	SaveEvent(UID, 5217); 	 
 end
 
@@ -766,10 +756,8 @@ if (EVENT == 933) then
 end
 
 if (EVENT == 930) then
-	RobItem(UID, 379250000, 1)
-	RobItem(UID, 379236000, 2)
+	GiveItemLua(UID,900007000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 379250000,1, 379236000,2, 0,0, 0,0);
 	GoldLose(UID, 10000000)
-	GiveItem(UID, 900007000, 1)
 	SaveEvent(UID, 5229);
 end
 
@@ -845,10 +833,8 @@ if (EVENT == 1033) then
 end
 
 if (EVENT == 1030) then
-	RobItem(UID, 379249000, 1)
-	RobItem(UID, 379236000, 2)
+	GiveItemLua(UID,900007000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 379249000,1, 379236000,2, 0,0, 0,0);
 	GoldLose(UID, 10000000)
-	GiveItem(UID, 900007000, 1)
 	SaveEvent(UID, 5241); 
 end
 
@@ -924,10 +910,8 @@ if (EVENT == 1133) then
 end
 
 if (EVENT == 1130) then
-	RobItem(UID, 379250000, 1)
-	RobItem(UID, 379236000, 3)
+	GiveItemLua(UID,900007000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 379250000,1, 379236000,3, 0,0, 0,0);
 	GoldLose(UID, 10000000)
-	GiveItem(UID, 900007000, 1)
 	SaveEvent(UID, 5253);  
 end
 
@@ -1003,9 +987,7 @@ if (EVENT == 1233) then
 end
 
 if (EVENT == 1230) then
-	RobItem(UID, 379249000, 1)
-	RobItem(UID, 379236000, 3)
+	GiveItemLua(UID,900007000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 379249000,1, 379236000,3, 0,0, 0,0);
 	GoldLose(UID, 10000000)
-	GiveItem(UID, 900007000, 1)
 	SaveEvent(UID, 5265);
 end

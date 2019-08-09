@@ -109,12 +109,7 @@ if (EVENT == 538) then
 end
 
 if (EVENT == 537) then
-	RobItem(UID, 910134000, 1)
-	RobItem(UID, 910127000, 1)
-	GiveItem(UID, 910139000, 1)
-	GiveItem(UID, 910140000, 1)
-	GiveItem(UID, 910141000, 1)
-	GiveItem(UID, 910142000, 1)
+	GiveItemLua(UID,910139000,1,0, 910140000,1,0, 910141000,1,0, 910142000,0,0, 0,0,0, 910134000,1, 910127000,1, 0,0, 0,0, 0,0);
 	SaveEvent(UID, 4268); 
 end
 
@@ -442,24 +437,19 @@ end
 if (EVENT == 637) then
 	Class = CheckClass(UID);
 	if (Class == 1 or Class == 5 or Class == 6) then
-		GiveItem(UID, 910120350, 1)
-		GiveItem(UID, 910126544, 1)
-		GiveItem(UID, 910121300, 1)
+		GiveItemLua(UID,910120350,5,0, 910126544,1,0, 910121300,1,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		SaveEvent(UID, 4335);
 		ShowEffect(UID, 300391) 
 	elseif (Class == 2 or Class == 7 or Class == 8) then
-		GiveItem(UID, 910119300, 1)
-		GiveItem(UID, 910122350, 1)
+		GiveItemLua(UID,910119300,5,0, 910122350,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		SaveEvent(UID, 4340);
 		ShowEffect(UID, 300391) 
 	elseif (Class == 3 or Class == 9 or Class == 10) then
-		GiveItem(UID, 910123355, 1)
-		GiveItem(UID, 910124351, 1)
+		GiveItemLua(UID,910123355,5,0, 910124351,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		SaveEvent(UID, 4345);
 		ShowEffect(UID, 300391) 
 	elseif (Class == 4 or Class == 11 or Class == 12) then
-		GiveItem(UID, 910125324, 1)
-		GiveItem(UID, 910126544, 1)
+		GiveItemLua(UID,910125324,5,0, 910126544,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		SaveEvent(UID, 4350);
 		ShowEffect(UID, 300391) 
 	end	 

@@ -18,8 +18,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 900660000, 1)
-	GiveItem(UID, 810934956, 1,30)
+		GiveItemLua(UID,810934956,1,30, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900660000,1, 0,0, 0,0, 0,0, 0,0);
 end
 end
 
@@ -39,8 +38,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 399119000, 1)
-	GiveItem(UID, 930540724, 1,30)
+		GiveItemLua(UID,930540724,1,30, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 399119000,1, 0,0, 0,0, 0,0, 0,0);
 end
 end
 
@@ -211,8 +209,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810507000, 1)
-	GiveItem(UID, 900767866, 1,7)
+		GiveItemLua(UID,900767866,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810507000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -221,8 +218,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810507000, 1)
-	GiveItem(UID, 900767867, 1,7)
+		GiveItemLua(UID,900767867,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810507000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -231,8 +227,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810507000, 1)
-	GiveItem(UID, 900767869, 1,7)
+		GiveItemLua(UID,900767869,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810507000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -241,8 +236,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810507000, 1)
-	GiveItem(UID, 900767868, 1,7)
+		GiveItemLua(UID,900767868,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810507000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -251,8 +245,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810507000, 1)
-	GiveItem(UID, 900768870, 1,7)
+		GiveItemLua(UID,900768870,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810507000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -261,8 +254,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810507000, 1)
-	GiveItem(UID, 900768871, 1,7)
+		GiveItemLua(UID,900768871,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810507000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -271,8 +263,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810507000, 1)
-	GiveItem(UID, 900768873, 1,7)
+		GiveItemLua(UID,900768873,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810507000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -281,8 +272,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810507000, 1)
-	GiveItem(UID, 900768872, 1,7)
+		 GiveItemLua(UID,900768872,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810507000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -300,8 +290,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810672000, 1)
-	GiveItem(UID, 810638711, 1,7)
+		GiveItemLua(UID,810638711,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810672000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -310,8 +299,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810672000, 1)
-	GiveItem(UID, 810638712, 1,7)
+		GiveItemLua(UID,810638712,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810672000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -320,8 +308,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810672000, 1)
-	GiveItem(UID, 810638730, 1,7)
+		GiveItemLua(UID,810638730,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810672000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end
 
@@ -330,7 +317,6 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
-	RobItem(UID, 810672000, 1)
-	GiveItem(UID, 810638731, 1,7)
+		GiveItemLua(UID,810638731,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 810672000,1, 0,0, 0,0, 0,0, 0,0);
     end
 end

@@ -10,7 +10,7 @@ if (EVENT == 100) then
 			if (RED < 1) then
 				Cast = CastSkill(UID, 610096);
 				if (Cast) then
-					GiveItem(UID, 900129000, 1)
+					GiveItemLua(UID,900129000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 				else
 					Ret = 1;
 				end
@@ -26,7 +26,7 @@ if (EVENT == 100) then
 			if (RED < 1) then
 				Cast = CastSkill(UID, 610096);
 				if (Cast) then
-					GiveItem(UID, 900129000, 1)
+					GiveItemLua(UID,900129000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 				else
 					Ret = 1;
 				end

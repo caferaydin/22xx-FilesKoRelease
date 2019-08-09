@@ -46,24 +46,24 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
 	else
 	Roll = RollDice(UID, 6) 
 	if Roll == 0 then
-    GiveItem(UID,381005000,1);
+	GiveItemLua(UID,381005000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
     end
 	if Roll == 1 then
-    GiveItem(UID,700036018,1);
+	GiveItemLua(UID,700036018,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
     end
 	if Roll == 2 then
-    GiveItem(UID,379194000,5);
+	GiveItemLua(UID,379194000,5,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
     end
 	if Roll == 3 then
-    GiveItem(UID,379195000,5);
+	GiveItemLua(UID,379195000,5,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
     end
 	if Roll == 4 then
-    GiveItem(UID,379196000,5);
+	GiveItemLua(UID,379196000,5,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 	end
 	if Roll == 5 then
-    GiveItem(UID,379197000,5);
+	GiveItemLua(UID,379197000,5,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
     end
-        RobItem(UID, 914010000, 5)
+		GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 914010000,5, 0,0, 0,0, 0,0, 0,0);
 		SelectMsg(UID, 2, -1, 9110, NPC, 10, -1);
 	end   
 end
@@ -83,7 +83,6 @@ if (EVENT == 202) then
 end
 
 if (EVENT == 203) then
-RobItem(UID, 914010000,5)
-GiveItem(UID,528005647,1,7);
+GiveItemLua(UID,528005647,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 914010000,5, 0,0, 0,0, 0,0, 0,0);
 SelectMsg(UID, 2, -1, 9110, NPC, 10, -1);
 end

@@ -472,9 +472,9 @@ if (EXPPREM < 1) then
 SelectMsg(UID, 2, -1, 9528, NPC, 18, 101);
 else
 GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 399295000,1, 0,0, 0,0, 0,0, 0,0);
-GivePremium(UID, 10, 30) 
-GivePremium(UID, 11, 30)
-GivePremium(UID, 12, 30)
+GivePremium(UID, 10, 720) 
+GivePremium(UID, 11, 720)
+GivePremium(UID, 12, 720)
 
 end 
 end

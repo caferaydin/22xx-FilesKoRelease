@@ -14,8 +14,7 @@ if (EVENT == 102) then -- War Emblem Exchange
 	if (WARAMBLEM < 1) then
 		SelectMsg(UID, 2, -1, 11801, NPC, 10, 101);
 	else
-		RobItem(UID, 900594000, 1)
-		GiveItem(UID, 900595000, 1)
+		GiveItemLua(UID,900595000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900594000,1, 0,0, 0,0, 0,0, 0,0);
 	end
 end
 
@@ -24,8 +23,7 @@ if (EVENT == 103) then -- WAR Championship Emblem Exchange
 	if (WARCAMBLEM < 1) then
 		SelectMsg(UID, 2, -1, 11802, NPC, 10, 101);
 	else
-		RobItem(UID, 900596000, 1)
-		GiveItem(UID, 900597000, 1)
+		GiveItemLua(UID,900597000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900596000,1, 0,0, 0,0, 0,0, 0,0);
 	end
 end
 
@@ -116,8 +114,7 @@ if (EVENT == 108) then -- Guardian Emblem Exchange
 	if (GUARD < 1) then
 		SelectMsg(UID, 2, -1, 11063, NPC, 10, 101);
 	else
-		RobItem(UID, 900703000, 1)
-		GiveItem(UID, 900704000, 1)
+		GiveItemLua(UID,900704000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900703000,1, 0,0, 0,0, 0,0, 0,0);
 	end
 end
 
@@ -128,11 +125,9 @@ if (EVENT == 111) then -- Exchange Wing of Neophyte
 	else
 		Nation = CheckNation(UID);
 		if (Nation == 1) then
-			RobItem(UID, 900700000, 1)
-			GiveItem(UID, 900701000, 1)
+			GiveItemLua(UID,900701000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900700000,1, 0,0, 0,0, 0,0, 0,0);
 		else
-			RobItem(UID, 900700000, 1)
-			GiveItem(UID, 900702000, 1)
+			GiveItemLua(UID,900700000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 900702000,1, 0,0, 0,0, 0,0, 0,0);
 		end
 	end
 end

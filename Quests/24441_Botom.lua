@@ -318,7 +318,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
 RunExchange(UID, 961)
 		SaveEvent(UID, 8723);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
-		GiveItem(UID, 245004005, 1)
+		GiveItemLua(UID,245004005,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 RunExchange(UID, 962)
 		SaveEvent(UID, 8728);
 	elseif (Class == 3 or Class == 9 or Class == 10) then

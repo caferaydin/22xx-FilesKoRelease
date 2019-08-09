@@ -33,7 +33,7 @@ if (EVENT == 120) then
 		if (Check == -1) then
 			SelectMsg(UID, 2, -1, 832, NPC ,27);
 		else
-			GiveItem(UID, 910084000, 1);
+			GiveItemLua(UID,910084000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 			SaveEvent(UID,4186);  
 		end	
 	else
@@ -58,7 +58,7 @@ if (EVENT == 140) then
 		if (Check == -1) then
 			SelectMsg(UID, 2, -1, 832, NPC, 27, 101);
 		else
-			GiveItem(UID, 910085000, 1);
+			GiveItemLua(UID,910085000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 			SaveEvent(UID, 4191);
 		end	
 	else

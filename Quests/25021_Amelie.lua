@@ -73,7 +73,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 2)
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
 			SaveEvent(UID, 7459)
-            GiveItem(UID, 900609000, 1)
+			GiveItemLua(UID,900609000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 end
 end
 

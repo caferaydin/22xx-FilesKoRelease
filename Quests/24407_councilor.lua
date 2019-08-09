@@ -255,7 +255,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 3)
 	SaveEvent(UID, 13846)
 	SaveEvent(UID, 13857)
 	RunExchange(UID, 3240)
-	GiveItem(UID, 900335523)
+	GiveItemLua(UID,900335523,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 end
 end
 
@@ -294,8 +294,7 @@ SLOTKONTROL = CheckGiveSlot(UID, 3)
 	SaveEvent(UID, 13858)
 	SaveEvent(UID, 13869)
 	RunExchange(UID, 3241)
-	GiveItem(UID, 900336524)
-	RobItem(UID, 900335523)
+	GiveItemLua(UID,900336524,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 900335523,1, 0,0, 0,0, 0,0);
 end
 end
 

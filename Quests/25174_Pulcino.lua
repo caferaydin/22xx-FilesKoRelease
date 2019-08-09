@@ -17,9 +17,7 @@ end
 if (EVENT == 3101) then
 	ITEM = HowmuchItem(UID, 810552000);
 	if (ITEM > 0) then
-		RobItem (UID, 810552000, 1)	
-		GiveItem(UID, 810554924, 1)
-		GiveItem(UID, 810512000, 1)
+		GiveItemLua(UID,810552000,1,1, 810554924,1,1, 810512000,1,1, 0,0,0, 0,0,0, 810552000,1, 0,0, 0,0, 0,0, 0,0);
 	else
 	SelectMsg(UID, 2, -1, 12133, NPC, 8708, 101)
 	end
