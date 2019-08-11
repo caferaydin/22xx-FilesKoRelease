@@ -95,7 +95,7 @@ end
 
 if (EVENT == 219) then
 		RobItem(UID, 900044000, 1)
-		GivePremium(UID, 10, 3)
+		GivePremium(UID, 10, 72)
 end		
 
 if (EVENT == 211) then -- DISC Premium 7
@@ -109,7 +109,7 @@ end
 
 if (EVENT == 220) then
 		RobItem(UID, 900045000, 1)
-		GivePremium(UID, 10, 7)
+		GivePremium(UID, 10, 168)
 end	
 
 if (EVENT == 212) then -- EXP Premium 3
@@ -123,7 +123,7 @@ end
 
 if (EVENT == 221) then
 	RobItem(UID, 998020000, 1)
-	GivePremium(UID, 11, 3)
+	GivePremium(UID, 11, 72)
 end
 
 if (EVENT == 213) then -- EXP Premium 7
@@ -137,7 +137,7 @@ end
 
 if (EVENT == 222) then
 	RobItem(UID, 911800000, 1)
-	GivePremium(UID, 11, 7)
+	GivePremium(UID, 11, 168)
 end
 
 if (EVENT == 214) then -- WAR Premium 3
@@ -165,7 +165,7 @@ end
 
 if (EVENT == 224) then
 	RobItem(UID, 910936000, 1)
-	GivePremium(UID, 12, 7)
+	GivePremium(UID, 12, 168)
 end
 
 if (EVENT == 216) then -- Bronze Premium 3
@@ -179,7 +179,7 @@ end
 
 if (EVENT == 225) then	
 	RobItem(UID, 900828000, 1)
-	GivePremium(UID, 3, 3)
+	GivePremium(UID, 3, 72)
 end
 
 if (EVENT ==  1000) then

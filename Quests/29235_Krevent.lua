@@ -118,7 +118,7 @@ if (EVENT == 300) then
 	Prem = GetPremium(UID);
 	if (Prem == 0) then
 		RobItem(UID, 900970865, 1)
-		GivePremium(UID, 7,30)
+		GivePremium(UID, 7,720)
 	else
 		SelectMsg(UID, 2, -1, 9526, NPC, 10, 101);
 	end

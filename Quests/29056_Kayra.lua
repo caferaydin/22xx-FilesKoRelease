@@ -109,7 +109,7 @@ if (EVENT == 183) then
 		SelectMsg(UID, 2, -1, 9528, NPC, 18, 1000);
 	else
 RobItem(UID, 399281685, 1)
-GivePremium(UID, 10, 30)
+GivePremium(UID, 10, 720)
 
 	end
 end
@@ -124,7 +124,7 @@ if (EVENT == 184) then
 		SelectMsg(UID, 2, -1, 9528, NPC, 18, 1000);
 	else
 		RobItem(UID, 399282686, 1)
-		GivePremium(UID, 11, 30)
+		GivePremium(UID, 11, 720)
 	end
 end
 
@@ -140,7 +140,7 @@ if (EVENT == 185) then
 		SelectMsg(UID, 2, -1, 9528, NPC, 18, 1000);
 	else
 		RobItem(UID, 399292764, 1)
-		GivePremium(UID, 12, 30)
+		GivePremium(UID, 12, 720)
 			end
 end
 

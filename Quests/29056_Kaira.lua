@@ -566,6 +566,7 @@ if (EVENT == 183) then
 	else
 		GiveItemLua(UID,508122000,1,0, 700002000,1,0, 0,0,0, 0,0,0, 0,0,0, 399281685,1, 0,0, 0,0, 0,0, 0,0);
 		GivePremium(UID, 10, 30)
+		GivePremium(UID, 10, 720)
 	end
 end
 
@@ -579,7 +580,7 @@ if (EVENT == 184) then
 		SelectMsg(UID, 2, -1, 9528, NPC, 18, 1000);
 	else
 		GiveItemLua(UID,389330000,1,0, 389360000,1,0, 700002000,1,0, 508121000,1,0, 0,0,0, 399282686,1, 0,0, 0,0, 0,0, 0,0);
-		GivePremium(UID, 11, 30)
+		GivePremium(UID, 11, 720)
 	end
 end
 
@@ -594,10 +595,10 @@ if (EVENT == 185) then
 		SelectMsg(UID, 2, -1, 9528, NPC, 18, 1000);
 	else	
 		GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 399292764,1, 0,0, 0,0, 0,0, 0,0);
-		GivePremium(UID, 12, 30)
-		GivePremium(UID, 10, 30)
-		GivePremium(UID, 11, 30)
-		GivePremium(UID, 12, 30)	
+		GivePremium(UID, 12, 720)
+		GivePremium(UID, 10, 720)
+		GivePremium(UID, 11, 720)
+		GivePremium(UID, 12, 720)	
 		end
 end
 
@@ -611,9 +612,9 @@ if (EVENT == 187) then
 		SelectMsg(UID, 2, -1, 9528, NPC, 18, 1000);
 	else
 		GiveItemLua(UID,389070000,1000,0, 389130000,1000,0, 810638730,1,30, 0,0,0, 0,0,0, 399295000,1, 0,0, 0,0, 0,0, 0,0);
-		GivePremium(UID, 10, 30)
-		GivePremium(UID, 11, 30)
-		GivePremium(UID, 12, 30)	
+		GivePremium(UID, 10, 720)
+		GivePremium(UID, 11, 720)
+		GivePremium(UID, 12, 720)	
 	end
 end
 
