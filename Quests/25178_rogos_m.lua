@@ -22,9 +22,7 @@ if (EVENT == 300) then
 		
   SendNpcKillID(UID, 25178)
 	if (Cast) then
-		CastSkill(UID, 25178)
-		
-		
+		CastSkill(UID, 25178		
 	else
 		NpcMsg(UID, 9137);
 	end
