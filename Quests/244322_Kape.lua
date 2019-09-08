@@ -145,7 +145,7 @@ local Check;
 if EVENT == 8758 then
     Class = CheckClass(UID);
     if Class == 1 or Class == 5 or Class == 6 then
-    Check = CheckExchangeSlot(UID, 957)
+    Check = CheckGiveSlot(UID, 957)
         if  Check == true then        
         SaveEvent(UID, 8681);
         SaveEvent(UID, 8702);
@@ -154,7 +154,7 @@ if EVENT == 8758 then
         Ret = 1; 
         end  
     elseif Class == 2 or Class == 7 or Class == 8 then
-    Check = CheckExchangeSlot(UID, 958)
+    Check = CheckGiveSlot(UID, 958)
         if  Check == true then        
         SaveEvent(UID, 8686);
         SaveEvent(UID, 8702);
@@ -163,7 +163,7 @@ if EVENT == 8758 then
         Ret = 1; 
         end  
     elseif Class == 3 or Class == 9 or Class == 10 then
-    Check = CheckExchangeSlot(UID, 959)
+    Check = CheckGiveSlot(UID, 959)
         if  Check == true then        
         SaveEvent(UID, 8691);
         SaveEvent(UID, 8702);
@@ -172,7 +172,7 @@ if EVENT == 8758 then
         Ret = 1; 
         end  
     elseif Class == 4 or Class == 11 or Class == 12 then
-    Check = CheckExchangeSlot(UID, 960)
+    Check = CheckGiveSlot(UID, 960)
         if  Check == true then        
         SaveEvent(UID, 8696);
         SaveEvent(UID, 8702);
@@ -286,7 +286,7 @@ local Check;
 if EVENT == 8958 then
     Class = CheckClass(UID);
     if Class == 1 or Class == 5 or Class == 6 then
-    Check = CheckExchangeSlot(UID, 973)
+    Check = CheckGiveSlot(UID, 973)
         if  Check == true then        
         RunQuestExchange(UID, 973);
         SaveEvent(UID, 8765);
@@ -296,7 +296,7 @@ if EVENT == 8958 then
         Ret = 1; 
         end  
     elseif Class == 2 or Class == 7 or Class == 8 then
-    Check = CheckExchangeSlot(UID, 974)
+    Check = CheckGiveSlot(UID, 974)
         if  Check == true then        
         RunQuestExchange(UID, 974);
         SaveEvent(UID, 8770);
@@ -306,7 +306,7 @@ if EVENT == 8958 then
         Ret = 1; 
         end  
     elseif Class == 3 or Class == 9 or Class == 10 then
-    Check = CheckExchangeSlot(UID, 975)
+    Check = CheckGiveSlot(UID, 975)
         if  Check == true then        
         RunQuestExchange(UID, 975);
         SaveEvent(UID, 8775);
@@ -316,7 +316,7 @@ if EVENT == 8958 then
         Ret = 1; 
         end  
     elseif Class == 4 or Class == 11 or Class == 12 then
-    Check = CheckExchangeSlot(UID, 976)
+    Check = CheckGiveSlot(UID, 976)
         if  Check == true then        
         RunQuestExchange(UID, 976);
         SaveEvent(UID, 8780);
@@ -431,7 +431,7 @@ local Check;
 if EVENT == 8178 then
     Class = CheckClass(UID);
     if Class == 1 or Class == 5 or Class == 6 then
-    Check = CheckExchangeSlot(UID, 981)
+    Check = CheckGiveSlot(UID, 981)
         if  Check == true then        
         RunQuestExchange(UID, 981);
         SaveEvent(UID, 8807);
@@ -441,7 +441,7 @@ if EVENT == 8178 then
         Ret = 1; 
         end  
     elseif Class == 2 or Class == 7 or Class == 8 then
-    Check = CheckExchangeSlot(UID, 982)
+    Check = CheckGiveSlot(UID, 982)
         if  Check == true then        
         RunQuestExchange(UID, 982);
         SaveEvent(UID, 8812);
@@ -451,7 +451,7 @@ if EVENT == 8178 then
         Ret = 1; 
         end  
     elseif Class == 3 or Class == 9 or Class == 10 then
-    Check = CheckExchangeSlot(UID, 983)
+    Check = CheckGiveSlot(UID, 983)
         if  Check == true then        
         RunQuestExchange(UID, 983);
         SaveEvent(UID, 8828);
@@ -461,7 +461,7 @@ if EVENT == 8178 then
         Ret = 1; 
         end  
     elseif Class == 4 or Class == 11 or Class == 12 then
-    Check = CheckExchangeSlot(UID, 984)
+    Check = CheckGiveSlot(UID, 984)
         if  Check == true then        
         RunQuestExchange(UID, 984);
         SaveEvent(UID, 8822);
@@ -535,7 +535,7 @@ if EVENT == 9068 then
 end
 
 if EVENT == 9069 then
-   Check = CheckExchangeSlot(UID, 1042)
+   Check = CheckGiveSlot(UID, 1042)
    if  Check == true then
    RunQuestExchange(UID, 1042);
    SaveEvent(UID, 9119);
@@ -691,7 +691,7 @@ local Check;
 if EVENT == 9158 then
     Class = CheckClass(UID);
     if Class == 1 or Class == 5 or Class == 6 then
-    Check = CheckExchangeSlot(UID, 1052)
+    Check = CheckGiveSlot(UID, 1052)
         if  Check == true then        
         RunQuestExchange(UID, 1052);
         SaveEvent(UID, 9257);
@@ -701,7 +701,7 @@ if EVENT == 9158 then
         Ret = 1; 
         end  
     elseif Class == 2 or Class == 7 or Class == 8 then
-    Check = CheckExchangeSlot(UID, 1053)
+    Check = CheckGiveSlot(UID, 1053)
         if  Check == true then        
         RunQuestExchange(UID, 1053);
         SaveEvent(UID, 9262);
@@ -711,7 +711,7 @@ if EVENT == 9158 then
         Ret = 1; 
         end  
     elseif Class == 3 or Class == 9 or Class == 10 then
-    Check = CheckExchangeSlot(UID, 1054)
+    Check = CheckGiveSlot(UID, 1054)
         if  Check == true then        
         RunQuestExchange(UID, 1054);
         SaveEvent(UID, 9267);
@@ -721,7 +721,7 @@ if EVENT == 9158 then
         Ret = 1; 
         end  
     elseif Class == 4 or Class == 11 or Class == 12 then
-    Check = CheckExchangeSlot(UID, 1055)
+    Check = CheckGiveSlot(UID, 1055)
         if  Check == true then        
         RunQuestExchange(UID, 1055);
         SaveEvent(UID, 9272);
@@ -789,7 +789,7 @@ end
 local Check;
 
 if EVENT == 9329 then
-   Check = CheckExchangeSlot(UID, 1089)
+   Check = CheckGiveSlot(UID, 1089)
    if  Check == true then
    RunQuestExchange(UID, 1089);
    SaveEvent(UID, 9341);
@@ -856,7 +856,7 @@ end
 local Check;
 
 if EVENT == 9349 then
-   Check = CheckExchangeSlot(UID, 1092)
+   Check = CheckGiveSlot(UID, 1092)
    if  Check == true then
    RunQuestExchange(UID, 1092);
    SaveEvent(UID, 9365);
@@ -964,7 +964,7 @@ local Check;
 if EVENT == 9438 then
     Class = CheckClass(UID);
     if Class == 1 or Class == 5 or Class == 6 then
-    Check = CheckExchangeSlot(UID, 1033)
+    Check = CheckGiveSlot(UID, 1033)
         if  Check == true then        
    RunQuestExchange(UID, 1106);
    SaveEvent(UID, 9473);
@@ -973,7 +973,7 @@ if EVENT == 9438 then
         Ret = 1; 
         end  
     elseif Class == 2 or Class == 7 or Class == 8 then
-    Check = CheckExchangeSlot(UID, 1034)
+    Check = CheckGiveSlot(UID, 1034)
         if  Check == true then        
    RunQuestExchange(UID, 1107);
    SaveEvent(UID, 9478);
@@ -982,7 +982,7 @@ if EVENT == 9438 then
         Ret = 1; 
         end  
     elseif Class == 3 or Class == 9 or Class == 10 then
-    Check = CheckExchangeSlot(UID, 1035)
+    Check = CheckGiveSlot(UID, 1035)
         if  Check == true then        
    RunQuestExchange(UID, 1108);
    SaveEvent(UID, 9483);
@@ -991,7 +991,7 @@ if EVENT == 9438 then
         Ret = 1; 
         end  
     elseif Class == 4 or Class == 11 or Class == 12 then
-    Check = CheckExchangeSlot(UID, 1036)
+    Check = CheckGiveSlot(UID, 1036)
         if  Check == true then        
    RunQuestExchange(UID, 1109);
    SaveEvent(UID, 9488);
@@ -1096,7 +1096,7 @@ local Check;
 if EVENT == 9458 then
     Class = CheckClass(UID);
     if Class == 1 or Class == 5 or Class == 6 then
-    Check = CheckExchangeSlot(UID, 1033)
+    Check = CheckGiveSlot(UID, 1033)
         if  Check == true then        
    RunQuestExchange(UID, 1114);
    SaveEvent(UID, 9515);
@@ -1105,7 +1105,7 @@ if EVENT == 9458 then
         Ret = 1; 
         end  
     elseif Class == 2 or Class == 7 or Class == 8 then
-    Check = CheckExchangeSlot(UID, 1034)
+    Check = CheckGiveSlot(UID, 1034)
         if  Check == true then        
    RunQuestExchange(UID, 1115);
    SaveEvent(UID, 9520);
@@ -1114,7 +1114,7 @@ if EVENT == 9458 then
         Ret = 1; 
         end  
     elseif Class == 3 or Class == 9 or Class == 10 then
-    Check = CheckExchangeSlot(UID, 1035)
+    Check = CheckGiveSlot(UID, 1035)
         if  Check == true then        
    RunQuestExchange(UID, 1116);
    SaveEvent(UID, 9525);
@@ -1123,7 +1123,7 @@ if EVENT == 9458 then
         Ret = 1; 
         end  
     elseif Class == 4 or Class == 11 or Class == 12 then
-    Check = CheckExchangeSlot(UID, 1036)
+    Check = CheckGiveSlot(UID, 1036)
         if  Check == true then        
    RunQuestExchange(UID, 1117);
    SaveEvent(UID, 9530);

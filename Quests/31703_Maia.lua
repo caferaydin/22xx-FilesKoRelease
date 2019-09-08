@@ -61,7 +61,7 @@ if(ItemCount0 < 3 and ItemCount1 < 3)then
 else
 NATION = CheckNation(UID);
 if(NATION == 2)then
-Check = CheckExchangeSlot(UID, 3072);
+Check = CheckGiveSlot(UID, 3072);
 if(Check == 1)then
 RunQuestExchange(UID, 3072);
 SaveEvent(UID, 11861);
@@ -110,7 +110,7 @@ if(ItemCount0 < 1)then
 else
 NATION = CheckNation(UID);
 if(NATION == 2)then
-Check = CheckExchangeSlot(UID, 3075);
+Check = CheckGiveSlot(UID, 3075);
 if(Check == 1)then
 RunQuestExchange(UID, 3075);
 SaveEvent(UID, 11897);
@@ -211,7 +211,7 @@ if(ItemCount0 < 1)then
 else
 NATION = CheckNation(UID);
 if(NATION == 2)then
-Check = CheckExchangeSlot(UID, 3094);
+Check = CheckGiveSlot(UID, 3094);
 if(Check == 1)then
 RunQuestExchange(UID, 3094);
 SaveEvent(UID, 12125);
@@ -256,11 +256,11 @@ end
 end
 end
 if(EVENT == 1610)then
-Slot = CheckExchangeSlot(UID,1)
+Slot = CheckGiveSlot(UID,1)
 if (Slot == true) then -- slotta yer var
 NATION = CheckNation(UID);
 if(NATION == 2)then
-Check = CheckExchangeSlot(UID, 3095);
+Check = CheckGiveSlot(UID, 3095);
 if(Check == 1)then
 RunQuestExchange(UID, 3095);
 SaveEvent(UID, 12137);
@@ -330,11 +330,11 @@ end
 end
 end
 if(EVENT == 1810)then
-Slot = CheckExchangeSlot(UID,1)
+Slot = CheckGiveSlot(UID,1)
 if (Slot == true) then -- slotta yer var
 NATION = CheckNation(UID);
 if(NATION == 2)then
-Check = CheckExchangeSlot(UID, 3101);
+Check = CheckGiveSlot(UID, 3101);
 if(Check == 1)then
 RunQuestExchange(UID, 3101);
 SaveEvent(UID, 12209);
@@ -378,11 +378,11 @@ end
 end
 end
 if(EVENT == 1910)then
-Slot = CheckExchangeSlot(UID,1)
+Slot = CheckGiveSlot(UID,1)
 if (Slot == true) then -- slotta yer var
 NATION = CheckNation(UID);
 if(NATION == 2)then
-Check = CheckExchangeSlot(UID, 3102);
+Check = CheckGiveSlot(UID, 3102);
 if(Check == 1)then
 RunQuestExchange(UID, 3102);
 SaveEvent(UID, 12221);

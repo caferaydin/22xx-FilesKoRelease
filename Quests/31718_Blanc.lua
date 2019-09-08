@@ -19,7 +19,7 @@ if (EVENT == 102) then
 end
 
 if (EVENT == 103) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)
+SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -39,7 +39,7 @@ if (EVENT == 112) then
 end
 
 if (EVENT == 113) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)
+SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -59,7 +59,7 @@ if (EVENT == 122) then
 end
 
 if (EVENT == 123) then
-SLOTKONTROL = CheckExchangeSlot(UID, 5)
+SLOTKONTROL = CheckGiveSlot(UID, 5)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -83,7 +83,7 @@ if (EVENT == 132) then
 end
 
 if (EVENT == 133) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)
+SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -103,7 +103,7 @@ if (EVENT == 142) then
 end
 
 if (EVENT == 143) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)
+SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -127,7 +127,7 @@ if (EVENT == 153) then
 end
 
 if (EVENT == 200) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)
+SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -138,7 +138,7 @@ end
 end
 
 if (EVENT == 210) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)
+SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -149,7 +149,7 @@ end
 end
 
 if (EVENT == 220) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)
+SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -160,7 +160,7 @@ end
 end
 
 if (EVENT == 230) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)
+SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -176,7 +176,7 @@ if (EVENT == 154) then
 end
 
 if (EVENT == 240) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)
+SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -188,7 +188,7 @@ end
 end
 
 if (EVENT == 250) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)
+SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -200,7 +200,7 @@ end
 end
 
 if (EVENT == 260) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)
+SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -212,7 +212,7 @@ end
 end
 
 if (EVENT == 270) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)
+SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -233,7 +233,7 @@ if (EVENT == 162) then
 end
 
 if (EVENT == 163) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)
+SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -253,7 +253,7 @@ if (EVENT == 172) then
 end
 
 if (EVENT == 173) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)
+SLOTKONTROL = CheckGiveSlot(UID, 1)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else

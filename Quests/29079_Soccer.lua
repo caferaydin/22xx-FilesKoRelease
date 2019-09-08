@@ -9,17 +9,17 @@ if (EVENT == 102) then
 end
 
 if (EVENT == 103) then
-	EventSoccerMember(UID, 1, 672, 166)
+	EnterFootballTeam(UID, 1, 672, 166)
 	-- Enter the blue Team -- Mavi Takım İçin Giriş
 end
 
 if (EVENT == 104) then
-	EventSoccerMember(UID, 2, 672, 154)
+	EnterFootballTeam(UID, 2, 672, 154)
 	-- Enter the red Team -- Kırmızı Takım İçin Giriş
 end
 
 if (EVENT == 200) then
-	EventSoccerStard(UID)
+	StartFootball(UID)
 	--Soccer Start -- Maç Başlasın
 end
 

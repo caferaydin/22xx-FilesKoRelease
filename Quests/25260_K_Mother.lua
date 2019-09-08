@@ -6,7 +6,7 @@ end
 
 if (EVENT == 501) then
 	ZoneChange(UID, 95, 302, 440)
-	SendDrakisInit(UID, 3, 1, 17);
+	DrakiRiftChange(UID, 3, 1, 17);
 end
 
 if (EVENT == 502) then

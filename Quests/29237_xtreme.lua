@@ -10,7 +10,7 @@ end
 
 --mage mp paper set
 if (EVENT == 800) then
-SLOTKONTROL = CheckExchangeSlot(UID, 5)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 5)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -24,7 +24,7 @@ end
 
 --prist hp paper set
 if (EVENT == 801) then
-SLOTKONTROL = CheckExchangeSlot(UID, 5)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 5)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -38,7 +38,7 @@ end
 
 --rogue hp paper set
 if (EVENT == 802) then
-SLOTKONTROL = CheckExchangeSlot(UID, 5)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 5)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -52,7 +52,7 @@ end
 
 --warrior hp paper set
 if (EVENT == 803) then
-SLOTKONTROL = CheckExchangeSlot(UID, 5)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 5)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -66,7 +66,7 @@ end
 
 --mage linen set hp
 if (EVENT == 804) then
-SLOTKONTROL = CheckExchangeSlot(UID, 5)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 5)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -80,7 +80,7 @@ end
 
 --mage linen set MP
 if (EVENT == 805) then
-SLOTKONTROL = CheckExchangeSlot(UID, 5)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 5)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else

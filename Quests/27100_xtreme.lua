@@ -46,7 +46,7 @@ end
 
 -- [Defender Of The Lord +9 / 70.000 NP]
 if (EVENT == 805) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -65,7 +65,7 @@ end
 
 --[Dread Shield +9 / 120.000 NP]
 if (EVENT == 806) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -87,7 +87,7 @@ end
 --------------------------------------------
 -- [Mirage Dagger +9 / 100.000 NP]
 if (EVENT == 810) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -107,7 +107,7 @@ end
 
 -- [Dark Vane +9 / 150.000 NP]
 if (EVENT == 801) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -128,7 +128,7 @@ end
 
 -- [Iron Impact +9 / 120.000 NP]
 if (EVENT == 802) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -148,7 +148,7 @@ end
 
 -- [Totamic Spear +9 and Hanguk Sword +9 / 150.000 NP]
 if (EVENT == 803) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 2)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -168,7 +168,7 @@ end
 
 -- [Eagle's Eye +9 / 70.000 NP]
 if (EVENT == 804) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -189,7 +189,7 @@ end
 
 -- [Shard +9 / 130.000 NP]
 if (EVENT == 807) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -210,7 +210,7 @@ end
 
 -- [Raptor +9 / 140.000 NP]
 if (EVENT == 808) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -233,7 +233,7 @@ end
 ---------------------------------------------------
 -- [Wreath Of Erenion +9 / 70.000 NP]
 if (EVENT == 410) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -253,7 +253,7 @@ end
 
 -- [Glacier Erenion +9 / 70.000 NP]
 if (EVENT == 401) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -273,7 +273,7 @@ end
 
 -- [Lightning Erenion +9 / 70.000 NP]
 if (EVENT == 402) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -293,7 +293,7 @@ end
 
 -- [Scorching Staff +9 and Lycaon Staff +9 / 100.000 NP]
 if (EVENT == 403) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -314,7 +314,7 @@ end
 
 -- [Oasis Staff +9 and Lobo Staff +9 / 100.000 NP]
 if (EVENT == 404) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -335,7 +335,7 @@ end
 
 -- [Chaotic Staff +9 and Lupus Staff +9 / 100.000 NP]
 if (EVENT == 405) then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 2)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -357,7 +357,7 @@ end
 -------------------------------------------------
 -- [Ring Of Felankor +2 / 120.000 NP]
 if (EVENT == 202) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -377,7 +377,7 @@ end
 
 -- [Foverin +2 / 70.000 NP]
 if (EVENT == 203) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -397,7 +397,7 @@ end
 
 -- [Elf Ring +2 / 70.000 NP] 
 if (EVENT == 204) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -417,7 +417,7 @@ end
 
 -- [Agate Ring +2 / 70.000 NP]
 if (EVENT == 205) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -440,7 +440,7 @@ end
 
 -- [Diamond Ring +2 / 70.000 NP]
 if (EVENT == 206) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -463,7 +463,7 @@ end
 ---------------------------------------------------------------
 -- [String of Skulls +2 / 90.000 NP]
 if (EVENT == 310) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -483,7 +483,7 @@ end
 
 --[Belt Of Strength +2 / 40.000 NP]
 if (EVENT == 301) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -503,7 +503,7 @@ end
 
 --[Belt Of Dexterity +2 / 40.000 NP]
 if (EVENT == 302) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -523,7 +523,7 @@ end
 
 -- [Belt Of Life +2 / 40.000 NP]
 if (EVENT == 303) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -543,7 +543,7 @@ end
 
 -- [Light Belt Of Life +2 / 40.000 NP]
 if (EVENT == 304) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -564,7 +564,7 @@ end
 --------------------------------------------
 --[Amulet Of Strength +2 / 60.000 NP]
 if (EVENT == 601) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -584,7 +584,7 @@ end
 
 --- [Amulet Of Goddess +2 / 60.000 NP]
 if (EVENT == 602) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -603,7 +603,7 @@ end
 
 -- [Amulet Of Health +2 / 60.000 NP]
 if (EVENT == 603) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -624,7 +624,7 @@ end
 
 --[Priest Pendant +2 / 90.000 NP]
 if (EVENT == 604) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -644,7 +644,7 @@ end
 
 --[Warrior Pendant +2 / 90.000 NP]
 if (EVENT == 605) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -664,7 +664,7 @@ end
 
 -- [Elemantal Pendant +2 / 90.000 NP]
 if (EVENT == 606) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -685,7 +685,7 @@ end
 --------------------------------------------------------
 --[Elf-Metal Earring +2 / 90.000 NP]
 if (EVENT == 510) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -705,7 +705,7 @@ end
 
 --[Platinum Earring +2 / 90.000 NP]
 if (EVENT == 501) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -725,7 +725,7 @@ end
 
 --[Secret-Silver Earring +2 / 90.000 NP]
 if (EVENT == 502) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -744,7 +744,7 @@ end
 
 --[Warrior Earring +2 / 60.000 NP]
 if (EVENT == 503) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -764,7 +764,7 @@ end
 
 --[Rogue Earring +2 / 60.000 NP]
 if (EVENT == 504) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -784,7 +784,7 @@ end
 
 --[Cleric Earring +2 / 60.000 NP]
 if (EVENT == 505) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -803,7 +803,7 @@ end
 
 --[Opal Earring +2 / 60.000 NP]
 if (EVENT == 506) then
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else

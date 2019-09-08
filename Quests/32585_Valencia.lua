@@ -10,7 +10,7 @@ end
 end
 
 if (EVENT == 2000)then
-SLOTKONTROL = CheckExchangeSlot(UID, 2)
+SLOTKONTROL = CheckGiveSlot(UID, 2)
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else

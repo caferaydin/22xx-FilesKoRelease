@@ -24,7 +24,7 @@ end
 --[Hera Scroll ]
 
 if (EVENT == 980) then --Karus
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -44,7 +44,7 @@ end
 
 
 if (EVENT == 981) then--Human
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -82,7 +82,7 @@ end
 --[Counger Scroll ]
 
 if (EVENT == 1000) then --Karus
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -102,7 +102,7 @@ end
 
 
 if (EVENT == 2000) then--Human
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -138,7 +138,7 @@ end
 
 
 if (EVENT == 1001) then --Karus
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -158,7 +158,7 @@ end
 
 
 if (EVENT == 2001) then--Human
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -196,7 +196,7 @@ end
 
 
 if (EVENT == 1002) then --Karus
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -216,7 +216,7 @@ end
 
 
 if (EVENT == 2002) then--Human
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -248,7 +248,7 @@ end
 
 
 if (EVENT == 1003) then 
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -279,7 +279,7 @@ end
 
 
 if (EVENT == 1004) then 
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -310,7 +310,7 @@ end
 
 
 if (EVENT == 1005) then 
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -343,7 +343,7 @@ end
 
 
 if (EVENT == 1006) then 
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -375,7 +375,7 @@ end
 
 
 if (EVENT == 1007) then 
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else
@@ -407,7 +407,7 @@ end
 
 
 if (EVENT == 1008) then 
-SLOTKONTROL = CheckExchangeSlot(UID, 1)--bos yer varmi komtrol
+SLOTKONTROL = CheckGiveSlot(UID, 1)--bos yer varmi komtrol
      if SLOTKONTROL == false then
        SelectMsg(UID,2,-1,8898,NPC,10)
          else

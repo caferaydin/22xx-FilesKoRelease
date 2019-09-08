@@ -48,7 +48,7 @@ end
 if (EVENT == 108) then
 	nItem = HowmuchItem(UID, 800360000);
 	if(nItem > 0) then
-		NationChange(UID)
+		SendNationTransfer(UID)
 	end
 end
 

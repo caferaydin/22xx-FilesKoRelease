@@ -5,5 +5,5 @@ if (EVENT == 100) then
 end
 
 if (EVENT == 501) then
-	SendDrakisInit(UID, 1, 4, 5);
+	SendDrakiTempleDetail(UID, 1, 4, 5);
 end
