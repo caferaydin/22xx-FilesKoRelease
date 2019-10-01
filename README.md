@@ -39,8 +39,8 @@ Sunucu Lisans Satın almak istiyorsanız.(iletişimi geçin.)
 referans: Mac ve hdw ban Lisans 
 latinko (Free Lisans)
 -----------------------------------------------------------------------------------------------------------------------------------------
-Local Deneme lisans = 50TL
-Sunucu Server için aylık özel Dm gönderebilirim..
+(Ev Local) Deneme lisans = 50TL
+(Sunucu Server) için aylık özel Dm gönderebilirim..
 -----------------------------------------------------------------------------------------------------------------------------------------
 ![Screenshot_1](https://user-images.githubusercontent.com/27152392/59972430-b4f3fd00-9597-11e9-9cd9-ff5d2f4d63d4.png)
 -----------------------------------------------------------------------------------------------------------------------------------------
