@@ -1,19 +1,14 @@
-local Ret = 0;
 local NPC = 24414;
 
 if (EVENT == 190) then
 	QuestNum = SearchQuest(UID, NPC);
 	if (QuestNum == 0) then
-		SelectMsg(UID, 2, -1, 3003, NPC, 10, 193);
+		SelectMsg(UID, 2, -1, 3003, NPC, 10, -1);
 	elseif (QuestNum > 1 and  QuestNum < 100) then
 		NpcMsg(UID, 3200, NPC)
 	else
 		EVENT = QuestNum
 	end
-end
-
-if (EVENT == 193) then
-	Ret = 1;
 end
 
 if (EVENT == 195) then
@@ -29,34 +24,49 @@ if (EVENT == 197) then
 	SelectMsg(UID, 2, 107, 3002, NPC, 28, 196);
 end
 
-if (EVENT == 200) then -- 25 Level Zombie Eye
+if (EVENT == 200) then 
 	SelectMsg(UID, 2, 107, 3201, NPC, 10, 201);
 end
 
 if (EVENT == 201) then
-	SelectMsg(UID, 4, 107, 3202, NPC, 22, 202, 23, 193);
+	SelectMsg(UID, 4, 107, 3202, NPC, 22, 202, 23, -1);
 end
 
 if (EVENT == 202) then
-	SaveEvent(UID, 3054);
+	QuestStatus = GetQuestStatus(UID, 107)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 3054);
+	end
 end
 
 if (EVENT == 205) then
-	SaveEvent(UID, 3056);
-	NATION = CheckNation(UID);
-	if (NATION == 1) then
-		SelectMsg(UID, 2, 107, 3005, NPC, 3009, 193);
-	else
-		SelectMsg(UID, 2, 107, 3006, NPC, 3009, 193);
+	QuestStatus = GetQuestStatus(UID, 107)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 3056);
+			NATION = CheckNation(UID);
+		if (NATION == 1) then
+			SelectMsg(UID, 2, 107, 3005, NPC, 3009, -1);
+		else
+			SelectMsg(UID, 2, 107, 3006, NPC, 3009, -1);
+		end
 	end
 end
 
 if (EVENT == 210) then
+	QuestStatus = GetQuestStatus(UID, 107)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
 	ITEM_COUNT = HowmuchItem(UID, 810418000);
-	if (ITEM_COUNT < 3) then
-		SelectMsg(UID, 2, 107, 3203, NPC, 18, 213);
-	else
-		SelectMsg(UID, 5, 107, 3204, NPC, 41, 214, 27, 193);
+		if (ITEM_COUNT < 3) then
+			SelectMsg(UID, 2, 107, 3203, NPC, 18, 213);
+		else
+			SelectMsg(UID, 5, 107, 3204, NPC, 41, 214, 27, -1);
+		end
 	end
 end
 
@@ -65,8 +75,18 @@ if (EVENT == 213) then
 end
 
 if (EVENT == 214) then
-RunExchange(UID,328)
-	SaveEvent(UID, 3055);   
+	QuestStatus = GetQuestStatus(UID, 107)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	ITEM_COUNT = HowmuchItem(UID, 810418000);
+		if (ITEM_COUNT < 3) then
+			SelectMsg(UID, 2, 107, 3203, NPC, 18, 213);
+		else
+			RunQuestExchange(UID,328,STEP,1);
+			SaveEvent(UID, 3055); 
+		end
+	end
 end
 
 if (EVENT == 250) then
@@ -82,8 +102,8 @@ if (EVENT == 252) then
 	SelectMsg(UID, 2, 106, 172, NPC, 24, 251);
 end
 
-if (EVENT == 300) then -- 25 Level Rotten Eyes
-	SelectMsg(UID, 2, 106, 3205, NPC, 3006, 308, 13, 193);
+if (EVENT == 300) then
+	SelectMsg(UID, 2, 106, 3205, NPC, 3006, 308, 13, -1);
 end
 
 if (EVENT == 308) then
@@ -91,38 +111,44 @@ if (EVENT == 308) then
 end
 
 if (EVENT == 301) then
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, 106, 3207, NPC, 22, 302, 23, 309);
-	else
-		SelectMsg(UID, 2, 106, 173, NPC, 10, 193);
-	end
+	SelectMsg(UID, 4, 106, 3207, NPC, 22, 302, 23, -1);
 end
 
 if (EVENT == 302) then
-	SaveEvent(UID, 7013);
-end
-
-if (EVENT == 309) then
-	SaveEvent(UID, 7016);
+	QuestStatus = GetQuestStatus(UID, 106)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 7013);
+	end
 end
 
 if (EVENT == 303) then
-	SaveEvent(UID, 7015);
-	NATION = CheckNation(UID);
-	if (NATION == 1) then
-		SelectMsg(UID, 2, 106, 3851, NPC, 3003, 193);
-	elseif (NATION == 2) then
-		SelectMsg(UID, 2, 106, 3852, NPC, 3003, 193);
+	QuestStatus = GetQuestStatus(UID, 106)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 7015);
+			NATION = CheckNation(UID);
+		if (NATION == 1) then
+			SelectMsg(UID, 2, 106, 3851, NPC, 3003, -1);
+		elseif (NATION == 2) then
+			SelectMsg(UID, 2, 106, 3852, NPC, 3003, -1);
+		end
 	end
 end
 
 if (EVENT == 305) then
-	MonsterCount = QuestMonsterCount(UID, 106, 1);
-	if (MonsterCount < 0) then
-		SelectMsg(UID, 2, 106, 3210, NPC, 18, 306);
-	else
-		SelectMsg(UID, 5, 106, 3211, NPC, 41, 307, 27, 193);
+	QuestStatus = GetQuestStatus(UID, 106)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 106, 1);
+		if (MonsterCount < 5) then
+			SelectMsg(UID, 2, 106, 3210, NPC, 18, 306);
+		else
+			SelectMsg(UID, 5, 106, 3211, NPC, 41, 307, 27, -1);
+		end
 	end
 end
 
@@ -131,6 +157,16 @@ if (EVENT == 306) then
 end
 
 if (EVENT == 307) then
-RunExchange(UID,305)
-	SaveEvent(UID, 7014);   
+	QuestStatus = GetQuestStatus(UID, 106)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 106, 1);
+		if (MonsterCount < 5) then
+			SelectMsg(UID, 2, 106, 3210, NPC, 18, 306);
+		else
+			RunQuestExchange(UID,305,STEP,1);
+			SaveEvent(UID, 7014); 
+		end
+	end
 end

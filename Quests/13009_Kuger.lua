@@ -1,15 +1,15 @@
+local NPC = 13009;
+
 if EVENT == 3000 then
 	QuestNum = SearchQuest(UID, 13009);
 		if QuestNum == 0 then 
 			 SelectMsg(UID, 2, -1, 1186, 13009, 10, -1);
-			 Ret = 1;
 		elseif QuestNum > 1 and  QuestNum < 100 then
-          NpcMsg(UID, 1187,13009)
+          NpcMsg(UID, 1187,NPC)
       else 
           EVENT = QuestNum
-		end
+	end
 end
-
 
 if EVENT == 3005 then
    SelectMsg(UID, 2, 84, 1190, 13009, 10, 3006);
@@ -42,9 +42,19 @@ if EVENT == 3011 then
 end
 
 if EVENT == 3012 then
-        RunExchange(UID, 304);
+	QuestStatusCheck = GetQuestStatus(UID, 84) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+   ITEM_COUNT = HowmuchItem(UID, 910038000);
+   if  ITEM_COUNT < 5 then
+      SelectMsg(UID, 2, 84, 1194, 13009, 18, 3011);
+	  else
+        RunQuestExchange(UID, 304,STEP,1);
         SaveEvent(UID, 3035);
-		RobItem(UID, 910038000, 5)
+		RobItem(UID, 910038000, 5);
+end
+end
 end
 
 if (EVENT == 632) then
@@ -96,8 +106,8 @@ if EVENT == 281 then
 end
 
 if (EVENT == 636) then
-	MonsterCount = QuestMonsterCount(UID, 358, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 358, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 358, 4641, NPC, 10, -1);
 	else
 		SelectMsg(UID, 4, 358, 4642, NPC, 4161, 637, 4162, -1);
@@ -105,29 +115,34 @@ if (EVENT == 636) then
 end
 
 if (EVENT == 637) then
+	QuestStatusCheck = GetQuestStatus(UID, 220) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 358, 1);
+	if (MonsterCount < 1) then
+		SelectMsg(UID, 2, 358, 4641, NPC, 10, -1);
+	else
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
-		RunExchange(UID,501)
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
+		RunQuestExchange(UID,501);
 		SaveEvent(UID, 4379); 
 	elseif (Class == 2 or Class == 7 or Class == 8) then
-		RunExchange(UID,502);
+		RunQuestExchange(UID,502);
 		SaveEvent(UID, 4384); 
 	elseif (Class == 3 or Class == 9 or Class == 10) then
-		RunExchange(UID,503)
+		RunQuestExchange(UID,503);
 		SaveEvent(UID, 4389);
 	elseif (Class == 4 or Class == 11 or Class == 12) then
-		RunExchange(UID,504)
+		RunQuestExchange(UID,504);
 		SaveEvent(UID, 4394);
-	end
+end
+end
+end
 end
 
 if (EVENT == 6014) then
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, 64, 6013, NPC, 22, -1, 23, -1);
-	else
-		SelectMsg(UID, 2, 64, 6013, NPC, 10, 193);
-	end
+	SelectMsg(UID, 4, 64, 6013, NPC, 22, -1, 23, -1);
 end
 
 if (EVENT == 6063) then
@@ -161,11 +176,20 @@ if (EVENT == 6068) then
 end
 
 if (EVENT == 6070) then
-RunExchange(UID,600)
-RobItem(UID,910039000,10)
-		SaveEvent(UID, 6025);
+	QuestStatusCheck = GetQuestStatus(UID, 88) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ITEM_COUNT = HowmuchItem(UID, 910039000);
+	if (ITEM_COUNT < 9) then
+		SelectMsg(UID, 2, 88, 6021, NPC, 18, 6069);
+	else
+	RunQuestExchange(UID,600,STEP,1);
+	RobItem(UID,910039000,10);
+	SaveEvent(UID, 6025);
 end
-
+end
+end
 
 if (EVENT == 6069) then
 	ZoneChange(UID, 52, 150, 150)

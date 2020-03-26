@@ -1,6 +1,5 @@
-local Ret = 0;
 local NPC = 29052;
-----------------------------------
+
 if (EVENT == 100) then
 	QuestNum = SearchQuest(UID, NPC);
 	if (QuestNum == 0) then
@@ -35,10 +34,10 @@ end
 if (EVENT == 1004) then
 	ITEMA = HowmuchItem(UID, 900060000);
 	if (ITEMA < 5) then 
-	SelectMsg(UID, 2, 811, 9494, NPC, 18, 1008);
+		SelectMsg(UID, 2, 811, 9494, NPC, 18, 1008);
 	else
-    SelectMsg(UID, 4, 811, 9494, NPC, 3000, 1007, 3005, -1);
-end
+		SelectMsg(UID, 4, 811, 9494, NPC, 3000, 1007, 3005, -1);
+	end
 end
 
 if (EVENT == 1008) then
@@ -50,11 +49,11 @@ if (EVENT == 1003) then
 end
 
 if (EVENT == 1007) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
-	RunExchange(UID,1224)
-	SaveEvent(UID, 2719);
-end
+	ITEMA = HowmuchItem(UID, 900060000);
+		if (ITEMA < 5) then 
+			SelectMsg(UID, 2, 811, 9494, NPC, 18, 1008);
+		else
+			RunQuestExchange(UID,1224);
+			SaveEvent(UID, 2719);
+	end
 end

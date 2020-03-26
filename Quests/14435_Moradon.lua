@@ -1,10 +1,9 @@
-local Ret = 0;
 local NPC = 14435;
 
 if (EVENT == 100) then
 	QuestNum = SearchQuest(UID, NPC);
 	if (QuestNum == 0) then
-		SelectMsg(UID, 2, -1, 4937, NPC, 10, 158);
+		SelectMsg(UID, 2, -1, 4937, NPC, 10, -1);
 	elseif (QuestNum > 1 and  QuestNum < 100) then
 		NpcMsg(UID, 4937, NPC)
 	else
@@ -12,14 +11,10 @@ if (EVENT == 100) then
 	end
 end
 
-if (EVENT == 158) then
-	Ret = 1;
-end
-
 local savenum = 127;
 
 if (EVENT == 232) then -- 35 Level
-	SelectMsg(UID, 4, savenum, 4931, NPC, 22, 233, 23, 158);
+	SelectMsg(UID, 4, savenum, 4931, NPC, 22, 233, 23, -1);
 end
 
 if (EVENT == 233) then
@@ -35,7 +30,7 @@ if (EVENT == 236) then
 	if (ANIMAL < 3) then
 		SelectMsg(UID, 2, savenum, 4991, NPC, 19, 238);
 	else
-		SelectMsg(UID, 4, savenum, 4998, NPC, 22, 237, 23, 158);
+		SelectMsg(UID, 4, savenum, 4998, NPC, 22, 237, 23, -1);
 	end
 end
 
@@ -44,14 +39,19 @@ if (EVENT == 238) then
 end
 
 if (EVENT == 237) then
-RunExchange(UID,541)
+	ANIMAL = HowmuchItem(UID, 379273000);
+	if (ANIMAL < 3) then
+		SelectMsg(UID, 2, savenum, 4991, NPC, 19, 238);
+	else
+RunQuestExchange(UID,541)
 	SaveEvent(UID, 10014);
+end
 end
 
 local savenum1 = 130;
 
 if (EVENT == 242) then -- 36 Level
-	SelectMsg(UID, 4, savenum1, 575, NPC, 22, 243, 23, 158);
+	SelectMsg(UID, 4, savenum1, 575, NPC, 22, 243, 23, -1);
 end
 
 if (EVENT == 243) then
@@ -67,7 +67,7 @@ if (EVENT == 246) then
 	if (ROTTEN < 3) then
 		SelectMsg(UID, 2, savenum1, 788, NPC, 19, 248);
 	else
-		SelectMsg(UID, 4, savenum1, 6106, NPC, 22, 247, 23, 158);
+		SelectMsg(UID, 4, savenum1, 6106, NPC, 22, 247, 23, -1);
 	end
 end
 
@@ -76,14 +76,24 @@ if (EVENT == 248) then
 end
 
 if (EVENT == 247) then
-RunExchange(UID,542)
+	QuestStatusCheck = GetQuestStatus(UID, 130) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ROTTEN = HowmuchItem(UID, 379274000);
+	if (ROTTEN < 3) then
+		SelectMsg(UID, 2, savenum1, 788, NPC, 19, 248);
+	else
+RunQuestExchange(UID,542);
 	SaveEvent(UID, 10026);
+end
+end
 end
 
 local savenum2 = 133;
 
 if (EVENT == 252) then -- 37 Level
-	SelectMsg(UID, 4, savenum2, 576, NPC, 22, 253, 23, 158);
+	SelectMsg(UID, 4, savenum2, 576, NPC, 22, 253, 23, -1);
 end
 
 if (EVENT == 253) then
@@ -99,7 +109,7 @@ if (EVENT == 256) then
 	if (FEATHER < 3) then
 		SelectMsg(UID, 2, savenum2, 6187, NPC, 19, 258);
 	else
-		SelectMsg(UID, 4, savenum2, 6196, NPC, 22, 257, 23, 158);
+		SelectMsg(UID, 4, savenum2, 6196, NPC, 22, 257, 23, -1);
 	end
 end
 
@@ -108,14 +118,24 @@ if (EVENT == 258) then
 end
 
 if (EVENT == 257) then
-RunExchange(UID,543)
+	QuestStatusCheck = GetQuestStatus(UID, 133) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	FEATHER = HowmuchItem(UID, 379272000);
+	if (FEATHER < 3) then
+		SelectMsg(UID, 2, savenum2, 6187, NPC, 19, 258);
+	else
+RunQuestExchange(UID,543)
 	SaveEvent(UID, 9868);
+end
+end
 end
 
 local savenum3 = 136;
 
 if (EVENT == 262) then -- 38 Level
-	SelectMsg(UID, 4, savenum3, 586, NPC, 22, 263, 23, 158);
+	SelectMsg(UID, 4, savenum3, 586, NPC, 22, 263, 23, -1);
 end
 
 if (EVENT == 263) then
@@ -131,7 +151,7 @@ if (EVENT == 266) then
 	if (SKULL < 3) then
 		SelectMsg(UID, 2, savenum3, 6127, NPC, 19, 268);
 	else
-		SelectMsg(UID, 4, savenum3, 6128, NPC, 22, 267, 23, 158);
+		SelectMsg(UID, 4, savenum3, 6128, NPC, 22, 267, 23, -1);
 	end
 end
 
@@ -140,14 +160,24 @@ if (EVENT == 268) then
 end
 
 if (EVENT == 267) then
-RunExchange(UID,544)
+	QuestStatusCheck = GetQuestStatus(UID, 136) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	SKULL = HowmuchItem(UID, 810418000);
+	if (SKULL < 3) then
+		SelectMsg(UID, 2, savenum3, 6127, NPC, 19, 268);
+	else
+RunQuestExchange(UID,544)
 	SaveEvent(UID, 9880);
+end
+end
 end
 
 local savenum4 = 139;
 
 if (EVENT == 272) then -- 39 Level
-	SelectMsg(UID, 4, savenum4, 6139, NPC, 22, 273, 23, 158);
+	SelectMsg(UID, 4, savenum4, 6139, NPC, 22, 273, 23, -1);
 end
 
 if (EVENT == 273) then
@@ -163,7 +193,7 @@ if (EVENT == 276) then
 	if (COARSE < 3) then
 		SelectMsg(UID, 2, savenum4, 6141, NPC, 19, 278);
 	else
-		SelectMsg(UID, 4, savenum4, 6142, NPC, 22, 277, 23, 158);
+		SelectMsg(UID, 4, savenum4, 6142, NPC, 22, 277, 23, -1);
 	end
 end
 
@@ -172,14 +202,24 @@ if (EVENT == 278) then
 end
 
 if (EVENT == 277) then
-RunExchange(UID,545)
+	QuestStatusCheck = GetQuestStatus(UID, 139) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	COARSE = HowmuchItem(UID, 379275000);
+	if (COARSE < 3) then
+		SelectMsg(UID, 2, savenum4, 6141, NPC, 19, 278);
+	else
+RunQuestExchange(UID,545)
 	SaveEvent(UID, 9892);
+end
+end
 end
 
 local savenum5 = 142;
 
 if (EVENT == 282) then -- 40 Level
-	SelectMsg(UID, 4, savenum5, 590, NPC, 22, 283, 23, 158);
+	SelectMsg(UID, 4, savenum5, 590, NPC, 22, 283, 23, -1);
 end
 
 if (EVENT == 283) then
@@ -194,8 +234,8 @@ if (EVENT == 286) then
 	APPLE = HowmuchItem(UID, 810418000);
 	if (APPLE < 10 ) then
 		SelectMsg(UID, 2, savenum5, 6141, NPC, 19, 288);
-	elseif (APPLE > 10) then
-		SelectMsg(UID, 4, savenum5, 6142, NPC, 22, 287, 23, 158);
+	else
+		SelectMsg(UID, 4, savenum5, 6142, NPC, 22, 287, 23, -1);
 	end
 end
 
@@ -204,14 +244,24 @@ if (EVENT == 288) then
 end
 
 if (EVENT == 287) then
-RunExchange(UID,546)
+	QuestStatusCheck = GetQuestStatus(UID, 142) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	APPLE = HowmuchItem(UID, 810418000);
+	if (APPLE < 10 ) then
+		SelectMsg(UID, 2, savenum5, 6141, NPC, 19, 288);
+	else
+RunQuestExchange(UID,546)
 	SaveEvent(UID, 9904);
+end
+end
 end
 
 local savenum6 = 145;
 
 if (EVENT == 292) then -- 41 Level
-	SelectMsg(UID, 4, savenum6, 6163, NPC, 22, 293, 23, 158);
+	SelectMsg(UID, 4, savenum6, 6163, NPC, 22, 293, 23, -1);
 end
 
 if (EVENT == 293) then
@@ -227,7 +277,7 @@ if (EVENT == 296) then
 	if (ORK < 7) then
 		SelectMsg(UID, 2, savenum6, 6163, NPC, 19, 298);
 	else
-		SelectMsg(UID, 4, savenum6, 6142, NPC, 22, 297, 23, 158);
+		SelectMsg(UID, 4, savenum6, 6142, NPC, 22, 297, 23, -1);
 	end
 end
 
@@ -236,14 +286,24 @@ if (EVENT == 298) then
 end
 
 if (EVENT == 297) then
-RunExchange(UID,547)
+	QuestStatusCheck = GetQuestStatus(UID, 145) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ORK = HowmuchItem(UID, 379277000);
+	if (ORK < 7) then
+		SelectMsg(UID, 2, savenum6, 6163, NPC, 19, 298);
+	else
+RunQuestExchange(UID,547)
 	SaveEvent(UID, 9916);
+end
+end
 end
 
 local savenum7 = 148;
 
 if (EVENT == 302) then -- 42 Level
-	SelectMsg(UID, 4, savenum7, 4932, NPC, 22, 303, 23, 158);
+	SelectMsg(UID, 4, savenum7, 4932, NPC, 22, 303, 23, -1);
 end
 
 if (EVENT == 303) then
@@ -259,7 +319,7 @@ if (EVENT == 306) then
 	if (OATH < 3) then
 		SelectMsg(UID, 2, savenum7, 4932, NPC, 19, 308);
 	else
-		SelectMsg(UID, 4, savenum7, 4934, NPC, 22, 307, 23, 158);
+		SelectMsg(UID, 4, savenum7, 4934, NPC, 22, 307, 23, -1);
 	end
 end
 
@@ -268,14 +328,24 @@ if (EVENT == 308) then
 end
 
 if (EVENT == 307) then
-RunExchange(UID,548)
+	QuestStatusCheck = GetQuestStatus(UID, 148) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	OATH = HowmuchItem(UID, 379276000);
+	if (OATH < 3) then
+		SelectMsg(UID, 2, savenum7, 4932, NPC, 19, 308);
+	else
+RunQuestExchange(UID,548)
 	SaveEvent(UID, 9928);
+end
+end
 end
 
 local savenum8 = 151;
 
 if (EVENT == 312) then -- 43 Level
-	SelectMsg(UID, 4, savenum8, 576, NPC, 22, 313, 23, 158);
+	SelectMsg(UID, 4, savenum8, 576, NPC, 22, 313, 23, -1);
 end
 
 if (EVENT == 313) then
@@ -291,7 +361,7 @@ if (EVENT == 316) then
 	if (FEATHER < 7) then
 		SelectMsg(UID, 2, savenum8, 6187, NPC, 19, 318);
 	else
-		SelectMsg(UID, 4, savenum8, 6196, NPC, 22, 317, 23, 158);
+		SelectMsg(UID, 4, savenum8, 6196, NPC, 22, 317, 23, -1);
 	end
 end
 
@@ -300,10 +370,19 @@ if (EVENT == 318) then
 end
 
 if (EVENT == 317) then
-RunExchange(UID,549)
+	QuestStatusCheck = GetQuestStatus(UID, 151) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	FEATHER = HowmuchItem(UID, 379272000);
+	if (FEATHER < 7) then
+		SelectMsg(UID, 2, savenum8, 6187, NPC, 19, 318);
+	else
+RunQuestExchange(UID,549)
 	SaveEvent(UID, 9940);
 end
-
+end
+end
 
 local savenum=1373
 local talknum=44200
@@ -332,15 +411,25 @@ end
 if (EVENT == 503) then
 	ITEMA  = HowmuchItem(UID, 810494000);
 	if(ITEMA > 4) then
-		SelectMsg(UID, 5, savenum, talknum, NPC, 41, 504, 27, 193);
+		SelectMsg(UID, 4, savenum, talknum, NPC, 41, 504, 27, -1);
 	else
 		SelectMsg(UID, 2, savenum, talknum, NPC, 10, 505);
 	end
 end
 
 if (EVENT == 504)then
-	RunExchange(UID, exchangeid)
+	QuestStatusCheck = GetQuestStatus(UID, 1373) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ITEMA  = HowmuchItem(UID, 810494000);
+	if(ITEMA > 4) then
+	RunQuestExchange(UID, exchangeid)
 	SaveEvent(UID,3965)
+		else
+		SelectMsg(UID, 2, savenum, talknum, NPC, 10, 505);
+	end
+end
 end
 
 if (EVENT == 505) then
@@ -374,7 +463,7 @@ end
 if (EVENT == 513) then
 	ITEMA  = HowmuchItem(UID, 810495000);
 	if(ITEMA > 19) then
-		SelectMsg(UID, 5, savenum, talknum, NPC, 41, 514, 27, 193);
+		SelectMsg(UID, 4, savenum, talknum, NPC, 41, 514, 27, -1);
 	else
 		SelectMsg(UID, 2, savenum, talknum, NPC, 10, 515);
 	end
@@ -386,8 +475,18 @@ end
 
 
 if (EVENT == 514)then
-	RunExchange(UID, exchangeid)
+	QuestStatusCheck = GetQuestStatus(UID, 1374) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ITEMA  = HowmuchItem(UID, 810495000);
+	if(ITEMA > 19) then
+	RunQuestExchange(UID, exchangeid)
 	SaveEvent(UID,3975)
+		else
+		SelectMsg(UID, 2, savenum, talknum, NPC, 10, 515);
+	end
+end
 end
 
 local savenum=1375
@@ -417,15 +516,25 @@ end
 if (EVENT == 523) then
 	ITEMA  = HowmuchItem(UID, 810496000);
 	if(ITEMA > 14) then
-		SelectMsg(UID, 5, savenum, talknum, NPC, 41, 524, 27, 193);
+		SelectMsg(UID, 4, savenum, talknum, NPC, 41, 524, 27, 193);
 	else
 		SelectMsg(UID, 2, savenum, talknum, NPC, 10, 525);
 	end
 end
 
 if (EVENT == 524)then
-	RunExchange(UID, exchangeid)
+	QuestStatusCheck = GetQuestStatus(UID, 1375) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ITEMA  = HowmuchItem(UID, 810496000);
+	if(ITEMA > 14) then
+	RunQuestExchange(UID, exchangeid)
 	SaveEvent(UID,3985)
+		else
+		SelectMsg(UID, 2, savenum, talknum, NPC, 10, 525);
+	end
+end
 end
 
 if (EVENT == 525) then
@@ -463,9 +572,20 @@ if (EVENT == 533) then
 end
 
 if (EVENT == 534)then
-	RunExchange(UID, exchangeid)
+	QuestStatusCheck = GetQuestStatus(UID, 1376) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ITEMA = HowmuchItem(UID, 810497000);
+	if (ITEMA > 2) then
+	RunQuestExchange(UID, exchangeid)
 	SaveEvent(UID,3995)
+	else
+		SelectMsg(UID, 2, savenum, talknum, NPC, 10, 217);
+	end
 end
+end
+
 if (EVENT == 1002)then
 	SelectMsg(UID, 2, 516, 20122, NPC, 4161, 1003);
 end
@@ -482,7 +602,7 @@ end
 
 if (EVENT == 1005) then 
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 	    SaveEvent(UID,11009);
 		SaveEvent(UID, 11014);
 		SelectMsg(UID, 2, 516, 20207, NPC,6002, -1);
@@ -523,9 +643,19 @@ if (EVENT == 1103) then
 end
 
 if (EVENT == 1105)then
-RunExchange(UID,3007)
-	SaveEvent(UID,11087)
-	SaveEvent(UID,11098)
+	QuestStatusCheck = GetQuestStatus(UID, 520) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ITEM_COUNT = HowmuchItem(UID, 910210000);   
+	if (ITEM_COUNT < 1) then
+		SelectMsg(UID, 2, 520, 20009, NPC, 18, -1);
+	else
+RunQuestExchange(UID,3007);
+	SaveEvent(UID,11087);
+	SaveEvent(UID,11098);
+end
+end
 end
 
 if (EVENT == 1201)then
@@ -545,7 +675,12 @@ if (EVENT == 1203) then
 end
 
 if (EVENT == 1205)then
-RunExchange(UID,3008)
+	QuestStatusCheck = GetQuestStatus(UID, 521) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+RunQuestExchange(UID,3008)
 	SaveEvent(UID,11099)
 	SaveEvent(UID,11110)
+end
 end

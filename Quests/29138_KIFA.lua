@@ -1,6 +1,5 @@
 local NPC = 29138;
-local Ret = 0;
------------------------------------------------------
+
 if (EVENT == 101) then
 	QuestNum = SearchQuest(UID, NPC);
 	if (QuestNum == 0) then

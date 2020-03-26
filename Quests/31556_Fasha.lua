@@ -1,4 +1,3 @@
-local Ret = 0;
 local NPC = 31556;
 
 if (EVENT == 100) then
@@ -19,18 +18,15 @@ end
 if (EVENT == 1002) then
 	SelectMsg(UID, 2, 642, 21618, NPC, 3000, 1003,3005,-1);
 	SaveEvent(UID, 12504);
-	
 end
 
 if (EVENT == 1003) then
 	SelectMsg(UID, 4, 642, 21619, NPC, 3000, 1004,3005,-1);
 	SaveEvent(UID, 12506);
-	
 end
 
 if (EVENT == 1004) then
 	SelectMsg(UID, 2, 642, 21620, NPC, 10,-1);
 	SaveEvent(UID, 12505);
 	SaveEvent(UID, 12516);
-	
 end

@@ -1,26 +1,29 @@
+local NPC = 25106;
+
 if (EVENT == 100) then
-	QuestStatus = SearchQuest(UID, 1277)	
-	if(QuestStatus == 1) then
-		EVENT = 101
-		end
-		end
-		
-		
+	QuestStatus = GetQuestStatus(UID, 1277)	
+		if(QuestStatus == 1) then
+			EVENT = 101
+			else
+			SelectMsg(UID, 2, -1, 44127, NPC, 10, -1);
+	end
+end
+
 if (EVENT == 101) then		
-SelectMsg(UID, 2, -1, 43914, NPC, 40348, 102,40349,-1);
+	SelectMsg(UID, 2, -1, 43914, NPC, 40348, 102,40349,-1);
 end
 
 if (EVENT == 102) then		
-SelectMsg(UID, 2, -1, 44079, NPC, 65, 103);
+	SelectMsg(UID, 2, -1, 44079, NPC, 65, 103);
 end
-
 
 if (EVENT == 103) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else		
-SelectMsg(UID, 2, -1, 44081, NPC, 10, -1);
-GiveItemLua(UID,900684000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
-end
+	SlotCheck = CheckGiveSlot(UID, 1)
+		if SlotCheck == false then
+			
+        else		
+			SelectMsg(UID, 2, -1, 44081, NPC, 10, -1);
+			GiveItem(UID, 900684000,1);
+			
+	end
 end

@@ -1,10 +1,9 @@
-local Ret = 0;
 local NPC = 24440;
 
 if (EVENT == 100) then
 	QuestNum = SearchQuest(UID, NPC);
 	if (QuestNum == 0) then
-		SelectMsg(UID, 2, -1, 411, NPC, 10, 168);
+		SelectMsg(UID, 2, -1, 411, NPC, 10, -1);
 	elseif (QuestNum > 1 and QuestNum < 100) then
 		NpcMsg(UID, 411, NPC);
 	else
@@ -12,39 +11,44 @@ if (EVENT == 100) then
 	end
 end   
 
-if (EVENT == 102) then
-	Ret = 1;
-end
-
-local savenum = 167;
-
-if (EVENT == 111) then -- Dragon Tooth Soldier
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, savenum, 412, NPC, 22, 112, 23, 113);
-	else
-		SelectMsg(UID, 2, savenum, 412, NPC, 10, 102);
-	end
+if (EVENT == 111) then
+	SelectMsg(UID, 4, 167, 412, NPC, 22, 112, 23, -1);
 end
 
 if (EVENT == 112) then
-	SaveEvent(UID, 276);
-end
-
-if (EVENT == 113) then
-	SaveEvent(UID, 279);
+	QuestStatus = GetQuestStatus(UID, 167)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 276);
+	end
 end
 
 if (EVENT == 114) then
-	SaveEvent(UID, 278);
+	QuestStatus = GetQuestStatus(UID, 167)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 167, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 167, 412, NPC, 21, 117);
+		else
+			SaveEvent(UID, 278);
+		end
+	end
 end
 
 if (EVENT == 115) then
-	MonsterCount = QuestMonsterCount(UID, 167, 1);
-	if (MonsterCount < 0) then
-		SelectMsg(UID, 2, savenum, 412, NPC, 21, 117);
-	else
-		SelectMsg(UID, 4, savenum, 412, NPC, 41, 118, 23, 117);
+	QuestStatus = GetQuestStatus(UID, 167)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 167, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 167, 412, NPC, 21, 117);
+		else
+			SelectMsg(UID, 4, 167, 412, NPC, 41, 118, 23, 117);
+		end
 	end
 end
 
@@ -53,45 +57,58 @@ if (EVENT == 117) then
 end
 
 if (EVENT == 118) then
-	Prem = GetPremium(UID);
-	if (Prem > 0) then
-		RunExchange(UID, 23)
-		SaveEvent(UID, 277);
-	else
-		RunExchange(UID, 23)
-		SaveEvent(UID, 277);
+	QuestStatus = GetQuestStatus(UID, 167)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 167, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 167, 412, NPC, 21, 117);
+		else
+			RunQuestExchange(UID, 23);
+			SaveEvent(UID, 277);
+		end
 	end
 end
 
-local savenum = 168;
-
-if (EVENT == 120) then -- Dragon Tooth Skeleton
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, savenum, 425, NPC, 22, 121, 23, 122);
-	else
-		SelectMsg(UID, 2, savenum, 425, NPC, 10, 102);
-	end
+if (EVENT == 120) then 
+	SelectMsg(UID, 4, 168, 425, NPC, 22, 121, 23, -1);
 end
 
 if (EVENT == 121) then
-	SaveEvent(UID, 289);
-end
-
-if (EVENT == 122) then
-	SaveEvent(UID, 292);
+	QuestStatus = GetQuestStatus(UID, 168)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 289);
+	end
 end
 
 if (EVENT == 123) then
-	SaveEvent(UID, 291);
+	QuestStatus = GetQuestStatus(UID, 168)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 168, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 168, 425, NPC, 21, 126);
+		else
+			SaveEvent(UID, 291);
+		end
+	end
 end
 
 if (EVENT == 124) then
-	MonsterCount = QuestMonsterCount(UID, 168, 1);
-	if (MonsterCount < 0) then
-		SelectMsg(UID, 2, savenum, 425, NPC, 21, 126);
-	else
-		SelectMsg(UID, 4, savenum, 425, NPC, 41, 127, 23, 126);
+	QuestStatus = GetQuestStatus(UID, 168)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 168, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 168, 425, NPC, 21, 126);
+		else
+			SelectMsg(UID, 4, 168, 425, NPC, 41, 127, 23, -1);
+		end
 	end
 end
 
@@ -100,45 +117,59 @@ if (EVENT == 126) then
 end
 
 if (EVENT == 127) then
-	Prem = GetPremium(UID);
-	if (Prem > 0) then
-		RunExchange(UID, 24)
-		SaveEvent(UID, 290);
-	else
-		RunExchange(UID, 24)
-		SaveEvent(UID, 290);
+	QuestStatus = GetQuestStatus(UID, 168)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 168, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 168, 425, NPC, 21, 126);
+		else
+			RunQuestExchange(UID, 24);
+			SaveEvent(UID, 290);
+		end
 	end
 end
 
-local savenum = 169;
 
-if (EVENT == 130) then -- Dragon Tooth Commander
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, savenum, 430, NPC, 22, 131, 23, 132);
-	else
-		SelectMsg(UID, 2, savenum, 430, NPC, 10, 102);
-	end
+if (EVENT == 130) then 
+	SelectMsg(UID, 4, 169, 430, NPC, 22, 131, 23, -1);
 end
 
 if (EVENT == 131) then
-	SaveEvent(UID, 299);
-end
-
-if (EVENT == 132) then
-	SaveEvent(UID, 309);
+	QuestStatus = GetQuestStatus(UID, 169)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 299);
+	end
 end
 
 if (EVENT == 133) then
-	SaveEvent(UID, 308);
+	QuestStatus = GetQuestStatus(UID, 169)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 169, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 169, 430, NPC, 21, 136);
+		else
+			SaveEvent(UID, 308);
+		end
+	end
 end
 
 if (EVENT == 134) then
-	MonsterCount = QuestMonsterCount(UID, 169, 1);
-	if (MonsterCount < 0) then
-		SelectMsg(UID, 2, savenum, 430, NPC, 21, 136);
-	else
-		SelectMsg(UID, 4, savenum, 430, NPC, 41, 137, 23, 136);
+	QuestStatus = GetQuestStatus(UID, 169)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 169, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 169, 430, NPC, 21, 136);
+		else
+			SelectMsg(UID, 4, 169, 430, NPC, 41, 137, 23, -1);
+		end
 	end
 end
 
@@ -147,45 +178,58 @@ if (EVENT == 136) then
 end
 
 if (EVENT == 137) then
-	Prem = GetPremium(UID);
-	if (Prem > 0) then
-		RunExchange(UID, 25)
-		SaveEvent(UID, 307);
-	else
-		RunExchange(UID, 25)
-		SaveEvent(UID, 307);
+	QuestStatus = GetQuestStatus(UID, 169)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 169, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 169, 430, NPC, 21, 136);
+		else
+			RunQuestExchange(UID, 25);
+			SaveEvent(UID, 307);
+		end
 	end
 end
 
-local savenum = 170;
-
-if (EVENT == 140) then -- Lich
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, savenum, 441, NPC, 22, 141, 23, 142);
-	else
-		SelectMsg(UID, 2, savenum, 441, NPC, 10, 102);
-	end
+if (EVENT == 140) then
+	SelectMsg(UID, 4, 170, 441, NPC, 22, 141, 23, -1);
 end
 
 if (EVENT == 141) then
-	SaveEvent(UID, 316);
-end
-
-if (EVENT == 142) then
-	SaveEvent(UID, 319);
+	QuestStatus = GetQuestStatus(UID, 170)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 316);
+	end
 end
 
 if (EVENT == 143) then
-	SaveEvent(UID, 318);
+	QuestStatus = GetQuestStatus(UID, 170)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 170, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 170, 441, NPC, 21, 146);
+		else
+			SaveEvent(UID, 318);
+		end
+	end
 end
 
 if (EVENT == 144) then
-	MonsterCount = QuestMonsterCount(UID, 170, 1);
-	if (MonsterCount < 0) then
-		SelectMsg(UID, 2, savenum, 441, NPC, 21, 146);
-	else
-		SelectMsg(UID, 4, savenum, 441, NPC, 41, 147, 23, 146);
+	QuestStatus = GetQuestStatus(UID, 170)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 170, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 170, 441, NPC, 21, 146);
+		else
+			SelectMsg(UID, 4, 170, 441, NPC, 41, 147, 23, -1);
+		end
 	end
 end
 
@@ -194,45 +238,58 @@ if (EVENT == 146) then
 end
 
 if (EVENT == 147) then
-	Prem = GetPremium(UID);
-	if (Prem > 0) then
-		RunExchange(UID, 26)
-		SaveEvent(UID, 317);
-	else
-		RunExchange(UID, 26)
-		SaveEvent(UID, 317);
+	QuestStatus = GetQuestStatus(UID, 170)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 170, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 170, 441, NPC, 21, 146);
+		else
+			RunQuestExchange(UID, 26);
+			SaveEvent(UID, 317);
+		end
 	end
 end
 
-local savenum = 171;
-
-if (EVENT == 150) then -- Deruvish
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, savenum, 446, NPC, 22, 151, 23, 152);
-	else
-		SelectMsg(UID, 2, savenum, 446, NPC, 10, 102);
-	end
+if (EVENT == 150) then
+	SelectMsg(UID, 4, 171, 446, NPC, 22, 151, 23, -1);
 end
 
 if (EVENT == 151) then
-	SaveEvent(UID, 326);
-end
-
-if (EVENT == 152) then
-	SaveEvent(UID, 329);
+	QuestStatus = GetQuestStatus(UID, 171)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 326);
+	end
 end
 
 if (EVENT == 153) then
-	SaveEvent(UID, 328);
+	QuestStatus = GetQuestStatus(UID, 171)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 171, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 171, 446, NPC, 21, 156);
+		else
+			SaveEvent(UID, 328);
+		end
+	end
 end
 
 if (EVENT == 154) then
-	MonsterCount = QuestMonsterCount(UID, 171, 1);
-	if (MonsterCount < 0) then
-		SelectMsg(UID, 2, savenum, 446, NPC, 21, 156);
-	else
-		SelectMsg(UID, 4, savenum, 446, NPC, 41, 157, 23, 156);
+	QuestStatus = GetQuestStatus(UID, 171)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 171, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 171, 446, NPC, 21, 156);
+		else
+			SelectMsg(UID, 4, 171, 446, NPC, 41, 157, 23, -1);
+		end
 	end
 end
 
@@ -241,45 +298,58 @@ if (EVENT == 156) then
 end
 
 if (EVENT == 157) then
-	Prem = GetPremium(UID);
-	if (Prem > 0) then
-		RunExchange(UID, 27)
-		SaveEvent(UID, 327);
-	else
-		RunExchange(UID, 27)
-		SaveEvent(UID, 327);
+	QuestStatus = GetQuestStatus(UID, 171)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 171, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 171, 446, NPC, 21, 156);
+		else
+			RunQuestExchange(UID, 27);
+			SaveEvent(UID, 327);
+		end
 	end
 end
 
-local savenum = 173;
-
-if (EVENT == 170) then -- Troll
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, savenum, 454, NPC, 22, 171, 23, 172);
-	else
-		SelectMsg(UID, 2, savenum, 454, NPC, 10, 102);
-	end
+if (EVENT == 170) then
+	SelectMsg(UID, 4, 173, 454, NPC, 22, 171, 23, -1);
 end
 
 if (EVENT == 171) then
-	SaveEvent(UID, 352);
-end
-
-if (EVENT == 172) then
-	SaveEvent(UID, 355);
+	QuestStatus = GetQuestStatus(UID, 173)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 352);
+	end
 end
 
 if (EVENT == 173) then
-	SaveEvent(UID, 354);
+	QuestStatus = GetQuestStatus(UID, 173)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 173, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 173, 454, NPC, 21, 176);
+		else
+			SaveEvent(UID, 354);
+		end
+	end
 end
 
 if (EVENT == 174) then
-	MonsterCount = QuestMonsterCount(UID, 173, 1);
-	if (MonsterCount < 0) then
-		SelectMsg(UID, 2, savenum, 454, NPC, 21, 176);
-	else
-		SelectMsg(UID, 4, savenum, 454, NPC, 41, 177, 23, 176);
+	QuestStatus = GetQuestStatus(UID, 173)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 173, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 173, 454, NPC, 21, 176);
+		else
+			SelectMsg(UID, 4, 173, 454, NPC, 41, 177, 23, -1);
+		end
 	end
 end
 
@@ -288,45 +358,58 @@ if (EVENT == 176) then
 end
 
 if (EVENT == 177) then
-	Prem = GetPremium(UID);
-	if (Prem > 0) then
-		RunExchange(UID, 58)
-		SaveEvent(UID, 353);
-	else
-		RunExchange(UID, 58)
-		SaveEvent(UID, 353);
+	QuestStatus = GetQuestStatus(UID, 173)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 173, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 173, 454, NPC, 21, 176);
+		else
+			RunQuestExchange(UID, 58);
+			SaveEvent(UID, 353);
+		end
 	end
 end
 
-local savenum = 172;
-
-if (EVENT == 160) then -- Apostle
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, savenum, 446, NPC, 22, 161, 23, 162);
-	else
-		SelectMsg(UID, 2, savenum, 446, NPC, 10, 102);
-	end
+if (EVENT == 160) then
+	SelectMsg(UID, 4, 172, 446, NPC, 22, 161, 23, -1);
 end
 
 if (EVENT == 161) then
-	SaveEvent(UID, 342);
-end
-
-if (EVENT == 162) then
-	SaveEvent(UID, 345);
+	QuestStatus = GetQuestStatus(UID, 172)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 342);
+	end
 end
 
 if (EVENT == 163) then
-	SaveEvent(UID, 344);
+	QuestStatus = GetQuestStatus(UID, 172)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 172, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 172, 446, NPC, 21, 166);
+		else
+			SaveEvent(UID, 344);
+		end
+	end
 end
 
 if (EVENT == 164) then
-	MonsterCount = QuestMonsterCount(UID, 172, 1);
-	if (MonsterCount < 0) then
-		SelectMsg(UID, 2, savenum, 446, NPC, 21, 166);
-	else
-		SelectMsg(UID, 4, savenum, 446, NPC, 41, 167, 23, 166);
+	QuestStatus = GetQuestStatus(UID, 172)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 172, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 172, 446, NPC, 21, 166);
+		else
+			SelectMsg(UID, 4, 172, 446, NPC, 41, 167, 23, -1);
+		end
 	end
 end
 
@@ -335,45 +418,58 @@ if (EVENT == 166) then
 end
 
 if (EVENT == 167) then
-	Prem = GetPremium(UID);
-	if (Prem > 0) then
-		RunExchange(UID, 57)
-		SaveEvent(UID, 343);
-	else
-		RunExchange(UID, 57)
-		SaveEvent(UID, 343);
+	QuestStatus = GetQuestStatus(UID, 172)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 172, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 172, 446, NPC, 21, 166);
+		else
+			RunQuestExchange(UID, 57);
+			SaveEvent(UID, 343);
+		end
 	end
 end
 
-local savenum = 174;
-
-if (EVENT == 180) then -- Harpy
-	MonsterSub = ExistMonsterQuestSub(UID);
-	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, savenum, 464, NPC, 22, 181, 23, 182);
-	else
-		SelectMsg(UID, 2, savenum, 464, NPC, 10, 102);
-	end
+if (EVENT == 180) then
+	SelectMsg(UID, 4, 174, 464, NPC, 22, 181, 23, -1);
 end
 
 if (EVENT == 181) then
-	SaveEvent(UID, 369);
-end
-
-if (EVENT == 182) then
-	SaveEvent(UID, 372);
+	QuestStatus = GetQuestStatus(UID, 174)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+			SaveEvent(UID, 369);
+	end
 end
 
 if (EVENT == 183) then
-	SaveEvent(UID, 371);
+	QuestStatus = GetQuestStatus(UID, 174)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 174, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 174, 464, NPC, 21, 186);
+		else
+			SaveEvent(UID, 371);
+		end
+	end
 end
 
 if (EVENT == 184) then
-	MonsterCount = QuestMonsterCount(UID, 174, 1);
-	if (MonsterCount < 0) then
-		SelectMsg(UID, 2, savenum, 464, NPC, 21, 186);
-	else
-		SelectMsg(UID, 4, savenum, 464, NPC, 41, 187, 23, 186);
+	QuestStatus = GetQuestStatus(UID, 174)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 174, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 174, 464, NPC, 21, 186);
+		else
+			SelectMsg(UID, 4, 174, 464, NPC, 41, 187, 23, -1);
+		end
 	end
 end
 
@@ -382,12 +478,16 @@ if (EVENT == 186) then
 end
 
 if (EVENT == 187) then
-	Prem = GetPremium(UID);
-	if (Prem > 0) then
-		RunExchange(UID, 59)
-		SaveEvent(UID, 370);
-	else
-		RunExchange(UID, 59)
-		SaveEvent(UID, 370);
+	QuestStatus = GetQuestStatus(UID, 174)	
+		if(QuestStatus == 2) then
+			SelectMsg(UID, 2, -1, 44614, NPC, 10, -1);
+		else
+	MonsterCount = CountMonsterQuestSub(UID, 174, 1);
+		if (MonsterCount < 20) then
+			SelectMsg(UID, 2, 174, 464, NPC, 21, 186);
+		else
+			RunQuestExchange(UID, 59);
+			SaveEvent(UID, 370);
+		end
 	end
 end

@@ -23,6 +23,8 @@ if (EVENT == 101) then
 end
 
 if (EVENT == 102) then
-	RegisterEvent(UID ,3)
-	SelectMsg(UID, 2, -1, 812, NPC, 10, 201);
+	if(RegisterEvent(UID, 3) == 0 ) 
+	then
+		SelectMsg(UID, 2, -1, 817, NPC, 10, 201);
+	end
 end

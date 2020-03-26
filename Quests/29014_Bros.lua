@@ -1,4 +1,3 @@
-local Ret = 0;
 local NPC = 29014;
 
 if (EVENT == 100) then
@@ -67,7 +66,7 @@ end
 if (EVENT == 1107) then
     SaveEvent(UID, 13016);
 	SaveEvent(UID, 13027);
-    RunExchange(UID, 3170)
+    RunQuestExchange(UID, 3170)
 	SelectMsg(UID, 2, -1, 22313, NPC, 10, -1);
 end
 
@@ -99,7 +98,7 @@ end
 if (EVENT == 1207) then
     SaveEvent(UID, 13028);
 	SaveEvent(UID, 13039);
-    RunExchange(UID, 3171);
+    RunQuestExchange(UID, 3171);
 	SelectMsg(UID, 2, -1, 22334, NPC, 10, 1208);
 end
 
@@ -116,10 +115,10 @@ if (EVENT == 1306)then
 end
 
 if (EVENT == 1305) then
-	MonsterCount01 = QuestMonsterCount(UID, 699, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 699, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 699, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 699, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
-		SelectMsg(UID, 5, 699, 22160, NPC,3000,1309,3005,1309,3005,1309,3005,1309,3005,1309,3005,1309,3005,1309);
+		SelectMsg(UID, 5, 699, 22160, NPC,3000,1309,3005,-1);
 	else
 		if (MonsterCount01 < 1) then
 			SelectMsg(UID, 2, 699, 22160, NPC, 18, 1307);
@@ -138,16 +137,11 @@ if (EVENT == 1308) then
 end
 
 if (EVENT == 1309) then
-SLOTKONTROL = CheckGiveSlot(UID, 4)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13040);
 	SaveEvent(UID, 13051);
-    RunExchange(UID, 3172)
+    RunQuestExchange(UID, 3172,STEP,1);
 	ShowEffect(UID, 300391)
 	SelectMsg(UID, 2, -1, 22777, NPC, 10, -1);
-end
 end
 
 if (EVENT == 1401)then
@@ -175,8 +169,8 @@ end
 if (EVENT == 1407) then
     SaveEvent(UID, 13052);
 	SaveEvent(UID, 13063);
-    RunExchange(UID, 3173)
-	SelectMsg(UID, 2, -1, 22349, NPC, 10, 1408,4005,-1);
+    RunQuestExchange(UID, 3173)
+	SelectMsg(UID, 2, -1, 22349, NPC, 10, 1508,4005,-1);
 end
 
 if (EVENT == 1501)then
@@ -192,38 +186,33 @@ if (EVENT == 1506)then
 end
 
 if (EVENT == 1505)then
-	QuestStatus = SearchQuest(UID, 702)	
-	if(QuestStatus == 1) then
-	SelectMsg(UID, 2, -1, 22349, NPC, 10, 1408,4005,-1);
+	QuestStatusCheck = GetQuestStatus(UID, 702)	
+	if(QuestStatusCheck == 1) then
+	SelectMsg(UID, 2, -1, 22349, NPC, 10, 1508,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900221000);  
     ITEM2_COUNT = HowmuchItem(UID, 900222000); 
     ITEM3_COUNT = HowmuchItem(UID, 900223000); 	
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
-	SelectMsg(UID, 2, -1, 22349, NPC, 10, 1408,4005,-1);
+	SelectMsg(UID, 2, -1, 22349, NPC, 10, 1508,4005,-1);
 	else
-	SelectMsg(UID, 5, 702, 22166, NPC,3000,1507,3005,1507,3005,1507,3005,1507,3005,1507,3005,1507,3005,1507);
+	SelectMsg(UID, 5, 702, 22166, NPC,3000,1507,3005,-1);
 end
 end
 end
 
-if (EVENT == 1408)then
-ZoneChange(UID, 81, 203, 197)
+if (EVENT == 1508)then
+	MonsterStoneQuestJoin(UID,702);
 end
 
 if (EVENT == 1507) then
-SLOTKONTROL = CheckGiveSlot(UID, 3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13064);
 	SaveEvent(UID, 13075);
-    RunExchange(UID, 3174)
+    RunQuestExchange(UID, 3174,STEP,1);
 	SelectMsg(UID, 2, -1, 22370, NPC, 10, -1);
-	RobItem(UID, 900221000, 1)
-	RobItem(UID, 900222000, 1)
-	RobItem(UID, 900223000, 1)
-end
+	RobItem(UID, 900221000, 1);
+	RobItem(UID, 900222000, 1);
+	RobItem(UID, 900223000, 1);
 end
 
 if (EVENT == 1601)then
@@ -239,8 +228,8 @@ if (EVENT == 1606)then
 end
 
 if (EVENT == 1605) then
-	MonsterCount = QuestMonsterCount(UID, 703, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 703, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 703, 22168, NPC, 18, 1607);
 	else
 		SelectMsg(UID, 4, 703, 22168, NPC, 3000, 1608, 27, -1);
@@ -252,15 +241,10 @@ if (EVENT == 1607) then
 end
 
 if (EVENT == 1608) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13076);
 	SaveEvent(UID, 13087);
-	RunExchange(UID,3175)
+	RunQuestExchange(UID,3175)
 	SelectMsg(UID, 2, -1, 22382, NPC, 10, -1);
-	end
 end
 
 if (EVENT == 1701)then
@@ -276,10 +260,10 @@ if (EVENT == 1706)then
 end
 
 if (EVENT == 1705) then
-	MonsterCount01 = QuestMonsterCount(UID, 705, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 705, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 705, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 705, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
-		SelectMsg(UID, 5, 705, 22170, NPC,3000,1709,3005,1709,3005,1709,3005,1709,3005,1709,3005,1709,3005,1709);
+		SelectMsg(UID, 5, 705, 22170, NPC,3000,1709,3005,-1);
 	else
 		if (MonsterCount01 < 1) then
 			SelectMsg(UID, 2, 705, 22170, NPC, 18, 1707);
@@ -298,16 +282,11 @@ if (EVENT == 1708) then
 end
 
 if (EVENT == 1709) then
-SLOTKONTROL = CheckGiveSlot(UID, 4)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13088);
 	SaveEvent(UID, 13099);
-    RunExchange(UID, 3176)
+    RunQuestExchange(UID, 3176,STEP,1);
 	ShowEffect(UID, 300391)
 	SelectMsg(UID, 2, -1, 22777, NPC, 10, -1);
-end
 end
 
 if (EVENT == 1801)then
@@ -335,12 +314,8 @@ end
 if (EVENT == 1807) then
     SaveEvent(UID, 13100);
 	SaveEvent(UID, 13111);
-    RunExchange(UID, 3177)
-	SelectMsg(UID, 2, -1, 22397, NPC, 10, 1808,4005,-1);
-end
-
-if (EVENT == 1808)then
-ZoneChange(UID, 82, 203, 197)
+    RunQuestExchange(UID, 3177)
+	SelectMsg(UID, 2, -1, 22397, NPC, 10, 1908,4005,-1);
 end
 
 if (EVENT == 1901)then
@@ -355,35 +330,34 @@ if (EVENT == 1906)then
 	SaveEvent(UID, 13113);
 end
 
+if (EVENT == 1908)then
+	MonsterStoneQuestJoin(UID,708);
+end
+
 if (EVENT == 1905)then
-	QuestStatus = SearchQuest(UID, 708)	
-	if(QuestStatus == 1) then
-	SelectMsg(UID, 2, -1, 22397, NPC, 10, 1808,4005,-1);
+	QuestStatusCheck = GetQuestStatus(UID, 708)	
+	if(QuestStatusCheck == 1) then
+	SelectMsg(UID, 2, -1, 22397, NPC, 10, 1908,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900227000);  
     ITEM2_COUNT = HowmuchItem(UID, 900228000); 
     ITEM3_COUNT = HowmuchItem(UID, 900229000); 	
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
-	SelectMsg(UID, 2, -1, 22397, NPC, 10, 1808,4005,-1);
+	SelectMsg(UID, 2, -1, 22397, NPC, 10, 1908,4005,-1);
 	else
-	SelectMsg(UID, 5, 708, 22172, NPC,3000,1907,3005,1907,3005,1907,3005,1907,3005,1907,3005,1907,3005,1907);
+	SelectMsg(UID, 5, 708, 22172, NPC,3000,1907,3005,-1);
 end
 end
 end
 
 if (EVENT == 1907) then
-SLOTKONTROL = CheckGiveSlot(UID, 3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13112);
 	SaveEvent(UID, 13123);
-    RunExchange(UID, 3178)
-	RobItem(UID, 900227000, 1)
-	RobItem(UID, 900228000, 1)
-	RobItem(UID, 900229000, 1)
+    RunQuestExchange(UID, 3178,STEP,1);
+	RobItem(UID, 900227000, 1);
+	RobItem(UID, 900228000, 1);
+	RobItem(UID, 900229000, 1);
 	SelectMsg(UID, 2, -1, 22409, NPC, 10, -1);
-end
 end
 
 if (EVENT == 2001)then
@@ -399,8 +373,8 @@ if (EVENT == 2006)then
 end
 
 if (EVENT == 2005) then
-	MonsterCount = QuestMonsterCount(UID, 709, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 709, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 709, 22176, NPC, 18, 2007);
 	else
 		SelectMsg(UID, 4, 709, 22176, NPC, 3000, 2008, 27, -1);
@@ -412,15 +386,10 @@ if (EVENT == 2007) then
 end
 
 if (EVENT == 2008) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
 	SaveEvent(UID, 13124);
 	SaveEvent(UID, 13135);
-    RunExchange(UID, 3179)
+    RunQuestExchange(UID, 3179)
 	SelectMsg(UID, 2, -1, 22409, NPC, 10, -1);
-end
 end
 
 if (EVENT == 2101)then
@@ -436,10 +405,10 @@ if (EVENT == 2106)then
 end
 
 if (EVENT == 2105) then
-	MonsterCount01 = QuestMonsterCount(UID, 711, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 711, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 711, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 711, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
-		SelectMsg(UID, 5, 711, 22178, NPC,3000,2109,3005,2109,3005,2109,3005,2109,3005,2109,3005,2109,3005,2109);
+		SelectMsg(UID, 5, 711, 22178, NPC,3000,2109,3005,-1);
 	else
 		if (MonsterCount01 < 1) then
 			SelectMsg(UID, 2, 711, 22178, NPC, 18, 2107);
@@ -458,16 +427,11 @@ if (EVENT == 2108) then
 end
 
 if (EVENT == 2109) then
-SLOTKONTROL = CheckGiveSlot(UID, 4)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13136);
 	SaveEvent(UID, 13147);
-    RunExchange(UID, 3180)
+    RunQuestExchange(UID, 3180,STEP,1);
 	ShowEffect(UID, 300391)
 	--SelectMsg(UID, 2, -1, 22777, NPC, 10, -1);
-end
 end
 
 if (EVENT == 2201)then
@@ -495,7 +459,7 @@ end
 if (EVENT == 2207) then
     SaveEvent(UID, 13148);
 	SaveEvent(UID, 13159);
-    RunExchange(UID, 3181)
+    RunQuestExchange(UID, 3181)
 	SelectMsg(UID, 2, -1, 22456, NPC, 10, 2308,4005,-1);
 end
 
@@ -511,9 +475,13 @@ if (EVENT == 2306)then
 	SaveEvent(UID, 13161);
 end
 
+if (EVENT == 2308)then
+	MonsterStoneQuestJoin(UID,714);
+end
+
 if (EVENT == 2305)then
-	QuestStatus = SearchQuest(UID, 714)	
-	if(QuestStatus == 1) then
+	QuestStatusCheck = GetQuestStatus(UID, 714)	
+	if(QuestStatusCheck == 1) then
 	SelectMsg(UID, 2, -1, 22456, NPC, 10, 2308,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900233000);  
@@ -522,24 +490,19 @@ if (EVENT == 2305)then
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
 	SelectMsg(UID, 2, -1, 22456, NPC, 10, 2308,4005,-1);
 	else
-	SelectMsg(UID, 5, 714, 22182, NPC,3000,2307,3005,2307,3005,2307,3005,2307,3005,2307,3005,2307,3005,2307);
+	SelectMsg(UID, 5, 714, 22182, NPC,3000,2307,3005,-1);
 end
 end
 end
 
 if (EVENT == 2307) then
-SLOTKONTROL = CheckGiveSlot(UID, 3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13160);
 	SaveEvent(UID, 13171);
-    RunExchange(UID, 3182)
-	RobItem(UID, 900233000, 1)
-	RobItem(UID, 900234000, 1)
-	RobItem(UID, 900235000, 1)
+    RunQuestExchange(UID, 3182,STEP,1);
+	RobItem(UID, 900233000, 1);
+	RobItem(UID, 900234000, 1);
+	RobItem(UID, 900235000, 1);
 	SelectMsg(UID, 2, -1, 22468, NPC, 10, -1);
-end
 end
 
 if (EVENT == 2401)then
@@ -555,8 +518,8 @@ if (EVENT == 2406)then
 end
 
 if (EVENT == 2405) then
-	MonsterCount = QuestMonsterCount(UID, 715, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 715, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 715, 22184, NPC, 18, 2407);
 	else
 		SelectMsg(UID, 4, 715, 22184, NPC, 3000, 2408, 27, -1);
@@ -568,14 +531,9 @@ if (EVENT == 2407) then
 end
 
 if (EVENT == 2408) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13172);
 	SaveEvent(UID, 13183);
-    RunExchange(UID, 3183)
-end
+    RunQuestExchange(UID, 3183)
 end
 
 if (EVENT == 2501)then
@@ -591,10 +549,10 @@ if (EVENT == 2506)then
 end
 
 if (EVENT == 2505) then
-	MonsterCount01 = QuestMonsterCount(UID, 717, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 717, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 717, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 717, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
-		SelectMsg(UID, 5, 717, 22186, NPC,3000,2509,3005,2509,3005,2509,3005,2509,3005,2509,3005,2509,3005,2509);
+		SelectMsg(UID, 5, 717, 22186, NPC,3000,2509,3005,-1);
 	else
 		if (MonsterCount01 < 1) then
 			SelectMsg(UID, 2, 717, 22186, NPC, 18, 2507);
@@ -613,15 +571,10 @@ if (EVENT == 2508) then
 end
 
 if (EVENT == 2509) then
-SLOTKONTROL = CheckGiveSlot(UID, 3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13184);
 	SaveEvent(UID, 13195);
-    RunExchange(UID, 3184)
+    RunQuestExchange(UID, 3184,STEP,1);
 	ShowEffect(UID, 300391)
-end
 end
 
 if (EVENT == 2601)then
@@ -649,7 +602,7 @@ end
 if (EVENT == 2607) then
     SaveEvent(UID, 13196);
 	SaveEvent(UID, 13207);
-    RunExchange(UID, 3185)
+    RunQuestExchange(UID, 3185)
 	SelectMsg(UID, 2, -1, 22370, NPC, 10, 2708,4005,-1);
 end
 
@@ -665,9 +618,13 @@ if (EVENT == 2706)then
 	SaveEvent(UID, 13209);
 end
 
+if (EVENT == 2708)then
+MonsterStoneQuestJoin(UID,720);
+end
+
 if (EVENT == 2705)then
-	QuestStatus = SearchQuest(UID, 720)	
-	if(QuestStatus == 1) then
+	QuestStatusCheck = GetQuestStatus(UID, 720)	
+	if(QuestStatusCheck == 1) then
 	SelectMsg(UID, 2, -1, 22370, NPC, 10, 2708,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900239000);  
@@ -676,28 +633,19 @@ if (EVENT == 2705)then
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
 	SelectMsg(UID, 2, -1, 22370, NPC, 10, 2708,4005,-1);
 	else
-	SelectMsg(UID, 5, 720, 22190, NPC,3000,2707,3005,2707,3005,2707,3005,2707,3005,2707,3005,2707,3005,2707);
+	SelectMsg(UID, 5, 720, 22190, NPC,3000,2707,3005,-1);
 end
 end
-end
-
-if (EVENT == 2708)then
-ZoneChange(UID, 81, 203, 197)
 end
 
 if (EVENT == 2707) then
-SLOTKONTROL = CheckGiveSlot(UID, 3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13208);
 	SaveEvent(UID, 13219);
-    RunExchange(UID, 3186)
-	RobItem(UID, 900239000, 1)
-	RobItem(UID, 900240000, 1)
-	RobItem(UID, 900241000, 1)
+    RunQuestExchange(UID, 3186,STEP,1);
+	RobItem(UID, 900239000, 1);
+	RobItem(UID, 900240000, 1);
+	RobItem(UID, 900241000, 1);
 	SelectMsg(UID, 2, -1, 22507, NPC, 10, -1);
-end
 end
 
 if (EVENT == 2801)then
@@ -713,8 +661,8 @@ if (EVENT == 2806)then
 end
 
 if (EVENT == 2805) then
-	MonsterCount = QuestMonsterCount(UID, 721, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 721, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 721, 22192, NPC, 18, 2807);
 	else
 		SelectMsg(UID, 4, 721, 22192, NPC, 3000, 2808, 27, -1);
@@ -726,15 +674,10 @@ if (EVENT == 2807) then
 end
 
 if (EVENT == 2808) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13220);
 	SaveEvent(UID, 13231);
-    RunExchange(UID, 3187)
+    RunQuestExchange(UID, 3187)
 	SelectMsg(UID, 2, -1, 22530, NPC, 10, -1);
-end
 end
 
 if (EVENT == 2901)then
@@ -750,10 +693,10 @@ if (EVENT == 2906)then
 end
 
 if (EVENT == 2905) then
-	MonsterCount01 = QuestMonsterCount(UID, 723, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 723, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 723, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 723, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
-		SelectMsg(UID, 5, 723, 22186, NPC,3000,2909,3005,2909,3005,2909,3005,2909,3005,2909,3005,2909,3005,2909);
+		SelectMsg(UID, 5, 723, 22186, NPC,3000,2909,3005,-1);
 	else
 		if (MonsterCount01 < 1) then
 			SelectMsg(UID, 2, 723, 22186, NPC, 18, 2907);
@@ -772,16 +715,11 @@ if (EVENT == 2908) then
 end
 
 if (EVENT == 2909) then
-SLOTKONTROL = CheckGiveSlot(UID, 3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13232);
 	SaveEvent(UID, 13243);
-    RunExchange(UID, 3188)
+    RunQuestExchange(UID, 3188,STEP,1);
 	ShowEffect(UID, 300391)
 	SelectMsg(UID, 2, -1, 22777, NPC, 10, -1);
-end
 end
 
 if (EVENT == 3001)then
@@ -809,12 +747,8 @@ end
 if (EVENT == 3007) then
     SaveEvent(UID, 13244);
 	SaveEvent(UID, 13255);
-    RunExchange(UID, 3189)
+    RunQuestExchange(UID, 3189)
 	SelectMsg(UID, 2, -1, 22554, NPC, 10, 3008,4005,-1);
-end
-
-if (EVENT == 3008)then
-ZoneChange(UID, 82, 203, 197)
 end
 
 if (EVENT == 3101)then
@@ -829,9 +763,13 @@ if (EVENT == 3106)then
 	SaveEvent(UID, 13257);
 end
 
+if (EVENT == 3008)then
+	MonsterStoneQuestJoin(UID,726);
+end
+
 if (EVENT == 3105)then
-	QuestStatus = SearchQuest(UID, 726)	
-	if(QuestStatus == 1) then
+	QuestStatusCheck = GetQuestStatus(UID, 726)	
+	if(QuestStatusCheck == 1) then
 	SelectMsg(UID, 2, -1, 22554, NPC, 10, 3008,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900245000);  
@@ -840,24 +778,19 @@ if (EVENT == 3105)then
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
 	SelectMsg(UID, 2, -1, 22554, NPC, 10, 3008,4005,-1);
 	else
-	SelectMsg(UID, 5, 726, 22190, NPC,3000,3107,3005,3107,3005,3107,3005,3107,3005,3107,3005,3107,3005,3107);
+	SelectMsg(UID, 5, 726, 22190, NPC,3000,3107,3005,-1);
 end
 end
 end
 
 if (EVENT == 3107) then
-SLOTKONTROL = CheckGiveSlot(UID, 3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13256);
 	SaveEvent(UID, 13267);
-    RunExchange(UID, 3190)
-	RobItem(UID, 900245000, 1)
-	RobItem(UID, 900246000, 1)
-	RobItem(UID, 900247000, 1)
+    RunQuestExchange(UID, 3190,STEP,1);
+	RobItem(UID, 900245000, 1);
+	RobItem(UID, 900246000, 1);
+	RobItem(UID, 900247000, 1);
 	SelectMsg(UID, 2, -1, 22566, NPC, 10, -1);
-end
 end
 
 if (EVENT == 3201)then
@@ -873,8 +806,8 @@ if (EVENT == 3206)then
 end
 
 if (EVENT == 3205) then
-	MonsterCount = QuestMonsterCount(UID, 727, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 727, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 727, 22200, NPC, 18, 3207);
 	else
 		SelectMsg(UID, 4, 727, 22200, NPC, 3000, 3208, 27, -1);
@@ -886,15 +819,10 @@ if (EVENT == 3207) then
 end
 
 if (EVENT == 3208) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13268);
 	SaveEvent(UID, 13279);
-    RunExchange(UID, 3191)
+    RunQuestExchange(UID, 3191)
 	SelectMsg(UID, 2, -1, 22578, NPC, 10, -1);
-end
 end
 
 if (EVENT == 3301)then
@@ -910,10 +838,10 @@ if (EVENT == 3306)then
 end
 
 if (EVENT == 3305) then
-	MonsterCount01 = QuestMonsterCount(UID, 729, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 729, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 729, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 729, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
-		SelectMsg(UID, 5, 729, 22202, NPC,3000,3309,3005,3309,3005,3309,3005,3309,3005,3309,3005,3309,3005,3309);
+		SelectMsg(UID, 5, 729, 22202, NPC,3000,3309,3005,-1);
 	else
 		if (MonsterCount01 < 1) then
 			SelectMsg(UID, 2, 729, 22202, NPC, 18, 3307);
@@ -932,15 +860,10 @@ if (EVENT == 3308) then
 end
 
 if (EVENT == 3309) then
-SLOTKONTROL = CheckGiveSlot(UID, 3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13280);
 	SaveEvent(UID, 13291);
-    RunExchange(UID, 3192)
+    RunQuestExchange(UID, 3192,STEP,1);
 	SelectMsg(UID, 2, -1, 22777, NPC, 10, -1);
-end
 end
 
 if (EVENT == 3401)then
@@ -968,12 +891,8 @@ end
 if (EVENT == 3407) then
     SaveEvent(UID, 13292);
 	SaveEvent(UID, 13303);
-    RunExchange(UID, 3193)
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3408,4005,-1);
-end
-
-if (EVENT == 3408)then
-ZoneChange(UID, 83, 203, 197)
+    RunQuestExchange(UID, 3193)
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3508,4005,-1);
 end
 
 if (EVENT == 3501)then
@@ -988,16 +907,20 @@ if (EVENT == 3506)then
 	SaveEvent(UID, 13305);
 end
 
+if (EVENT == 3508)then
+	MonsterStoneQuestJoin(UID,732);
+end
+
 if (EVENT == 3505)then
-	QuestStatus = SearchQuest(UID, 732)	
-	if(QuestStatus == 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3408,4005,-1);
+	QuestStatusCheck = GetQuestStatus(UID, 732)	
+	if(QuestStatusCheck == 1) then
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3508,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900251000);  
     ITEM2_COUNT = HowmuchItem(UID, 900252000); 
     ITEM3_COUNT = HowmuchItem(UID, 900253000); 	
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3408,4005,-1);
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3508,4005,-1);
 	else
 	SelectMsg(UID, 4, 732, 22206, NPC,3000,3507,3005,-1);
 end
@@ -1007,7 +930,7 @@ end
 if (EVENT == 3507) then
     SaveEvent(UID, 13304);
 	SaveEvent(UID, 13315);
-    RunExchange(UID, 3194)
+    RunQuestExchange(UID, 3194)
 	SelectMsg(UID, 2, -1, 22615, NPC, 10,-1);
 end
 
@@ -1024,8 +947,8 @@ if (EVENT == 3606)then
 end
 
 if (EVENT == 3605) then
-	MonsterCount = QuestMonsterCount(UID, 733, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 733, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 733, 22208, NPC, 18, 3607);
 	else
 		SelectMsg(UID, 4, 733, 22208, NPC, 3000, 3608, 27, -1);
@@ -1037,15 +960,10 @@ if (EVENT == 3607) then
 end
 
 if (EVENT == 3608) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13316);
 	SaveEvent(UID, 13327);
-    RunExchange(UID, 3195)
+    RunQuestExchange(UID, 3195)
 	SelectMsg(UID, 2, -1, 22628, NPC, 10,-1);
-end
 end
 
 if (EVENT == 3701)then
@@ -1061,8 +979,8 @@ if (EVENT == 3706)then
 end
 
 if (EVENT == 3705) then
-	MonsterCount01 = QuestMonsterCount(UID, 735, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 735, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 735, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 735, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
 		SelectMsg(UID, 4, 735, 22210, NPC,3000,3709,3005,-1);
 	else
@@ -1083,15 +1001,10 @@ if (EVENT == 3708) then
 end
 
 if (EVENT == 3709) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13328);
 	SaveEvent(UID, 13339);
-    RunExchange(UID, 3196)
+    RunQuestExchange(UID, 3196)
 	SelectMsg(UID, 2, -1, 22628, NPC, 10,-1);
-end
 end
 
 if (EVENT == 3801)then
@@ -1119,8 +1032,8 @@ end
 if (EVENT == 3807) then
     SaveEvent(UID, 13340);
 	SaveEvent(UID, 13351);
-    RunExchange(UID, 3197)
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3808,4005,-1);
+    RunQuestExchange(UID, 3197)
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3908,4005,-1);
 end
 
 if (EVENT == 3901)then
@@ -1135,16 +1048,20 @@ if (EVENT == 3906)then
 	SaveEvent(UID, 13353);
 end
 
+if (EVENT == 3908)then
+	MonsterStoneQuestJoin(UID,738);
+end
+
 if (EVENT == 3905)then
-	QuestStatus = SearchQuest(UID, 738)	
-	if(QuestStatus == 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3808,4005,-1);
+	QuestStatusCheck = GetQuestStatus(UID, 738)	
+	if(QuestStatusCheck == 1) then
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3908,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900257000);  
     ITEM2_COUNT = HowmuchItem(UID, 900258000); 
     ITEM3_COUNT = HowmuchItem(UID, 900259000); 	
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3808,4005,-1);
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 3908,4005,-1);
 	else
 	SelectMsg(UID, 4, 738, 22206, NPC,3000,3907,3005,-1);
 end
@@ -1152,15 +1069,10 @@ end
 end
 
 if (EVENT == 3907) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13352);
 	SaveEvent(UID, 13363);
-    RunExchange(UID, 3198)
+    RunQuestExchange(UID, 3198)
 	--SelectMsg(UID, 2, -1, 22615, NPC, 10,-1);
-end
 end
 
 if (EVENT == 4001)then
@@ -1176,8 +1088,8 @@ if (EVENT == 4006)then
 end
 
 if (EVENT == 4005) then
-	MonsterCount = QuestMonsterCount(UID, 739, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 739, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 739, 22216, NPC, 18, 4007);
 	else
 		SelectMsg(UID, 4, 739, 22216, NPC, 3000, 4008, 27, -1);
@@ -1185,15 +1097,10 @@ if (EVENT == 4005) then
 end
 
 if (EVENT == 4008) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13364);
 	SaveEvent(UID, 13375);
-    RunExchange(UID, 3199)
+    RunQuestExchange(UID, 3199)
 	--SelectMsg(UID, 2, -1, 22615, NPC, 10,-1);
-end
 end
 
 if (EVENT == 4101)then
@@ -1209,8 +1116,8 @@ if (EVENT == 4106)then
 end
 
 if (EVENT == 4105) then
-	MonsterCount01 = QuestMonsterCount(UID, 741, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 741, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 741, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 741, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
 		SelectMsg(UID, 4, 741, 22218, NPC,3000,4109,3005,-1);
 	else
@@ -1231,15 +1138,10 @@ if (EVENT == 4108) then
 end
 
 if (EVENT == 4109) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13376);
 	SaveEvent(UID, 13387);
-    RunExchange(UID, 3200)
+    RunQuestExchange(UID, 3200)
 	--SelectMsg(UID, 2, -1, 22615, NPC, 10,-1);
-end
 end
 
 if (EVENT == 4201)then
@@ -1267,8 +1169,8 @@ end
 if (EVENT == 4208) then
     SaveEvent(UID, 13388);
 	SaveEvent(UID, 13399);
-    RunExchange(UID, 3201)
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4209,4005,-1);
+    RunQuestExchange(UID, 3201)
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4309,4005,-1);
 end
 
 if (EVENT == 4301)then
@@ -1283,16 +1185,20 @@ if (EVENT == 4306)then
 	SaveEvent(UID, 13401);
 end
 
+if (EVENT == 4309)then
+	MonsterStoneQuestJoin(UID,744);
+end
+
 if (EVENT == 4305)then
-	QuestStatus = SearchQuest(UID, 744)	
-	if(QuestStatus == 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4209,4005,-1);
+	QuestStatusCheck = GetQuestStatus(UID, 744)	
+	if(QuestStatusCheck == 1) then
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4309,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900263000);  
     ITEM2_COUNT = HowmuchItem(UID, 900264000); 
     ITEM3_COUNT = HowmuchItem(UID, 900265000); 	
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4209,4005,-1);
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4309,4005,-1);
 	else
 	SelectMsg(UID, 4, 744, 22222, NPC,3000,4307,3005,-1);
 end
@@ -1300,15 +1206,10 @@ end
 end
 
 if (EVENT == 4307) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13400);
 	SaveEvent(UID, 13411);
-    RunExchange(UID, 3202)
+    RunQuestExchange(UID, 3202)
 	--SelectMsg(UID, 2, -1, 22602, NPC, 10, 4209,4005,-1);
-end
 end
 
 if (EVENT == 4401)then
@@ -1324,8 +1225,8 @@ if (EVENT == 4406)then
 end
 
 if (EVENT == 4405) then
-	MonsterCount = QuestMonsterCount(UID, 745, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 745, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 745, 22224, NPC, 18, 4407);
 	else
 		SelectMsg(UID, 4, 745, 22224, NPC, 3000, 4408, 27, -1);
@@ -1337,15 +1238,10 @@ if (EVENT == 4407) then
 end
 
 if (EVENT == 4408) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13412);
 	SaveEvent(UID, 13423);
-    RunExchange(UID, 3203)
+    RunQuestExchange(UID, 3203)
 	--SelectMsg(UID, 2, -1, 22615, NPC, 10,-1);
-end
 end
 
 if (EVENT == 4501)then
@@ -1361,8 +1257,8 @@ if (EVENT == 4506)then
 end
 
 if (EVENT == 4505) then
-	MonsterCount01 = QuestMonsterCount(UID, 747, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 747, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 747, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 747, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
 		SelectMsg(UID, 4, 747, 22226, NPC,3000,4509,3005,-1);
 	else
@@ -1383,15 +1279,10 @@ if (EVENT == 4508) then
 end
 
 if (EVENT == 4509) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13424);
 	SaveEvent(UID, 13435);
-    RunExchange(UID, 3204)
+    RunQuestExchange(UID, 3204)
 	--SelectMsg(UID, 2, -1, 22615, NPC, 10,-1);
-end
 end
 
 if (EVENT == 4601)then
@@ -1419,8 +1310,8 @@ end
 if (EVENT == 4608) then
     SaveEvent(UID, 13436);
 	SaveEvent(UID, 13447);
-    RunExchange(UID, 3205)
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4609,4005,-1);
+    RunQuestExchange(UID, 3205)
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4709,4005,-1);
 end
 
 if (EVENT == 4701)then
@@ -1435,16 +1326,20 @@ if (EVENT == 4706)then
 	SaveEvent(UID, 13449);
 end
 
+if (EVENT == 4709)then
+	MonsterStoneQuestJoin(UID,750);
+end
+
 if (EVENT == 4705)then
-	QuestStatus = SearchQuest(UID, 750)	
-	if(QuestStatus == 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4609,4005,-1);
+	QuestStatusCheck = GetQuestStatus(UID, 750)	
+	if(QuestStatusCheck == 1) then
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4709,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900269000);  
     ITEM2_COUNT = HowmuchItem(UID, 900270000); 
     ITEM3_COUNT = HowmuchItem(UID, 900271000); 	
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4609,4005,-1);
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 4709,4005,-1);
 	else
 	SelectMsg(UID, 4, 750, 22230, NPC,3000,4707,3005,-1);
 end
@@ -1452,15 +1347,10 @@ end
 end
 
 if (EVENT == 4707) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13448);
 	SaveEvent(UID, 13459);
-    RunExchange(UID, 3206)
+    RunQuestExchange(UID, 3206)
 	--SelectMsg(UID, 2, -1, 22602, NPC, 10, 4209,4005,-1);
-end
 end
 
 if (EVENT == 4801)then
@@ -1476,8 +1366,8 @@ if (EVENT == 4806)then
 end
 
 if (EVENT == 4805) then
-	MonsterCount = QuestMonsterCount(UID, 751, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 751, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 751, 22232, NPC, 18, 4807);
 	else
 		SelectMsg(UID, 4, 751, 22232, NPC, 3000, 4808, 27, -1);
@@ -1489,15 +1379,10 @@ if (EVENT == 4807) then
 end
 
 if (EVENT == 4808) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13460);
 	SaveEvent(UID, 13471);
-    RunExchange(UID, 3207)
+    RunQuestExchange(UID, 3207)
 	SelectMsg(UID, 2, -1, 22774, NPC, 10,-1);
-end
 end
 
 if (EVENT == 4901)then
@@ -1513,8 +1398,8 @@ if (EVENT == 4906)then
 end
 
 if (EVENT == 4905) then
-	MonsterCount01 = QuestMonsterCount(UID, 753, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 753, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 753, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 753, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
 		SelectMsg(UID, 4, 753, 22234, NPC,3000,4909,3005,-1);
 	else
@@ -1534,15 +1419,10 @@ if (EVENT == 4908) then
 end
 
 if (EVENT == 4909) then
-SLOTKONTROL = CheckGiveSlot(UID, 3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13472);
 	SaveEvent(UID, 13483);
-    RunExchange(UID, 3208)
+    RunQuestExchange(UID, 3208)
 	SelectMsg(UID, 2, -1, 22615, NPC, 10,-1);
-end
 end
 
 if (EVENT == 5001)then
@@ -1570,8 +1450,8 @@ end
 if (EVENT == 5008) then
     SaveEvent(UID, 13484);
 	SaveEvent(UID, 13495);
-    RunExchange(UID, 3209)
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5009,4005,-1);
+    RunQuestExchange(UID, 3209)
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5109,4005,-1);
 end
 
 if (EVENT == 5101)then
@@ -1586,16 +1466,20 @@ if (EVENT == 5106)then
 	SaveEvent(UID, 13497);
 end
 
+if (EVENT == 5109)then
+	MonsterStoneQuestJoin(UID,756);
+end
+
 if (EVENT == 5105)then
-	QuestStatus = SearchQuest(UID, 756)	
-	if(QuestStatus == 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5009,4005,-1);
+	QuestStatusCheck = GetQuestStatus(UID, 756)	
+	if(QuestStatusCheck == 1) then
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5109,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900275000);  
     ITEM2_COUNT = HowmuchItem(UID, 900276000); 
     ITEM3_COUNT = HowmuchItem(UID, 900277000); 	
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5009,4005,-1);
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5109,4005,-1);
 	else
 	SelectMsg(UID, 4, 756, 22238, NPC,3000,5107,3005,-1);
 end
@@ -1603,15 +1487,10 @@ end
 end
 
 if (EVENT == 5107) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13496);
 	SaveEvent(UID, 13507);
-    RunExchange(UID, 3210)
+    RunQuestExchange(UID, 3210)
 	--SelectMsg(UID, 2, -1, 22602, NPC, 10, 4209,4005,-1);
-end
 end
 
 if (EVENT == 5201)then
@@ -1627,8 +1506,8 @@ if (EVENT == 5206)then
 end
 
 if (EVENT == 5205) then
-	MonsterCount = QuestMonsterCount(UID, 757, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 757, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 757, 22240, NPC, 18, 5207);
 	else
 		SelectMsg(UID, 4, 757, 22240, NPC, 3000, 5208, 27, -1);
@@ -1640,15 +1519,10 @@ if (EVENT == 5207) then
 end
 
 if (EVENT == 5208) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13508);
 	SaveEvent(UID, 13519);
-    RunExchange(UID, 3211)
+    RunQuestExchange(UID, 3211)
 	SelectMsg(UID, 2, -1, 22774, NPC, 10,-1);
-end
 end
 
 if (EVENT == 5301)then
@@ -1664,8 +1538,8 @@ if (EVENT == 5306)then
 end
 
 if (EVENT == 5305) then
-	MonsterCount01 = QuestMonsterCount(UID, 759, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 759, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 759, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 759, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
 		SelectMsg(UID, 4, 759, 22242, NPC,3000,5309,3005,-1);
 	else
@@ -1685,15 +1559,10 @@ if (EVENT == 5308) then
 end
 
 if (EVENT == 5309) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13520);
 	SaveEvent(UID, 13531);
-    RunExchange(UID, 3212)
+    RunQuestExchange(UID, 3212)
 	SelectMsg(UID, 2, -1, 22615, NPC, 10,-1);
-end
 end
 
 if (EVENT == 5401)then
@@ -1721,8 +1590,8 @@ end
 if (EVENT == 5408) then
     SaveEvent(UID, 13532);
 	SaveEvent(UID, 13543);
-    RunExchange(UID, 3213)
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5409,4005,-1);
+    RunQuestExchange(UID, 3213)
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5509,4005,-1);
 end
 
 if (EVENT == 5501)then
@@ -1737,16 +1606,20 @@ if (EVENT == 5506)then
 	SaveEvent(UID, 13545);
 end
 
+if (EVENT == 5509)then
+	MonsterStoneQuestJoin(UID,762);
+end
+
 if (EVENT == 5505)then
-	QuestStatus = SearchQuest(UID, 762)	
-	if(QuestStatus == 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5409,4005,-1);
+	QuestStatusCheck = GetQuestStatus(UID, 762)	
+	if(QuestStatusCheck == 1) then
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5509,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900281000);  
     ITEM2_COUNT = HowmuchItem(UID, 900282000); 
     ITEM3_COUNT = HowmuchItem(UID, 900283000); 	
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5409,4005,-1);
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5509,4005,-1);
 	else
 	SelectMsg(UID, 4, 762, 22246, NPC,3000,5507,3005,-1);
 end
@@ -1754,15 +1627,10 @@ end
 end
 
 if (EVENT == 5507) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13544);
 	SaveEvent(UID, 13555);
-    RunExchange(UID, 3214)
+    RunQuestExchange(UID, 3214)
 	--SelectMsg(UID, 2, -1, 22602, NPC, 10, 4209,4005,-1);
-end
 end
 
 if (EVENT == 5601)then
@@ -1778,8 +1646,8 @@ if (EVENT == 5606)then
 end
 
 if (EVENT == 5605) then
-	MonsterCount = QuestMonsterCount(UID, 763, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 763, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 763, 22248, NPC, 18, 5607);
 	else
 		SelectMsg(UID, 4, 763, 22248, NPC, 3000, 5608, 27, -1);
@@ -1791,15 +1659,10 @@ if (EVENT == 5607) then
 end
 
 if (EVENT == 5608) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13556);
 	SaveEvent(UID, 13567);
-    RunExchange(UID, 3215)
+    RunQuestExchange(UID, 3215)
 	SelectMsg(UID, 2, -1, 22774, NPC, 10,-1);
-end
 end
 
 if (EVENT == 5701)then
@@ -1815,8 +1678,8 @@ if (EVENT == 5706)then
 end
 
 if (EVENT == 5705) then
-	MonsterCount01 = QuestMonsterCount(UID, 765, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 765, 2); 
+	MonsterCount01 = CountMonsterQuestSub(UID, 765, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 765, 2); 
 	if (MonsterCount01 > 0 and MonsterCount02 > 49) then 
 		SelectMsg(UID, 4, 765, 22250, NPC,3000,5709,3005,-1);
 	else
@@ -1836,15 +1699,10 @@ if (EVENT == 5708) then
 end
 
 if (EVENT == 5709) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13568);
 	SaveEvent(UID, 13579);
-    RunExchange(UID, 3216)
+    RunQuestExchange(UID, 3216)
 	SelectMsg(UID, 2, -1, 22615, NPC, 10,-1);
-end
 end
 
 if (EVENT == 5801)then
@@ -1872,8 +1730,8 @@ end
 if (EVENT == 5808) then
     SaveEvent(UID, 13580);
 	SaveEvent(UID, 13591);
-    RunExchange(UID, 3217)
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5809,4005,-1);
+    RunQuestExchange(UID, 3217)
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5909,4005,-1);
 end
 
 if (EVENT == 5901)then
@@ -1888,16 +1746,20 @@ if (EVENT == 5906)then
 	SaveEvent(UID, 13593);
 end
 
+if (EVENT == 5909)then
+	MonsterStoneQuestJoin(UID,768);
+end
+
 if (EVENT == 5905)then
-	QuestStatus = SearchQuest(UID, 768)	
-	if(QuestStatus == 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5809,4005,-1);
+	QuestStatusCheck = GetQuestStatus(UID, 768)	
+	if(QuestStatusCheck == 1) then
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5909,4005,-1);
 	else
 	ITEM1_COUNT = HowmuchItem(UID, 900287000);  
     ITEM2_COUNT = HowmuchItem(UID, 900288000); 
     ITEM3_COUNT = HowmuchItem(UID, 900289000); 	
 	if (ITEM1_COUNT < 1 and ITEM2_COUNT < 1 and ITEM3_COUNT < 1) then
-	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5809,4005,-1);
+	SelectMsg(UID, 2, -1, 22602, NPC, 10, 5909,4005,-1);
 	else
 	SelectMsg(UID, 4, 768, 22254, NPC,3000,5907,3005,-1);
 end
@@ -1905,15 +1767,10 @@ end
 end
 
 if (EVENT == 5907) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13592);
 	SaveEvent(UID, 13603);
-    RunExchange(UID, 3218)
+    RunQuestExchange(UID, 3218)
 	--SelectMsg(UID, 2, -1, 22602, NPC, 10, 4209,4005,-1);
-end
 end
 
 if (EVENT == 6001)then
@@ -1929,8 +1786,8 @@ if (EVENT == 6006)then
 end
 
 if (EVENT == 6005) then
-	MonsterCount = QuestMonsterCount(UID, 769, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 769, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 769, 22256, NPC, 18, 6007);
 	else
 		SelectMsg(UID, 4, 769, 22256, NPC, 3000, 6008, 27, -1);
@@ -1942,15 +1799,10 @@ if (EVENT == 6007) then
 end
 
 if (EVENT == 6008) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13604);
 	SaveEvent(UID, 13615);
-    RunExchange(UID, 3219)
+    RunQuestExchange(UID, 3219)
 	SelectMsg(UID, 2, -1, 22258, NPC, 10,-1);
-end
 end
 
 if (EVENT == 6301)then
@@ -1977,7 +1829,7 @@ end
 if (EVENT == 6307) then
     SaveEvent(UID, 13640);
 	SaveEvent(UID, 13651);
-    RunExchange(UID, 3222)
+    RunQuestExchange(UID, 3222)
 end
 
 if (EVENT == 6401)then
@@ -1994,14 +1846,9 @@ if (EVENT == 6403)then
 end
 
 if (EVENT == 6404)then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
     SaveEvent(UID, 13663);
 	SaveEvent(UID, 13652);
-	RunExchange(UID, 3223)
-end
+	RunQuestExchange(UID, 3223)
 end
 
 if (EVENT == 6501)then
@@ -2017,11 +1864,11 @@ if (EVENT == 6506)then
 end
 
 if (EVENT == 6505) then
-	MonsterCount = QuestMonsterCount(UID, 775, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 775, 1);
+	if (MonsterCount < 1) then
 		SelectMsg(UID, 2, 775, 22266, NPC, 18, 6507);
 	else
-		SelectMsg(UID, 4, 775, 22266, NPC, 3000, 6508, 27, -1);
+		SelectMsg(UID, 5, 775, 22266, NPC, 3000, 6508, 27, -1);
 	end
 end
 
@@ -2030,13 +1877,8 @@ if (EVENT == 6507) then
 end
 
 if (EVENT == 6508)then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
 	ShowMap(UID, 792);
     SaveEvent(UID, 13664);
 	SaveEvent(UID, 13675);
-	RunExchange(UID, 3224)
-end
+	RunQuestExchange(UID, 3224,STEP,1);
 end

@@ -1,12 +1,8 @@
-local Ret = -1;
 local NPC = 29049;
 
 if (EVENT == 100) then
-		SelectMsg(UID, 3, -1, 9464, 29049, 7176,1001,7177,1101,7178,1201);
+	SelectMsg(UID, 3, -1, 9464, 29049, 7176,1001,7177,1101,7178,1201);
 end
-
-
-
 
 if(EVENT == 1001) then 
 SelectMsg(UID, 2, -1, 9465, NPC, 10,1002);
@@ -21,7 +17,7 @@ STAMP = HowmuchItem(UID, 508213000)
 CUBE = HowmuchItem(UID, 508211000)
 GOLDP = HowmuchItem(UID, 508212000)
 if(STAMP > 29 and CUBE > 0 and GOLDP > 0) then
-SelectMsg(UID, 5, 808, 9492, NPC,3000,1005,3005,1005,3005,1005)
+SelectMsg(UID, 5, 808, 9492, NPC,3000,1005,3005,-1)
 else
 SelectMsg(UID, 2, -1, 9492, NPC, 10,-1);
 end
@@ -33,40 +29,33 @@ STAMP = HowmuchItem(UID, 508213000)
 CUBE = HowmuchItem(UID, 508211000)
 GOLDP = HowmuchItem(UID, 508212000)
 if(STAMP > 29 and CUBE > 0 and GOLDP > 0) then
-SelectMsg(UID, 5, 809, 9492, NPC,3000,1006,3005,1006,3005,1006,3005,1006,3005,1006,3005,1006)
+SelectMsg(UID, 5, 809, 9492, NPC,3000,1006,3005,-1)
 else
 SelectMsg(UID, 2, -1, 9492, NPC, 10,-1);
 end
 end
 
 if(EVENT == 1005) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
-RunExchange(UID,1221);
-GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 508213000,30, 508211000,1, 508212000,1, 0,0, 0,0);
-
-end
+RunQuestExchange(UID,1221,STEP,1);
+RobItem(UID, 508213000, 30);
+RobItem(UID, 508211000, 1);
+RobItem(UID, 508212000, 1);
 end
 
 if(EVENT == 1006) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
-RunExchange(UID,1222);
-GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 508213000,30, 508211000,1, 508212000,1, 0,0, 0,0);
-end
+RunQuestExchange(UID,1222,STEP,1);
+RobItem(UID, 508213000, 30);
+RobItem(UID, 508211000, 1);
+RobItem(UID, 508212000, 1);
 end
 
 if(EVENT == 1101) then 
-	QuestStatus = SearchQuest(UID, 810)	
-	if(QuestStatus == 1) then
+	QuestStatusCheck = GetQuestStatus(UID, 810)	
+	if(QuestStatusCheck == 1) then
 		EVENT = 1106
 		else
-	QuestStatus = SearchQuest(UID, 810)	
-	if(QuestStatus == 3) then
+	QuestStatusCheck = GetQuestStatus(UID, 810)	
+	if(QuestStatusCheck == 3) then
 		EVENT = 1108
 		else
 SelectMsg(UID, 2, 810, 9471, NPC, 10,1102);
@@ -99,13 +88,8 @@ SelectMsg(UID, 4, 810, 9493, NPC,3000,1110,3005,-1);
 end
 
 if (EVENT == 1110) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
-	RunExchange(UID,1223)
+	RunQuestExchange(UID,1223)
 	SaveEvent(UID, 2714);
-end
 end
 
 if(EVENT == 1201) then 

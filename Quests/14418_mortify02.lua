@@ -1,18 +1,13 @@
-local Ret = 0;
 local NPC = 14418;
-
-if (EVENT == 168) then
-	Ret = 1;
-end
 
 local savenum = 39;
 
 if (EVENT == 100) then
 	ItemA = HowmuchItem(UID, 910128000);
 	if (ItemA == 0) then
-		SelectMsg(UID, 2, savenum, 4554, NPC, 10, 168);
+		SelectMsg(UID, 2, savenum, 4554, NPC, 10, -1);
 	else
-		SelectMsg(UID, 4, savenum, 4555, NPC, 22, 101, 23, 168);
+		SelectMsg(UID, 4, savenum, 4555, NPC, 22, 101, 23, -1);
 	end
 end
 
@@ -21,11 +16,16 @@ if (EVENT == 101) then
 end
 
 if (EVENT == 102) then
-	RunExchange(UID, 483);		 
+	ItemA = HowmuchItem(UID, 910128000);
+	if (ItemA == 0) then
+		SelectMsg(UID, 2, savenum, 4554, NPC, 10, -1);
+	else
+	RunQuestExchange(UID, 483);		 
 	SaveEvent(UID, 4298);
+end
 end
 
 if (EVENT == 103) then
 	RobItem(UID, 910128000, 1);
-	SelectMsg(UID, 2, savenum, 4557, NPC, 10, 168);
+	SelectMsg(UID, 2, savenum, 4557, NPC, 10, -1);
 end

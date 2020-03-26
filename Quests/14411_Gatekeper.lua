@@ -1,8 +1,4 @@
 local NPC = 14411;
-if (EVENT == 193) then
-	Ret = 1;
-end
-
 
 if (EVENT == 217) then
 	ITEM = HowmuchItem(UID, 389620000);
@@ -18,14 +14,19 @@ if (EVENT == 218) then
 end
 
 if (EVENT == 221) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
+	ITEM = HowmuchItem(UID, 389620000);
+	if (ITEM < 1) then
+		SelectMsg(UID, 2, -1, 1269, NPC, 18, 218);
+	else
+SlotCheck = CheckGiveSlot(UID, 1)
+     if SlotCheck == false then
+       
          else
-		--RobItem(UID, 389620000, 1)
-		ExpChange(UID, 5000)
+		--RobItem(UID, 389620000, 1);
+		ExpChange(UID, 5000);
 		--SaveEvent(UID, 612);
-		GiveItem(UID, 910087000, 1)
+		GiveItem(UID, 910087000, 1);
 		SelectMsg(UID, 2, 66, 1272, NPC, 56, 193);
 	end
     end
+	end

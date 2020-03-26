@@ -1,0 +1,83 @@
+Dumping map: C:\Users\Emre\Documents\MEGAsync\Efsane61 SexyKO 2167 Source Efsane\bin\Debug\Map\Smd editor\FreeZone_b.smd
+
+==== Terrain starts at 0x00000000 ====
+Map size: 513 units
+Unit distance: 4.000000
+
+==== Collision data starts at 0x0010100C ====
+Map width: 2048.000000, length: 2048.000000, collision faces: 22035
+
+==== Object events start at 0x001D2AC4 ====
+iEventObjectCount: 2
+
+=== Object 0 at 0x001D2AC8 ===
+sBelong: 2
+sIndex: 4019
+sType: 5
+sControlNpcId: 712
+sStatus: 1
+fPosX: 622.000000
+fPosY: 11.610290
+fPosZ: 911.000000
+
+=== Object 1 at 0x001D2AE0 ===
+sBelong: 1
+sIndex: 4020
+sType: 5
+sControlNpcId: 711
+sStatus: 1
+fPosX: 1375.000000
+fPosY: 11.618810
+fPosZ: 1085.000000
+
+==== Map tiles start at 0x001D2AF8 ====
+==== Regene events start at 0x002532FA ====
+Regene events: 0
+
+==== Warp list starts at 0x002532FE ====
+Warp count: 4
+
+=== WARP 0 at 0x002532FE ===
+sWarpID: 7111
+strWarpName: Luferson Castle
+strAnnounce: You will be transported to Luferson Castle. Home of Kooglin`s tombstone, it is a village of warriors and priests. Luferson Castle vicinity is suitable for players at Level 20-35. Transport fee is 5,000 Noahs.
+dwPay: 5000
+sZone: 1
+fX: 437.000000
+fY: 0.000000
+fZ: 1627.000000
+fR: 5.000000
+
+=== WARP 1 at 0x0025343E ===
+sWarpID: 7114
+strWarpName: Moradon
+strAnnounce: You will be transported to Moradon. There is no transport fee.
+dwPay: 0
+sZone: 21
+fX: 817.000000
+fY: 0.000000
+fZ: 530.000000
+fR: 5.000000
+
+=== WARP 2 at 0x0025357E ===
+sWarpID: 7121
+strWarpName: El Morad Castle
+strAnnounce: You will be transported to El Morad Castle. Home of Pianna Knight Squad Tower, it is a village of warriors and priests. El Morad Castle vicinity is suitable for players at Level 20-35. There is no transport fee.
+dwPay: 0
+sZone: 2
+fX: 1598.000000
+fY: 0.000000
+fZ: 407.000000
+fR: 5.000000
+
+=== WARP 3 at 0x002536BE ===
+sWarpID: 7124
+strWarpName: Moradon
+strAnnounce: You will be transported to Moradon. There is no transport fee.
+dwPay: 0
+sZone: 21
+fX: 817.000000
+fY: 0.000000
+fZ: 530.000000
+fR: 5.000000
+

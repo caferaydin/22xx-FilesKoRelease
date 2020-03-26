@@ -1,12 +1,7 @@
-local Ret = 0;
 local NPC = 31526;
 
 if (EVENT == 100) then
 	SelectMsg(UID, 3, -1, 9264, NPC, 7143, 3001, 7139, 3002, 7116, 3003, 7117, 3004, 7118, 3005,7149,3006);
-end
-
-if (EVENT == 241) then
-	Ret = 1;
 end
 
 if (EVENT == 3001) then
@@ -122,53 +117,53 @@ if (EVENT == 426) then
 end
 
 if (EVENT == 3002) then
-	IsTakeToday = GetUserDailyOp(UID,1);
-		if (IsTakeToday == 1) then
-		Check = isRoomForItem(UID, 910246000);
+	Check = isRoomForItem(UID, 910246000);
 		if (Check == -1) then
-			SelectMsg(UID, 2, -1, 832, NPC, 27, 241);
+			SelectMsg(UID, 2, -1, 832, NPC, 27, -1);
 		else
-			SelectMsg(UID, 2, -1, 9265, NPC, 22, 300, 23, 241);
-		end
-	else
-		SelectMsg(UID, 2, -1, 9280, NPC, 10, 241);
+			SelectMsg(UID, 2, -1, 9265, NPC, 22, 300, 23, -1);
 	end
 end
 
 if (EVENT == 300) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
-	GiveItem(UID, 910246000, 1,1)
-end
+	IsTakeToday = GetUserDailyOp(UID,1);
+		if (IsTakeToday == 1) then
+	SlotCheck = CheckGiveSlot(UID, 1)
+		if SlotCheck == false then
+			;
+	    else
+			GiveItem(UID, 910246000, 1,1);
+	    end
+	 else
+		SelectMsg(UID, 2, -1, 9280, NPC, 10, -1);
+	end
 end
 
 if (EVENT == 3003) then
 	ITEM = HowmuchItem(UID, 810150000);
 	if (ITEM > 0) then
-		SelectMsg(UID, 2, -1, 9265, NPC, 4302, 200, 4303, 241);
+		SelectMsg(UID, 2, -1, 9265, NPC, 4302, 200, 4303, -1);
 	else
-		SelectMsg(UID, 2, -1, 9266, NPC, 10, 241);
+		SelectMsg(UID, 2, -1, 9266, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 200) then
-	SelectMsg(UID, 2, -1, 9267, NPC, 65, 201, 66, 241);
+	SelectMsg(UID, 2, -1, 9267, NPC, 65, 201, 66, -1);
 end
 
 if (EVENT == 201) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
+SlotCheck = CheckGiveSlot(UID, 1)
+     if SlotCheck == false then
+       
          else
 	Check = isRoomForItem(UID, 910041000);
 	if (Check == -1) then
-		SelectMsg(UID, 2, -1, 832, NPC, 27, 241);
+		SelectMsg(UID, 2, -1, 832, NPC, 27, -1);
 	else
-		RobItem(UID, 810150000, 1)
-		GiveItem(UID, 910246000, 1,1)
-		SelectMsg(UID, 2, -1, 9268, NPC, 20, 241);
+		RobItem(UID, 810150000, 1);
+		GiveItem(UID, 910246000, 1,1);
+		SelectMsg(UID, 2, -1, 9268, NPC, 20, -1);
 	end
 end   
 end
@@ -178,17 +173,17 @@ if (EVENT == 3005) then
 end
 
 if (EVENT == 203) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
+SlotCheck = CheckGiveSlot(UID, 1)
+     if SlotCheck == false then
+       
          else
 	ANCTEXT = HowmuchItem(UID, 810160000);
 	ORACLE = HowmuchItem(UID, 900184000);
 	if (ANCTEXT < 1) then
-		SelectMsg(UID, 2, -1, 9270, NPC, 10, 241);
+		SelectMsg(UID, 2, -1, 9270, NPC, 10, -1);
 	else
 	if (ORACLE < 1) then
-	SelectMsg(UID, 2, -1, 9269, NPC, 10, 241);
+	SelectMsg(UID, 2, -1, 9269, NPC, 10, -1);
 	else
 	Roll = RollDice(UID, 4) 
 	if Roll == 0 then
@@ -207,9 +202,9 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
     GiveItem(UID,900180669,1,1);
     end
 
-        RobItem(UID, 810160000, 1)
-		RobItem(UID, 900184000, 1)
-		SelectMsg(UID, 2, -1, 9273, NPC, 20, 241);
+        RobItem(UID, 810160000, 1);
+		RobItem(UID, 900184000, 1);
+		SelectMsg(UID, 2, -1, 9273, NPC, 20, -1);
 	end   
 end
 end
@@ -219,20 +214,20 @@ if (EVENT == 204) then
 	PARA = HowmuchItem(UID, 900000000);
 	Level = CheckLevel(UID);
 	if (PARA >= Level * 6000  ) then
-		SelectMsg(UID, 2, -1, 9275, NPC, 10, 205, 4005, 241);
+		SelectMsg(UID, 2, -1, 9275, NPC, 10, 205, 4005, -1);
 	else
-		SelectMsg(UID, 2, -1, 9274, NPC, 10, 241);
+		SelectMsg(UID, 2, -1, 9274, NPC, 10, -1);
 	end   
 end
 
 if (EVENT == 205) then	
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
+SlotCheck = CheckGiveSlot(UID, 1)
+     if SlotCheck == false then
+       
          else
 ORACLE = HowmuchItem(UID, 900184000);
 if (ORACLE < 1) then
-SelectMsg(UID, 2, -1, 9269, NPC, 10, 241);
+SelectMsg(UID, 2, -1, 9269, NPC, 10, -1);
 else
 	Roll = RollDice(UID, 4) 
 	if Roll == 0 then
@@ -250,9 +245,9 @@ else
 	if Roll == 4 then
     GiveItem(UID,900183682,1,1);
     end
-        RobItem(UID, 900184000, 1)
+        RobItem(UID, 900184000, 1);
 		GoldLose(UID,6000 * GetLevel(UID));
-		SelectMsg(UID, 2, -1, 9273, NPC, 10, 241); 
+		SelectMsg(UID, 2, -1, 9273, NPC, 10, -1); 
 end
 end
 end
@@ -262,12 +257,12 @@ if (EVENT == 210) then
     ORACLE = HowmuchItem(UID, 900184000);
 	DOCUMENT = HowmuchItem(UID, 810161000);
 	if (ORACLE < 1) then
-	SelectMsg(UID, 2, -1, 9269, NPC, 10, 0);
+	SelectMsg(UID, 2, -1, 9269, NPC, 10, -1);
 	else
 	if (DOCUMENT < 1) then
-	SelectMsg(UID, 2, -1, 9269, NPC, 10, 0);
+	SelectMsg(UID, 2, -1, 9269, NPC, 10, -1);
 	else
-		SelectMsg(UID, 2, -1, 9269, NPC, 10, 211,4005,0);
+		SelectMsg(UID, 2, -1, 9269, NPC, 10, 211,4005,-1);
 	end
 	end
 	end
@@ -278,40 +273,37 @@ SelectMsg(UID, 2, -1, 11038, NPC, 7993, 212,7993,213);
 end
 
 if (EVENT == 212) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
+SlotCheck = CheckGiveSlot(UID, 2)
+     if SlotCheck == false then
+       
          else
-RobItem(UID, 900184000, 1)
-RobItem(UID, 810161000, 1)
-GiveItem(UID, 910248763, 1,1)
-SelectMsg(UID, 2, -1, 9273, NPC, 10, 241); 
+RobItem(UID, 900184000, 1);
+RobItem(UID, 810161000, 1);
+GiveItem(UID, 910248763, 1,1);
+SelectMsg(UID, 2, -1, 9273, NPC, 10, -1); 
 end
 end
 
 if (EVENT == 213) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
+SlotCheck = CheckGiveSlot(UID, 2)
+     if SlotCheck == false then
+       
          else
-RobItem(UID, 900184000, 1)
-RobItem(UID, 810161000, 1)
-GiveItem(UID, 910248763, 1,1)
-SelectMsg(UID, 2, -1, 9273, NPC, 10, 241); 
+RobItem(UID, 900184000, 1);
+RobItem(UID, 810161000, 1);
+GiveItem(UID, 910248763, 1,1);
+SelectMsg(UID, 2, -1, 9273, NPC, 10, -1); 
 end
 end
-
-
-
 
 if (EVENT == 3004) then
 	SelectMsg(UID, 3, -1, 9277, NPC, 7121, 206, 7122, 207, 7123, 208, 7124, 209, 7135, 500);
 end
 
 if (EVENT == 206) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
+SlotCheck = CheckGiveSlot(UID, 1)
+     if SlotCheck == false then
+       
          else
 	KingWingTime = GetUserDailyOp(UID, 4);
 	King = isKing(UID);
@@ -319,22 +311,22 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
 		if (KingWingTime == 1) then
 			Check = isRoomForItem(UID, 910041000);
 			if (Check == -1) then
-				SelectMsg(UID, 2, -1, 832, NPC, 27, 241);
+				SelectMsg(UID, 2, -1, 832, NPC, 27, -1);
 			Nation = CheckNation(UID);
 			else
 				if (Nation == 1) then
 					GiveItem(UID, 900177663, 1,30);
-					SelectMsg(UID, 2, -1, 9279, NPC, 20, 241);
+					SelectMsg(UID, 2, -1, 9279, NPC, 20, -1);
 				else
 					GiveItem(UID, 900177663, 1,30);
-					SelectMsg(UID, 2, -1, 9279, NPC, 20, 241);
+					SelectMsg(UID, 2, -1, 9279, NPC, 20, -1);
 				end
 			end
 		else
-			SelectMsg(UID, 2, -1, 9280, NPC, 10, 241);
+			SelectMsg(UID, 2, -1, 9280, NPC, 10, -1);
 		end
 	else
-		SelectMsg(UID, 2, -1, 9279, NPC, 10, 241);
+		SelectMsg(UID, 2, -1, 9279, NPC, 10, -1);
 	end
 end
 end
@@ -346,16 +338,16 @@ if (EVENT == 207) then
 		--if (KeeperKiller) then
 		Check = isRoomForItem(UID, 910041000);
 		if (Check == -1) then
-			SelectMsg(UID, 2, -1, 832, NPC, 27, 241);
+			SelectMsg(UID, 2, -1, 832, NPC, 27, -1);
 		else
 			--GiveItem(UID, 900182674, 1)
-			SelectMsg(UID, 2, -1, 9282, NPC, 20, 241);
+			SelectMsg(UID, 2, -1, 9282, NPC, 20, -1);
 		end
 	--else
-		--SelectMsg(UID, 2, -1, 9278, NPC, 10, 241);
+		--SelectMsg(UID, 2, -1, 9278, NPC, 10, -1);
 	--end
 	else
-		SelectMsg(UID, 2, -1, 9280, NPC, 10 ,241);
+		SelectMsg(UID, 2, -1, 9280, NPC, 10 ,-1);
 	end
 end
 
@@ -366,16 +358,16 @@ if (EVENT == 208) then
 		--if (Captain1Killer) then
 		Check = isRoomForItem(UID, 910041000);
 		if (Check == -1) then
-			SelectMsg(UID, 2, -1, 832, NPC, 27, 241);
+			SelectMsg(UID, 2, -1, 832, NPC, 27, -1);
 		else
 			--GiveItem(UID, 900182674, 1)
-			SelectMsg(UID, 2, -1, 9283, NPC, 20, 241);
+			SelectMsg(UID, 2, -1, 9283, NPC, 20, -1);
 		end
 	--else
-		--SelectMsg(UID, 2, -1, 9278, NPC, 10, 241);
+		--SelectMsg(UID, 2, -1, 9278, NPC, 10, -1);
 	--end
 	else
-		SelectMsg(UID, 2, -1, 9280, NPC, 10 ,241);
+		SelectMsg(UID, 2, -1, 9280, NPC, 10 ,-1);
 	end
 end
 
@@ -386,16 +378,16 @@ if (EVENT == 209) then
 		--if (Captain2Killer) then
 		Check = isRoomForItem(UID, 910041000);
 		if (Check == -1) then
-			SelectMsg(UID, 2, -1, 832, NPC, 27, 241);
+			SelectMsg(UID, 2, -1, 832, NPC, 27, -1);
 		else
 			--GiveItem(UID, 900182674, 1)
-			SelectMsg(UID, 2, -1, 9283, NPC, 20, 241);
+			SelectMsg(UID, 2, -1, 9283, NPC, 20, -1);
 		end
 	--else
-		--SelectMsg(UID, 2, -1, 9278, NPC, 10, 241);
+		--SelectMsg(UID, 2, -1, 9278, NPC, 10, -1);
 	--end
 	else
-		SelectMsg(UID, 2, -1, 9280, NPC, 10 ,241);
+		SelectMsg(UID, 2, -1, 9280, NPC, 10 ,-1);
 	end
 end
 
@@ -404,39 +396,31 @@ if (EVENT == 500) then
 end
 
 if (EVENT == 501) then
-	--Ladder = isLadderRank(UID);
-	LadderTime = GetUserDailyOp(UID, 9);
-	if (LadderTime == 1) then
-		--if (Ladder) then
-		Check = isRoomForItem(UID, 910041000);
-		if (Check == -1) then
-			SelectMsg(UID, 2, -1, 832, NPC, 27, 241);
-		else
-			--GiveItem(UID, 900182674, 1)
-			SelectMsg(UID, 2, -1, 21997, NPC, 20, 241);
-		end
-	--else
-		--SelectMsg(UID, 2, -1, 9278, NPC, 10, 241);
-	--end
+PersonelRank = GetUserDailyOp(UID, 3);
+Rank = GetUserDailyOp(UID, 2);
+	if (PersonelRank == 1) then
+		RequestPersonalRankReward(UID);
+		SelectMsg(UID, 2, -1, 21997, NPC, 20, -1)
+	elseif (Rank == 1) then
+		RequestReward(UID);
+		SelectMsg(UID, 2, -1, 21997, NPC, 20, -1)
 	else
-		SelectMsg(UID, 2, -1, 9280, NPC, 10 ,241);
+		SelectMsg(UID, 2, -1, 9280, NPC, 10 ,-1);
 	end
 end
-
 
 if (EVENT == 3006) then
 	SelectMsg(UID, 2, -1, 9349, NPC, 7120, 350);
 end
 
-
 if (EVENT == 350) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
+SlotCheck = CheckGiveSlot(UID, 1)
+     if SlotCheck == false then
+       
          else
 	CHAOSEMBLEM = HowmuchItem(UID, 900106000);
     if (CHAOSEMBLEM < 5) then	
-	SelectMsg(UID, 2, -1, 9348, NPC, 10, 0);
+	SelectMsg(UID, 2, -1, 9348, NPC, 10, -1);
 	else
 	Roll = RollDice(UID, 4) 
 	if Roll == 0 then
@@ -454,8 +438,8 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
 	if Roll == 4 then
     GiveItem(UID,900183682,1,1);
     end
-		RobItem(UID, 900106000, 5)
-		SelectMsg(UID, 2, -1, 9273, NPC, 20, 241);
+		RobItem(UID, 900106000, 5);
+		SelectMsg(UID, 2, -1, 9273, NPC, 20, -1);
 end
 end
 end

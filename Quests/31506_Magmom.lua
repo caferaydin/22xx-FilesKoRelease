@@ -1,4 +1,3 @@
-local Ret = 0;
 local NPC = 31506;
 
 if (EVENT == 100) then
@@ -36,9 +35,9 @@ if (EVENT == 152) then
 end
 
 if (EVENT == 153) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
+SlotCheck = CheckGiveSlot(UID, 1)
+     if SlotCheck == false then
+       
          else
 	ITEMA = HowmuchItem(UID, 914010000);
 	if (ITEMA < 5) then
@@ -46,24 +45,24 @@ SLOTKONTROL = CheckGiveSlot(UID, 1)
 	else
 	Roll = RollDice(UID, 6) 
 	if Roll == 0 then
-	GiveItemLua(UID,381005000,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+    GiveItem(UID,381005000,1);
     end
 	if Roll == 1 then
-	GiveItemLua(UID,700036018,1,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+    GiveItem(UID,700036018,1);
     end
 	if Roll == 2 then
-	GiveItemLua(UID,379194000,5,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+    GiveItem(UID,379194000,5);
     end
 	if Roll == 3 then
-	GiveItemLua(UID,379195000,5,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+    GiveItem(UID,379195000,5);
     end
 	if Roll == 4 then
-	GiveItemLua(UID,379196000,5,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+    GiveItem(UID,379196000,5);
 	end
 	if Roll == 5 then
-	GiveItemLua(UID,379197000,5,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+    GiveItem(UID,379197000,5);
     end
-		GiveItemLua(UID,0,0,0, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 914010000,5, 0,0, 0,0, 0,0, 0,0);
+        RobItem(UID, 914010000, 5);
 		SelectMsg(UID, 2, -1, 9110, NPC, 10, -1);
 	end   
 end
@@ -83,6 +82,7 @@ if (EVENT == 202) then
 end
 
 if (EVENT == 203) then
-GiveItemLua(UID,528005647,1,7, 0,0,0, 0,0,0, 0,0,0, 0,0,0, 914010000,5, 0,0, 0,0, 0,0, 0,0);
+RobItem(UID, 914010000,5);
+GiveItem(UID,528005647,1,7);
 SelectMsg(UID, 2, -1, 9110, NPC, 10, -1);
 end

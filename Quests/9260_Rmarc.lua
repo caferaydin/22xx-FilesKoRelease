@@ -1,17 +1,8 @@
-local Ret = 0;
 local NPC = 9260;
 
 if (EVENT == 100) then
-	QuestNum = SearchQuest(UID, NPC);
-	if (QuestNum == 0) then
-		SelectMsg(UID, 2, -1, 23004, NPC, 10, -1);
-	elseif (QuestNum > 1 and  QuestNum < 100) then
-		NpcMsg(UID, 23004,NPC)
-	else
-		EVENT = QuestNum
-	end
+	NpcMsg(UID, 23004,NPC)
 end
-
 
 if(EVENT == 1001) then
 	SelectMsg(UID, 4, 789, 23004, NPC, 3000, 1002,3005,-1);
@@ -35,10 +26,15 @@ if(EVENT == 1005 ) then
 end
 
 if(EVENT == 1007 ) then
-SelectMsg(UID, 2, -1, 23176, NPC, 10, -1);
-		RunExchange(UID, 3237,2)
-		SaveEvent(UID, 13821)
-		SaveEvent(UID, 13827)
+	QuestStatusCheck = GetQuestStatus(UID, 789) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+		SelectMsg(UID, 2, -1, 23176, NPC, 10, -1);
+		RunQuestExchange(UID, 3237);
+		SaveEvent(UID, 13821);
+		SaveEvent(UID, 13827);
+	end
 end
 
 if(EVENT == 1101) then
@@ -64,8 +60,13 @@ if(EVENT == 1105 ) then
 end
 
 if(EVENT == 1107 ) then
-SelectMsg(UID, 2, -1, 23180, NPC, 10, -1);
-		RunExchange(UID, 3238,2)
-		SaveEvent(UID, 13828)
-		SaveEvent(UID, 13833)
+	QuestStatusCheck = GetQuestStatus(UID, 790) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+		SelectMsg(UID, 2, -1, 23180, NPC, 10, -1);
+		RunQuestExchange(UID, 3238);
+		SaveEvent(UID, 13828);
+		SaveEvent(UID, 13833);
+	end
 end

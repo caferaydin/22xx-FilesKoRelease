@@ -1,6 +1,5 @@
-local Ret = 0;
 local NPC = 29050;
-----------------------------------
+
 if (EVENT == 100) then
 	QuestNum = SearchQuest(UID, NPC);
 	if (QuestNum == 0) then
@@ -16,7 +15,6 @@ if (EVENT == 1001) then
 SelectMsg(UID, 19, -1, 9488, NPC, 3000, 1010,3005,-1);
 end
 
-
 if (EVENT == 1010) then
 SelectMsg(UID, 2, -1, 9483, NPC, 7183, 1002,7184,1013);
 end
@@ -26,7 +24,12 @@ SelectMsg(UID, 19, -1, 9488, NPC, 3000, 1014,3005,-1);
 end
 
 if (EVENT == 1014) then
-ZoneChange(UID, 35, 459, 113);
+	Room = isCswWinnerNembers(UID);
+	if (Room) then
+		--ZoneChange(UID, 35, 459, 113);
+	else
+		SelectMsg(UID, 2, -1, 9611, NPC, 10,-1);
+	end
 end
 
 if (EVENT == 1002) then
@@ -59,6 +62,11 @@ if (EVENT == 1003) then
 end
 
 if (EVENT == 1007) then
-	RunExchange(UID,1225)
-	SaveEvent(UID, 2724);
+	ITEMA = HowmuchItem(UID, 900060000);
+		if (ITEMA < 1) then 
+			SelectMsg(UID, 2, 812, 9485, NPC, 18, 1008);
+		else
+			RunQuestExchange(UID,1225);
+			SaveEvent(UID, 2724);
+	end
 end

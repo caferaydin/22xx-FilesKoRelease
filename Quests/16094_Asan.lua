@@ -1,8 +1,7 @@
 local NPC = 16094;
-local Ret = 0;
 
 if (EVENT == 500) then
-	SelectMsg(UID, 2, -1, 959, NPC, 4071, 501, 4072, 502);
+	SelectMsg(UID, 2, -1, 959, NPC, 4071, 501, 4072, -1);
 end
 
 if (EVENT == 501) then
@@ -21,8 +20,4 @@ if (EVENT == 501) then
 			ZoneChange(UID, 71, 1026, 984)
 		end
 	end
-end
-
-if (EVENT == 502) then
-	Ret = 1;
 end

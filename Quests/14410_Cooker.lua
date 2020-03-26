@@ -1,19 +1,14 @@
-local Ret = 0;
 local NPC = 14410;
 
 if (EVENT == 190) then
 	QuestNum = SearchQuest(UID, NPC);
 	if (QuestNum == 0) then
-		SelectMsg(UID, 2, -1, 680, NPC, 10, 193);
+		SelectMsg(UID, 2, -1, 680, NPC, 10, -1);
 	elseif (QuestNum > 1 and  QuestNum < 100) then
 		NpcMsg(UID, 681, NPC)
 	else 
 		EVENT = QuestNum
 	end
-end
-
-if (EVENT == 193) then
-	Ret = 1;
 end
 
 if (EVENT == 195) then
@@ -41,9 +36,9 @@ if (EVENT == 205) then
 	SaveEvent(UID, 452);
 	NATION = CheckNation(UID);
 	if (NATION == 1) then
-		SelectMsg(UID, 2, 202, 1263, NPC, 32, 193);
+		SelectMsg(UID, 2, 202, 1263, NPC, 32, -1);
 	else
-		SelectMsg(UID, 2, 202, 685, NPC, 21, 193);
+		SelectMsg(UID, 2, 202, 685, NPC, 21, -1);
 	end
 end
 
@@ -52,7 +47,7 @@ if (EVENT == 210) then
 	if (ITEM_COUNT < 2) then
 		SelectMsg(UID, 2, 202, 686, NPC, 18, 213);
 	else
-		SelectMsg(UID, 4, 202, 687, NPC, 41, 214, 27, 193); 
+		SelectMsg(UID, 4, 202, 687, NPC, 41, 214, 27, -1); 
 	end
 end
 
@@ -61,13 +56,23 @@ if (EVENT == 213) then
 end
 
 if (EVENT == 214) then
+	QuestStatusCheck = GetQuestStatus(UID, 202) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ITEM_COUNT = HowmuchItem(UID, 379204000);   
+	if (ITEM_COUNT < 2) then
+		SelectMsg(UID, 2, 202, 686, NPC, 18, 213);
+	else
 	Check = isRoomForItem(UID, 389620000);
 	if (Check == -1) then
-		SelectMsg(UID, 2, -1, 832, NPC, 27, 193);
+		SelectMsg(UID, 2, -1, 832, NPC, 27, -1);
 	else
-RunExchange(UID,90)
+RunQuestExchange(UID,90)
 		SaveEvent(UID, 451);
 	end
+end
+end
 end
 
 if (EVENT == 1001) then
@@ -92,12 +97,17 @@ if (EVENT == 1003) then
 end
 
 if (EVENT == 1005) then
-SLOTKONTROL = CheckGiveSlot(UID,3)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
-RunExchange(UID,3006)
- SaveEvent(UID, 11069);
-  SaveEvent(UID, 11086);
+	QuestStatusCheck = GetQuestStatus(UID, 519) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	ITEM_COUNT = HowmuchItem(UID, 910209000);   
+	if (ITEM_COUNT < 1) then
+		SelectMsg(UID, 2, 519, 20143, NPC, 18, -1);
+	else
+		RunQuestExchange(UID,3006)
+		SaveEvent(UID, 11069);
+		SaveEvent(UID, 11086);
+end
 end
 end

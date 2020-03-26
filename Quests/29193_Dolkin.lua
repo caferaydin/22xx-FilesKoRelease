@@ -1,61 +1,121 @@
-if(EVENT == 1000)then
-SelectMsg(UID, 4, 946, 10399, 29193, 22, 1001, 23, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
-ItemCount0 = HowmuchItem(UID,508143000);
-if(ItemCount0 < 3)then
-SelectMsg(UID, 2, 946, 192, 29193, 10, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
-else
-SelectMsg(UID, 4, 946, 10399, 29193, 10, 1009, 27, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
+local NPC = 29193;
+
+if (EVENT == 100) then
+	SelectMsg(UID, 3, -1, 10399, NPC,7577,110,7578,120,7581,130);
 end
-SelectMsg(UID, 4, 947, 10400, 29193, 22, 1001, 23, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
-ItemCount0 = HowmuchItem(UID,508144000);
-if(ItemCount0 < 3)then
-SelectMsg(UID, 2, 947, 192, 29193, 10, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
-else
-SelectMsg(UID, 4, 947, 10400, 29193, 10, 2009, 27, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
+
+if (EVENT == 110) then
+QuestStatus = GetQuestStatus(UID, 946);
+	if(QuestStatus == 1 or QuestStatus == 3) then
+		EVENT = 111
+	else
+		SelectMsg(UID, 2, -1, 10399, NPC, 56,112);
+	end
 end
-SelectMsg(UID, 4, 948, 10401, 29193, 22, 1001, 23, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
-ItemCount0 = HowmuchItem(UID,508147000);
-ItemCount1 = HowmuchItem(UID,508149000);
-ItemCount2 = HowmuchItem(UID,508151000);
-ItemCount3 = HowmuchItem(UID,508152000);
-if(ItemCount0 < 1 and ItemCount1 < 1 and ItemCount2 < 1 and ItemCount3 < 1)then
-SelectMsg(UID, 2, 948, 192, 29193, 10, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
-else
-SelectMsg(UID, 4, 948, 10401, 29193, 10, 4009, 27, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
+
+if (EVENT == 111) then
+QuestStatus = GetQuestStatus(UID, 946);
+		if(QuestStatus == 1) then
+			SelectMsg(UID, 2, -1, 10446, NPC, 10,-1);
+		elseif (QuestStatus == 3) then
+			SelectMsg(UID, 2, -1, 10399, NPC, 10,113);
+		else
+			SaveEvent(UID, 6816);
+	end
 end
+
+if (EVENT == 112) then
+	SaveEvent(UID, 6816);
 end
-if(EVENT == 1001)then
-SaveEvent(UID, 6816);
-SaveEvent(UID, 6821);
-SaveEvent(UID, 6826);
+
+if (EVENT == 1005) then
+	SaveEvent(UID, 6818);
 end
-if(EVENT == 1009)then
-Check = CheckGiveSlot(UID, 2537);
-if(Check ==1)then
-RunExchange(UID, 2537);
-SaveEvent(UID, 6817);
+
+if (EVENT == 113) then
+COUNTA = HowmuchItem(UID, 508143000);
+	if (COUNTA < 3) then
+		SelectMsg(UID, 2, -1, 10446, NPC, 10,-1);
+	else
+		RunQuestExchange(UID, 2537);
+		SaveEvent(UID, 6819);
+	end
 end
+if (EVENT == 120) then
+QuestStatus = GetQuestStatus(UID, 947);
+	if(QuestStatus == 1 or QuestStatus == 3) then
+		EVENT = 121
+	else
+		SelectMsg(UID, 2, -1, 10451, NPC, 56,122);
+	end
 end
-if(EVENT == 1005)then
-SaveEvent(UID, 6818);
+
+if (EVENT == 121) then
+QuestStatus = GetQuestStatus(UID, 947);
+		if(QuestStatus == 1) then
+			SelectMsg(UID, 2, -1, 10451, NPC, 10,-1);
+		elseif (QuestStatus == 3) then
+			SelectMsg(UID, 2, -1, 10454, NPC, 10,123);
+		else
+			SaveEvent(UID, 6821);
+	end
 end
-if(EVENT == 2009)then
-Check = CheckGiveSlot(UID, 2538);
-if(Check ==1)then
-RunExchange(UID, 2538);
-SaveEvent(UID, 6822);
+
+if (EVENT == 122) then
+	SaveEvent(UID, 6821);
 end
+
+if (EVENT == 2005) then
+	SaveEvent(UID, 6823);
 end
-if(EVENT == 2005)then
-SaveEvent(UID, 6823);
+
+if (EVENT == 123) then
+COUNTA = HowmuchItem(UID, 508144000);
+	if (COUNTA < 3) then
+		SelectMsg(UID, 2, -1, 10451, NPC, 10,-1);
+	else
+		RunQuestExchange(UID, 2538);
+		SaveEvent(UID, 6824);
+	end
 end
-if(EVENT == 4009)then
-Check = CheckGiveSlot(UID, 2539);
-if(Check ==1)then
-RunExchange(UID, 2539);
-SaveEvent(UID, 6827);
+
+if (EVENT == 130) then
+QuestStatus = GetQuestStatus(UID, 948);
+	if(QuestStatus == 1 or QuestStatus == 3) then
+		EVENT = 131
+	else
+		SelectMsg(UID, 2, -1, 10458, NPC, 56,132);
+	end
 end
+
+if (EVENT == 131) then
+QuestStatus = GetQuestStatus(UID, 948);
+		if(QuestStatus == 1) then
+			SelectMsg(UID, 2, -1, 10459, NPC, 10,-1);
+		elseif (QuestStatus == 3) then
+			SelectMsg(UID, 2, -1, 10458, NPC, 10,133);
+		else
+			SaveEvent(UID, 6826);
+	end
 end
-if(EVENT == 4005)then
-SaveEvent(UID, 6828);
+
+if (EVENT == 132) then
+	SaveEvent(UID, 6826);
+end
+
+if (EVENT == 4005) then
+	SaveEvent(UID, 6828);
+end
+
+if (EVENT == 133) then
+COUNTA = HowmuchItem(UID, 508142000);
+COUNTB = HowmuchItem(UID, 508142000);
+COUNTC = HowmuchItem(UID, 508142000);
+COUNTD = HowmuchItem(UID, 508142000);
+	if (COUNTA < 1 or COUNTB < 1 or COUNTC < 1 or COUNTD < 1) then
+		SelectMsg(UID, 2, -1, 10459, NPC, 10,-1);
+	else
+		RunQuestExchange(UID, 2539);
+		SaveEvent(UID, 6829);
+	end
 end

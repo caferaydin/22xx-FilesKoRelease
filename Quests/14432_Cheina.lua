@@ -1,21 +1,15 @@
-local Ret = 0;
 local NPC = 14432;
 
 if (EVENT == 160) then
 	QuestNum = SearchQuest(UID, NPC);
 	if (QuestNum == 0) then
-		SelectMsg(UID, 2, -1, 8256, NPC, 10, 163);
+		SelectMsg(UID, 2, -1, 8256, NPC, 10, -1);
 	elseif (QuestNum > 1 and  QuestNum < 100) then
 		NpcMsg(UID, 8258, NPC)
 	else
 		EVENT = QuestNum
 	end
 end
-
-if (EVENT == 163) then
-	Ret = 1;
-end
-
 
 if (EVENT == 1000) then -- 41 Lard Orc Premium
 	SaveEvent(UID, 2079);
@@ -26,7 +20,7 @@ if (EVENT == 1002) then
 	if (MonsterSub == 0) then
 		SelectMsg(UID, 4, 414, 8152, NPC, 22, 1003, 23, 1004);
 	else
-		SelectMsg(UID, 2, 414, 8152, NPC, 10, 163);
+		SelectMsg(UID, 2, 414, 8152, NPC, 10, -1);
 	end
 end
 
@@ -43,11 +37,11 @@ if (EVENT == 1010) then
 end
 
 if (EVENT == 1006) then
-	MonsterCount = QuestMonsterCount(UID, 414, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 414, 1);
+	if (MonsterCount < 19) then
 		SelectMsg(UID, 2, 414, 8152, NPC, 18, 1007);
 	else
-		SelectMsg(UID, 4, 414, 8152, NPC, 41, 1008, 27, 163);
+		SelectMsg(UID, 4, 414, 8152, NPC, 41, 1008, 27, -1);
 	end
 end
 
@@ -56,14 +50,24 @@ if (EVENT == 1007) then
 end
 
 if (EVENT == 1008) then
+	QuestStatusCheck = GetQuestStatus(UID, 414) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 414, 1);
+	if (MonsterCount < 19) then
+		SelectMsg(UID, 2, 414, 8152, NPC, 18, 1007);
+	else
 	Prem = GetPremium(UID);
 	if (Prem > 0) then
-		RunExchange(UID,1211)
+		RunQuestExchange(UID,1211)
 		SaveEvent(UID, 2081);
 	else
-		RunExchange(UID,1211)
+		RunQuestExchange(UID,1211)
 		SaveEvent(UID, 2081);   
 	end
+end
+end
 end
 
 local savenum = 144;
@@ -74,7 +78,7 @@ end
 
 if (EVENT == 8751) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8700);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8705);
@@ -90,13 +94,13 @@ if (EVENT == 8752) then
 	if (MonsterSub == 0) then
 		SelectMsg(UID, 4, savenum, 8152, NPC, 22, 8753, 23, 8754);
 	else
-		SelectMsg(UID, 2, savenum, 8152, NPC, 10, 163);
+		SelectMsg(UID, 2, savenum, 8152, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 8753) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8701);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8706);
@@ -109,7 +113,7 @@ end
 
 if (EVENT == 8754) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8704);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8709);
@@ -122,7 +126,7 @@ end
 
 if (EVENT == 8760) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8703);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8708);
@@ -134,11 +138,11 @@ if (EVENT == 8760) then
 end
 
 if (EVENT == 8756) then
-	MonsterCount = QuestMonsterCount(UID, 144, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 144, 1);
+	if (MonsterCount < 20) then
 		SelectMsg(UID, 2, savenum, 8152, NPC, 18, 8757);
 	else
-		SelectMsg(UID, 5, savenum, 8152, NPC, 41, 8758,41, 8758,41, 8758,41, 8758, 23, 163);
+		SelectMsg(UID, 5, savenum, 8152, NPC, 41, 8758,23, -1);
 	end
 end
 
@@ -147,30 +151,35 @@ if (EVENT == 8757) then
 end
 
 if (EVENT == 8758) then
-SLOTKONTROL = CheckGiveSlot(UID, 2)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
+	QuestStatusCheck = GetQuestStatus(UID, 144) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 144, 1);
+	if (MonsterCount < 20) then
+		SelectMsg(UID, 2, savenum, 8152, NPC, 18, 8757);
+	else
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
-RunExchange(UID,953)
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
+RunQuestExchange(UID,953,STEP,1);
 		SaveEvent(UID, 8702);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
-RunExchange(UID,954)
+RunQuestExchange(UID,954,STEP,1);
 		SaveEvent(UID, 8707);
 	elseif (Class == 3 or Class == 9 or Class == 10) then
-RunExchange(UID,955)
+RunQuestExchange(UID,955,STEP,1);
 		SaveEvent(UID, 8712);
 	elseif (Class == 4 or Class == 11 or Class == 12) then
-RunExchange(UID,956)
+RunQuestExchange(UID,956,STEP,1);
 		SaveEvent(UID, 8717);
-	end
+end
+end
 end
 end
 
 if (EVENT == 8170) then -- 45 Level Scolar
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8826);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8831);
@@ -186,17 +195,17 @@ if (EVENT == 8172) then
 	if (MonsterSub == 0) then
 		SelectMsg(UID, 2, 176, 8394, NPC, 10, 8175);
 	else
-		SelectMsg(UID, 2, 176, 8282, NPC, 10, 163);
+		SelectMsg(UID, 2, 176, 8282, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 8175) then
-	SelectMsg(UID, 4, 176, 8395, NPC, 22, 8173, 23, 163);
+	SelectMsg(UID, 4, 176, 8395, NPC, 22, 8173, 23, -1);
 end
 
 if (EVENT == 8173) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8827);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8832);
@@ -209,7 +218,7 @@ end
 
 if (EVENT == 8180) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8829);
 		EVENT = 8181
 	elseif (Class == 2 or Class == 7 or Class == 8) then
@@ -225,15 +234,15 @@ if (EVENT == 8180) then
 end
 
 if (EVENT == 8181) then
-	SelectMsg(UID, 2, 176, 8393, NPC, 3007, 163);
+	SelectMsg(UID, 2, 176, 8393, NPC, 3007, -1);
 end
 
 if (EVENT == 8176) then
-	MonsterCount = QuestMonsterCount(UID, 176, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 176, 1);
+	if (MonsterCount < 10) then
 		SelectMsg(UID, 2, 176, 8394, NPC, 18, 8177);
 	else
-		SelectMsg(UID, 4, 176, 8396, NPC, 41, 8178, 27, 163);
+		SelectMsg(UID, 4, 176, 8396, NPC, 41, 8178, 27, -1);
 	end
 end
 
@@ -242,24 +251,29 @@ if (EVENT == 8177) then
 end
 
 if (EVENT == 8178) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
+	QuestStatusCheck = GetQuestStatus(UID, 176) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 176, 1);
+	if (MonsterCount < 10) then
+		SelectMsg(UID, 2, 176, 8394, NPC, 18, 8177);
+	else
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
-RunExchange(UID,977)
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
+RunQuestExchange(UID,977)
 		SaveEvent(UID, 8828);
 	elseif (Class == 2 or Class == 7 or Class == 8) then      
-RunExchange(UID,978)
+RunQuestExchange(UID,978)
 		SaveEvent(UID, 8833);
 	elseif (Class == 3 or Class == 9 or Class == 10) then    
-RunExchange(UID,979)
+RunQuestExchange(UID,979)
 		SaveEvent(UID, 8838);
 	elseif (Class == 4 or Class == 11 or Class == 12) then     
-RunExchange(UID,980)
+RunQuestExchange(UID,980)
 		SaveEvent(UID, 8843);
-	end	 
+end
+end
 end
 end
 
@@ -269,7 +283,7 @@ end
 
 if (EVENT == 9431) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9492);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 9497);
@@ -285,13 +299,13 @@ if (EVENT == 9432) then
 	if (MonsterSub == 0) then
 		SelectMsg(UID, 4, 207, 8761, NPC, 22, 9433, 23, 9434);
 	else
-		SelectMsg(UID, 2, 207, 8761, NPC, 10, 163);
+		SelectMsg(UID, 2, 207, 8761, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 9433) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9493);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 9498);
@@ -304,7 +318,7 @@ end
 
 if (EVENT == 9434) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9496);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 9501);
@@ -317,7 +331,7 @@ end
 
 if (EVENT == 9440) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9495);
 		EVENT = 9441
 	elseif (Class == 2 or Class == 7 or Class == 8) then
@@ -333,15 +347,15 @@ if (EVENT == 9440) then
 end
 
 if (EVENT == 9441) then
-	SelectMsg(UID, 2, 207, 8759, NPC, 3007, 163);
+	SelectMsg(UID, 2, 207, 8759, NPC, 3007, -1);
 end
 
 if (EVENT == 9436) then
-	MonsterCount = QuestMonsterCount(UID, 207, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 207, 1);
+	if (MonsterCount < 40) then
 		SelectMsg(UID, 2, 207, 8384, NPC, 18, 9437);
 	else
-		SelectMsg(UID, 4, 207, 8396, NPC, 41, 9438, 27, 163);
+		SelectMsg(UID, 5, 207, 8396, NPC, 41, 9438, 27, -1);
 	end
 end
 
@@ -350,24 +364,29 @@ if (EVENT == 9437) then
 end
 
 if (EVENT == 9438) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
+	QuestStatusCheck = GetQuestStatus(UID, 207) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 207, 1);
+	if (MonsterCount < 40) then
+		SelectMsg(UID, 2, 207, 8384, NPC, 18, 9437);
+	else
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
-RunExchange(UID,1110)
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
+RunQuestExchange(UID,1110,STEP,1);
 		SaveEvent(UID, 9494);
 	elseif (Class == 2 or Class == 7 or Class == 8) then      
-RunExchange(UID,1111)
+RunQuestExchange(UID,1111,STEP,1);
 		SaveEvent(UID, 9499);
 	elseif (Class == 3 or Class == 9 or Class == 10) then    
-RunExchange(UID,1112)
+RunQuestExchange(UID,1112,STEP,1);
 		SaveEvent(UID, 9504);
 	elseif (Class == 4 or Class == 11 or Class == 12) then     
-RunExchange(UID,1113)
+RunQuestExchange(UID,1113,STEP,1);
 		SaveEvent(UID, 9509);
-	end	 
+end
+end
 end
 end
 
@@ -377,7 +396,7 @@ end
 
 if (EVENT == 9451) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9534);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 9539);
@@ -391,15 +410,15 @@ end
 if (EVENT == 9452) then
 	MonsterSub = ExistMonsterQuestSub(UID);
 	if (MonsterSub == 0) then
-		SelectMsg(UID, 4, 228, 8763, NPC, 22, 9453, 23, 163);
+		SelectMsg(UID, 4, 228, 8763, NPC, 22, 9453, 23, -1);
 	else
-		SelectMsg(UID, 2, 228, 8763, NPC, 10, 163);
+		SelectMsg(UID, 2, 228, 8763, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 9453) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9535);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 9540);
@@ -412,7 +431,7 @@ end
 
 if (EVENT == 9460) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9537);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 9542);
@@ -424,11 +443,11 @@ if (EVENT == 9460) then
 end
 
 if (EVENT == 9456) then
-	MonsterCount = QuestMonsterCount(UID, 228, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 228, 1);
+	if (MonsterCount < 20) then
 		SelectMsg(UID, 2, 228, 8384, NPC, 18, 9457);
 	else
-		SelectMsg(UID, 4, 228, 8396, NPC, 41, 9458, 27, 163);
+		SelectMsg(UID, 5, 228, 8396, NPC, 41, 9458, 27, -1);
 	end
 end
 
@@ -437,24 +456,29 @@ if (EVENT == 9457) then
 end
 
 if (EVENT == 9458) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
+	QuestStatusCheck = GetQuestStatus(UID, 228) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 228, 1);
+	if (MonsterCount < 20) then
+		SelectMsg(UID, 2, 228, 8384, NPC, 18, 9457);
+	else
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
-RunExchange(UID,1118)
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
+RunQuestExchange(UID,1118,STEP,1);
 		SaveEvent(UID, 9536);
 	elseif (Class == 2 or Class == 7 or Class == 8) then      
-RunExchange(UID,1119)
+RunQuestExchange(UID,1119,STEP,1);
 		SaveEvent(UID, 9541);
 	elseif (Class == 3 or Class == 9 or Class == 10) then    
-RunExchange(UID,1120)
+RunQuestExchange(UID,1120,STEP,1);
 		SaveEvent(UID, 9546);
 	elseif (Class == 4 or Class == 11 or Class == 12) then     
-RunExchange(UID,1121)
+RunQuestExchange(UID,1121,STEP,1);
 		SaveEvent(UID, 9551);
-	end	 
+end
+end
 end
 end
 
@@ -471,7 +495,7 @@ if (EVENT == 9062) then
 	if (MonsterSub == 0) then
 		SelectMsg(UID, 2, 266, 8426, NPC, 10, 9070);
 	else
-		SelectMsg(UID, 2, 266, 8428, NPC, 10, 163);
+		SelectMsg(UID, 2, 266, 8428, NPC, 10, -1);
 	end
 end
 
@@ -488,16 +512,16 @@ if (EVENT == 9064) then
 end
 
 if (EVENT == 9065) then
-	SelectMsg(UID, 2, 266, 8429, NPC, 3014, 163);
+	SelectMsg(UID, 2, 266, 8429, NPC, 3014, -1);
 	SaveEvent(UID, 9126);
 end
 
 if (EVENT == 9067) then
-	MonsterCount = QuestMonsterCount(UID, 266, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 266, 1);
+	if (MonsterCount < 20) then
 		SelectMsg(UID, 2, 266, 8430, NPC, 18, 9068);
 	else
-		SelectMsg(UID, 4, 266, 8431, NPC, 41, 9069, 27, 163);
+		SelectMsg(UID, 4, 266, 8431, NPC, 41, 9069, 27, -1);
 	end
 end
 
@@ -506,12 +530,17 @@ if (EVENT == 9068) then
 end
 
 if (EVENT == 9069) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
-RunExchange(UID,1043)
+	QuestStatusCheck = GetQuestStatus(UID, 266) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 266, 1);
+	if (MonsterCount < 20) then
+		SelectMsg(UID, 2, 266, 8430, NPC, 18, 9068);
+	else
+RunQuestExchange(UID,1043)
 	SaveEvent(UID, 9125);
+end
 end
 end
 
@@ -528,7 +557,7 @@ if (EVENT == 9322) then
 	if (MonsterSub == 0) then
 		SelectMsg(UID, 4, 268, 8677, NPC, 22, 9323, 23, 9324);
 	else
-		SelectMsg(UID, 2, 268, 8677, NPC, 10, 163);
+		SelectMsg(UID, 2, 268, 8677, NPC, 10, -1);
 	end
 end
 
@@ -545,11 +574,11 @@ if (EVENT == 9325) then
 end
 
 if (EVENT == 9327) then
-	MonsterCount = QuestMonsterCount(UID, 268, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 268, 1);
+	if (MonsterCount < 20) then
 		SelectMsg(UID, 2, 268, 8552, NPC, 18, 9328);
 	else
-		SelectMsg(UID, 4, 268, 8431, NPC, 41, 9329, 27, 163);
+		SelectMsg(UID, 4, 268, 8431, NPC, 41, 9329, 27, -1);
 	end
 end
 
@@ -558,8 +587,18 @@ if (EVENT == 9328) then
 end
 
 if (EVENT == 9329) then
-RunExchange(UID,1088)
+	QuestStatusCheck = GetQuestStatus(UID, 268) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 268, 1);
+	if (MonsterCount < 20) then
+		SelectMsg(UID, 2, 268, 8552, NPC, 18, 9328);
+	else
+RunQuestExchange(UID,1088)
 	SaveEvent(UID, 9347); 
+end
+end
 end
 
 if (EVENT == 9340) then -- 59 Level DTC
@@ -575,7 +614,7 @@ if (EVENT == 9342) then
 	if (MonsterSub == 0) then
 		SelectMsg(UID, 4, 270, 8681, NPC, 22, 9343, 23, 9344);
 	else
-		SelectMsg(UID, 2, 270, 8681, NPC, 10, 163);
+		SelectMsg(UID, 2, 270, 8681, NPC, 10, -1);
 	end
 end
 
@@ -592,11 +631,11 @@ if (EVENT == 9345) then
 end
 
 if (EVENT == 9347) then
-	MonsterCount = QuestMonsterCount(UID, 270, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 270, 1);
+	if (MonsterCount < 20) then
 		SelectMsg(UID, 2, 270, 8566, NPC, 18, 9348);
 	else
-		SelectMsg(UID, 4, 270, 8431, NPC, 41, 9349, 27, 163);
+		SelectMsg(UID, 4, 270, 8431, NPC, 41, 9349, 27, -1);
 	end
 end
 
@@ -605,8 +644,18 @@ if (EVENT == 9348) then
 end
 
 if (EVENT == 9349) then
-RunExchange(UID,1091)
+	QuestStatusCheck = GetQuestStatus(UID, 270) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 270, 1);
+	if (MonsterCount < 20) then
+		SelectMsg(UID, 2, 270, 8566, NPC, 18, 9348);
+	else
+RunQuestExchange(UID,1091)
 	SaveEvent(UID, 9371); 
+end
+end
 end
 
 if (EVENT == 9140) then -- 60 Level Lich
@@ -615,7 +664,7 @@ end
 
 if (EVENT == 9141) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9276);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 9281);
@@ -631,13 +680,13 @@ if (EVENT == 9150) then
 	if (MonsterSub == 0) then
 		SelectMsg(UID, 4, 292, 8440, NPC, 3018, 9152, 3019, 9159);
 	else
-		SelectMsg(UID, 2, 292, 8441, NPC, 4242, 163);
+		SelectMsg(UID, 2, 292, 8441, NPC, 4242, -1);
 	end
 end
 
 if (EVENT == 9152) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9277);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 9282);
@@ -650,7 +699,7 @@ end
 
 if (EVENT == 9159) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9280);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 9285);
@@ -663,7 +712,7 @@ end
 
 if (EVENT == 9153) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 9279);
 		EVENT = 9154
 	elseif (Class == 2 or Class == 7 or Class == 8) then
@@ -679,15 +728,15 @@ if (EVENT == 9153) then
 end
 
 if (EVENT == 9154) then
-	SelectMsg(UID, 2, 292, 8439, NPC, 57, 163);
+	SelectMsg(UID, 2, 292, 8439, NPC, 57, -1);
 end
 
 if (EVENT == 9155) then
-	MonsterCount = QuestMonsterCount(UID, 292, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 292, 1);
+	if (MonsterCount < 10) then
 		SelectMsg(UID, 2, 292, 8442, NPC, 18, 9157);
 	else
-		SelectMsg(UID, 4, 292, 8443, NPC, 41, 9158, 27, 163);
+		SelectMsg(UID, 4, 292, 8443, NPC, 41, 9158, 27, -1);
 	end
 end
 
@@ -696,21 +745,32 @@ if (EVENT == 9157) then
 end
 
 if (EVENT == 9158) then
+	QuestStatusCheck = GetQuestStatus(UID, 292) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 292, 1);
+	if (MonsterCount < 10) then
+		SelectMsg(UID, 2, 292, 8442, NPC, 18, 9157);
+	else
 	Class = CheckClass(UID);
-		if (Class == 1 or Class == 5 or Class == 6) then
-RunExchange(UID,1056)
+		if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
+RunQuestExchange(UID,1056)
 		SaveEvent(UID, 9278);
     elseif (Class == 2 or Class == 7 or Class == 8) then
-RunExchange(UID,1057)
+RunQuestExchange(UID,1057)
 		SaveEvent(UID, 9283);
     elseif (Class == 3 or Class == 9 or Class == 10) then
-RunExchange(UID,1058)
+RunQuestExchange(UID,1058)
 		SaveEvent(UID, 9288);
     elseif (Class == 4 or Class == 11 or Class == 12) then
-RunExchange(UID,1059)
+RunQuestExchange(UID,1059)
 		SaveEvent(UID, 9293);
   end	 
 end
+end
+end
+
 
 if (EVENT == 1100) then -- 43 Level Megantilion   Premium
 	SaveEvent(UID, 2103);
@@ -738,8 +798,8 @@ if (EVENT == 1105) then
 end
 
 if (EVENT == 1106) then
-	MonsterCount = QuestMonsterCount(UID, 418, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 418, 1);
+	if (MonsterCount < 20) then
 		SelectMsg(UID, 2, 418, 8310, NPC, 18, 1107);
 	else
 		SelectMsg(UID, 4, 418, 8310, NPC, 41, 1108, 23, 1107);
@@ -751,14 +811,24 @@ if (EVENT == 1107) then
 end
 
 if (EVENT == 1108) then
+	QuestStatusCheck = GetQuestStatus(UID, 418) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 418, 1);
+	if (MonsterCount < 20) then
+		SelectMsg(UID, 2, 418, 8310, NPC, 18, 1107);
+	else
 	Prem = GetPremium(UID);
 	if (Prem > 0) then
-		RunExchange(UID,1213)
+		RunQuestExchange(UID,1213)
 		SaveEvent(UID, 2105);
 	else
-		RunExchange(UID,1213)
+		RunQuestExchange(UID,1213)
 		SaveEvent(UID, 2105);
 	end
+end
+end
 end
 
 if (EVENT == 1200) then -- 45 Level Scolar  Premium
@@ -787,8 +857,8 @@ if (EVENT == 1205) then
 end
 
 if (EVENT == 1206) then
-	MonsterCount = QuestMonsterCount(UID, 422, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 422, 1);
+	if (MonsterCount < 10) then
 		SelectMsg(UID, 2, 422, 1215, NPC, 18, 1207);
 	else
 		SelectMsg(UID, 4, 422, 1215, NPC, 41, 1208, 23, 1207);
@@ -800,14 +870,24 @@ if (EVENT == 1207) then
 end
 
 if (EVENT == 1208) then
+	QuestStatusCheck = GetQuestStatus(UID, 422) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 422, 1);
+	if (MonsterCount < 10) then
+		SelectMsg(UID, 2, 422, 1215, NPC, 18, 1207);
+	else
 	Prem = GetPremium(UID);
 	if (Prem > 0) then
-		RunExchange(UID,1215)
+		RunQuestExchange(UID,1215)
 		SaveEvent(UID, 2129);
 	else
-		RunExchange(UID,1215)
+		RunQuestExchange(UID,1215)
 		SaveEvent(UID, 2129);
 	end
+end
+end
 end
 
 if (EVENT == 200) then -- 56 Level Grell  Premium
@@ -836,8 +916,8 @@ if (EVENT == 205) then
 end
 
 if (EVENT == 207) then
-	MonsterCount = QuestMonsterCount(UID, 476, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 476, 1);
+	if (MonsterCount < 30) then
 		SelectMsg(UID, 2, 476, 8170, NPC, 10, 206);
 	else
 		SelectMsg(UID, 4, 476, 8170, NPC, 41, 208, 23, 206);
@@ -845,14 +925,24 @@ if (EVENT == 207) then
 	end
 	
 if (EVENT == 208) then
+	QuestStatusCheck = GetQuestStatus(UID, 476) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 476, 1);
+	if (MonsterCount < 30) then
+		SelectMsg(UID, 2, 476, 8170, NPC, 10, 206);
+	else
 	Prem = GetPremium(UID);
 	if (Prem > 0) then
-		RunExchange(UID,21043)
+		RunQuestExchange(UID,21043)
 		SaveEvent(UID, 2309);
 	else
-		RunExchange(UID,21043)
+		RunQuestExchange(UID,21043)
 		SaveEvent(UID, 2309);
 	end
+end
+end
 end
 
 if (EVENT == 300) then -- 56 Level Hell Hound  Premium
@@ -881,8 +971,8 @@ if (EVENT == 305) then
 end
 
 if (EVENT == 307) then
-	MonsterCount = QuestMonsterCount(UID, 479, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 479, 1);
+	if (MonsterCount < 30) then
 		SelectMsg(UID, 2, 479, 8677, NPC, 10, 306);
 	else
 		SelectMsg(UID, 4, 479, 8677, NPC, 41, 308, 23, 306);
@@ -890,14 +980,24 @@ if (EVENT == 307) then
 	end
 	
 if (EVENT == 308) then
+	QuestStatusCheck = GetQuestStatus(UID, 479) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 479, 1);
+	if (MonsterCount < 30) then
+		SelectMsg(UID, 2, 479, 8677, NPC, 10, 306);
+	else
 	Prem = GetPremium(UID);
 	if (Prem > 0) then
-		RunExchange(UID,11088)
+		RunQuestExchange(UID,11088)
 		SaveEvent(UID, 2333);
 	else
-		RunExchange(UID,11088)
+		RunQuestExchange(UID,11088)
 		SaveEvent(UID, 2333);
 	end
+end
+end
 end
 
 if (EVENT == 400) then -- 58 Level Manticore  Premium
@@ -926,8 +1026,8 @@ if (EVENT == 405) then
 end
 
 if (EVENT == 407) then
-	MonsterCount = QuestMonsterCount(UID, 482, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 482, 1);
+	if (MonsterCount < 10) then
 		SelectMsg(UID, 2, 482, 8681, NPC, 10, 406);
 	else
 		SelectMsg(UID, 4, 482, 8681, NPC, 41, 408, 23, 406);
@@ -935,14 +1035,24 @@ if (EVENT == 407) then
 	end
 	
 if (EVENT == 408) then
+	QuestStatusCheck = GetQuestStatus(UID, 482) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 482, 1);
+	if (MonsterCount < 10) then
+		SelectMsg(UID, 2, 482, 8681, NPC, 10, 406);
+	else
 	Prem = GetPremium(UID);
 	if (Prem > 0) then
-		RunExchange(UID,11091)
+		RunQuestExchange(UID,11091)
 		SaveEvent(UID, 2357);
 	else
-		RunExchange(UID,11091)
+		RunQuestExchange(UID,11091)
 		SaveEvent(UID, 2357);
 	end
+end
+end
 end
 
 local savenum = 150;
@@ -953,7 +1063,7 @@ end
 
 if (EVENT == 8951) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8784);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8789);
@@ -969,13 +1079,13 @@ if (EVENT == 8952) then
 	if (MonsterSub == 0) then
 		SelectMsg(UID, 4, savenum, 8310, NPC, 22, 8953, 23, 8954);
 	else
-		SelectMsg(UID, 2, savenum, 8310, NPC, 10, 163);
+		SelectMsg(UID, 2, savenum, 8310, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 8953) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8785);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8790);
@@ -988,7 +1098,7 @@ end
 
 if (EVENT == 8954) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8788);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8793);
@@ -1001,7 +1111,7 @@ end
 
 if (EVENT == 8960) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
 		SaveEvent(UID, 8787);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
 		SaveEvent(UID, 8792);
@@ -1013,33 +1123,38 @@ if (EVENT == 8960) then
 end
 
 if (EVENT == 8956) then
-	MonsterCount = QuestMonsterCount(UID, 150, 1);
-	if (MonsterCount < 0) then
+	MonsterCount = CountMonsterQuestSub(UID, 150, 1);
+	if (MonsterCount < 20) then
 		SelectMsg(UID, 2, savenum, 8310, NPC, 18, 8957);
 	else
-		SelectMsg(UID, 4, savenum, 8310, NPC, 41, 8958, 23, 163);
+		SelectMsg(UID, 4, savenum, 8310, NPC, 41, 8958, 23, -1);
 	end
 end
 
 if (EVENT == 8958) then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
+	QuestStatusCheck = GetQuestStatus(UID, 150) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount = CountMonsterQuestSub(UID, 150, 1);
+	if (MonsterCount < 20) then
+		SelectMsg(UID, 2, savenum, 8310, NPC, 18, 8957);
+	else
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
-RunExchange(UID,969)
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
+RunQuestExchange(UID,969)
 		SaveEvent(UID, 8791);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
-RunExchange(UID,970)
+RunQuestExchange(UID,970)
 		SaveEvent(UID, 8786);
 	elseif (Class == 3 or Class == 9 or Class == 10) then
-RunExchange(UID,971)
+RunQuestExchange(UID,971)
 		SaveEvent(UID, 8796);
 	elseif (Class == 4 or Class == 11 or Class == 12) then
-RunExchange(UID,972)
+RunQuestExchange(UID,972)
 		SaveEvent(UID, 8801);
-	end
+end
+end
 end
 end
 
@@ -1083,7 +1198,7 @@ if(EVENT == 9905) then
 end
 
 if(EVENT == 9903) then
-	MonsterCount1 = QuestMonsterCount(UID, savenum, 1);
+	MonsterCount1 = CountMonsterQuestSub(UID, savenum, 1);
 	if (MonsterCount1 > 2) then
 		SelectMsg(UID, 5, savenum, talknum, NPC, 41, 9906, 27, 153);
 	else
@@ -1092,20 +1207,30 @@ if(EVENT == 9903) then
 end
 
 if (EVENT == 9906) then
+	QuestStatusCheck = GetQuestStatus(UID, savenum) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount1 = CountMonsterQuestSub(UID, savenum, 1);
+	if (MonsterCount1 > 2) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
-	RunExchange(UID,11110)
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
+	RunQuestExchange(UID,11110)
 	SaveEvent(UID, 1315);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
-	RunExchange(UID,11111)
+	RunQuestExchange(UID,11111)
 	SaveEvent(UID, 1318);
 	elseif (Class == 3 or Class == 9 or Class == 10) then
-	RunExchange(UID,11112)
+	RunQuestExchange(UID,11112)
 	SaveEvent(UID, 1321);
 	elseif (Class == 4 or Class == 11 or Class == 12) then
-	RunExchange(UID,11113)
+	RunQuestExchange(UID,11113)
 	SaveEvent(UID, 1324);
+		else
+		SelectMsg(UID, 2, savenum, talknum, NPC, 10, 217);
 	end
+	end
+end
 end
 
 local savenum=397
@@ -1148,7 +1273,7 @@ if(EVENT == 9805) then
 end
 
 if(EVENT == 9803) then
-	MonsterCount1 = QuestMonsterCount(UID, savenum, 1);
+	MonsterCount1 = CountMonsterQuestSub(UID, savenum, 1);
 	if (MonsterCount1 > 19) then
 		SelectMsg(UID, 5, savenum, talknum, NPC, 41, 9806, 27, 153);
 	else
@@ -1157,18 +1282,28 @@ if(EVENT == 9803) then
 end
 
 if (EVENT == 9806) then
+	QuestStatusCheck = GetQuestStatus(UID, 397) 
+	if(QuestStatusCheck == 2) then
+		SelectMsg(UID, 2, -1, 187, NPC, 10, -1);
+	else
+	MonsterCount1 = CountMonsterQuestSub(UID, savenum, 1);
+	if (MonsterCount1 > 19) then
 	Class = CheckClass(UID);
-	if (Class == 1 or Class == 5 or Class == 6) then
-	RunExchange(UID,11118)
+	if (Class == 1 or Class == 5 or Class == 6 or Class == 13 or Class == 14 or Class == 15) then
+	RunQuestExchange(UID,11118)
 	SaveEvent(UID, 1411);
 	elseif (Class == 2 or Class == 7 or Class == 8) then
-	RunExchange(UID,11119)
+	RunQuestExchange(UID,11119)
 	SaveEvent(UID, 1414);
 	elseif (Class == 3 or Class == 9 or Class == 10) then
-	RunExchange(UID,11120)
+	RunQuestExchange(UID,11120)
 	SaveEvent(UID, 1417);
 	elseif (Class == 4 or Class == 11 or Class == 12) then
-	RunExchange(UID,11121)
+	RunQuestExchange(UID,11121)
 	SaveEvent(UID, 1420);
+		else
+		SelectMsg(UID, 2, savenum, talknum, NPC, 10, 217);
 	end
+	end
+end
 end

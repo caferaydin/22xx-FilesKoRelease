@@ -1,53 +1,37 @@
 local NPC = 25216;
 
 if (EVENT == 100) then
-		SaveEvent(UID, 855); 
-		SelectMsg(UID, 3, -1, 3017, NPC, 8737, 200, 8738, 300, 8739, 400,8740, 500);	
+	SelectMsg(UID, 3, -1, 12181, NPC,8737,101,8738,102,8739,103,8740,104);
 end
 
-if (EVENT == 200) then 
-	Cast = CastSkill(UID, 504005);
-	
-  SendNpcKillID(UID, 25178)
+if (EVENT == 101) then
+Cast = CastSkill(UID, 492017);
 	if (Cast) then
-	CastSkill(UID, 504005)
-
-	else
-		NpcMsg(UID, 9137);
-	end
-end
-	
-if (EVENT == 300) then 
-	Cast = CastSkill(UID, 500109);
+		CastSkill(UID, 492017);
 		
-  SendNpcKillID(UID, 25178)
-	if (Cast) then
-		CastSkill(UID, 25178)
-		
-		
-	else
-		NpcMsg(UID, 9137);
-	end
-end
-if (EVENT == 400) then 
-	Cast = CastSkill(UID, 504006)
-	  SendNpcKillID(UID, 25178)
-	if (Cast) then
-		CastSkill(UID, 504006)
-		
-		
-	else
-		NpcMsg(UID, 9137);
 	end
 end
 
-if (EVENT == 500) then 
-	Cast = CastSkill(UID, 504007);
-	  SendNpcKillID(UID, 25178);
+if (EVENT == 102) then
+Cast = CastSkill(UID, 492018);
 	if (Cast) then
-		CastSkill(UID, 504008)
+		CastSkill(UID, 492018);
 		
-	else
-		NpcMsg(UID, 9137);
+	end
+end
+
+if (EVENT == 103) then
+Cast = CastSkill(UID, 492019);
+	if (Cast) then
+		CastSkill(UID, 492019);
+		
+	end
+end
+
+if (EVENT == 104) then
+Cast = CastSkill(UID, 492020);
+	if (Cast) then
+		CastSkill(UID, 492020);
+		
 	end
 end

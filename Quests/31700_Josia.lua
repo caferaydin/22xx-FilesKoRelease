@@ -1,6 +1,6 @@
 if EVENT == 100 then
-	QuestStatus = SearchQuest(UID, 182)	
-	if(QuestStatus == 3) then
+	QuestStatusCheck = GetQuestStatus(UID, 182)	
+	if(QuestStatusCheck == 3) then
 		EVENT = 107
 		else
    SelectMsg(UID, 2, -1, 4174, NPC, 7015, 101, 7017, 300);
@@ -36,8 +36,8 @@ end
 if(EVENT == 106) then
 SelectMsg(UID, 2, -1, 1571, NPC, 10,-1);
 --SaveEvent(UID, 1209)
-	  GiveItem(UID, 900074000, 1)
-	  GiveItem(UID, 900075000, 1)
+	  GiveItem(UID, 900074000, 1);
+	  GiveItem(UID, 900075000, 1);
 end
 
 if EVENT == 107 then 
@@ -45,13 +45,8 @@ if EVENT == 107 then
 end
 
 if EVENT == 108 then
-SLOTKONTROL = CheckGiveSlot(UID, 1)
-     if SLOTKONTROL == false then
-       SelectMsg(UID,2,-1,8898,NPC,10)
-         else
-		 SaveEvent(UID, 1209);
-RunExchange(UID, 188);
-end
+	SaveEvent(UID, 1209);
+	RunQuestExchange(UID, 188);
 end
 
 if(EVENT == 216) then

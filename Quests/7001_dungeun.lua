@@ -38,7 +38,7 @@ local HellY = {74, 197, 316, 437, 118, 237, 353, 473, 77, 192, 315, 435, 117, 23
 	end
 
 	if (EVENT == 30075) then
-		RobItem(UID, 379111000, 1)
+		RobItem(UID, 379111000, 1);
 		ZoneChangeParty(UID, 33, 62, 91)
 	end
 
@@ -51,23 +51,23 @@ local HellY = {74, 197, 316, 437, 118, 237, 353, 473, 77, 192, 315, 435, 117, 23
 		ItemA = HowmuchItem(UID, 379081000);
 		ItemB = HowmuchItem(UID, 379082000);
 		if (ItemA > 0 and ItemB > 0) then
-			SelectMsg(UID, 3, -1, 40040, NPC, 40061, 30070, 40062, 30071, 40060, 241);
+			SelectMsg(UID, 3, -1, 40040, NPC, 40061, 30070, 40062, 30071, 40060, -1);
 		elseif (ItemA > 0 and ItemB == 0) then
-			SelectMsg(UID, 2, -1, 40058, NPC, 40061, 30070, 40060, 241);
+			SelectMsg(UID, 2, -1, 40058, NPC, 40061, 30070, 40060, -1);
 		elseif (ItemA == 0 and ItemB > 0) then 
-			SelectMsg(UID, 2, -1, 40056, NPC, 40062, 30071, 40060, 241);
+			SelectMsg(UID, 2, -1, 40056, NPC, 40062, 30071, 40060, -1);
 		else
-			SelectMsg(UID, 2, -1, 40022, NPC, 10, 241);
+			SelectMsg(UID, 2, -1, 40022, NPC, 10, -1);
 		end
 	end
 
 	if (EVENT == 30070) then
-		RobItem(UID, 379081000, 1)
+		RobItem(UID, 379081000, 1);
 		ZoneChangeParty(UID, 32, 250, 192)
 	end
 
 	if (EVENT == 30071) then
-		RobItem(UID, 379082000, 1)
+		RobItem(UID, 379082000, 1);
 		ZoneChangeParty(UID, 32, 450, 437)
 	end
 
@@ -78,7 +78,7 @@ local HellY = {74, 197, 316, 437, 118, 237, 353, 473, 77, 192, 315, 435, 117, 23
 			i = Num - 39999
 			ZoneChangeParty(UID, 32, HellX[i], HellY[i])
 		else
-			SelectMsg(UID, 2, -1, 40021, NPC, 10, 241);
+			SelectMsg(UID, 2, -1, 40021, NPC, 10, -1);
 		end
 	end
 
@@ -96,7 +96,7 @@ local HellY = {74, 197, 316, 437, 118, 237, 353, 473, 77, 192, 315, 435, 117, 23
 	end
 
 	if (EVENT == 30100) then
-		SelectMsg(UID, 2, -1, 40070, NPC, 10, 241);
+		SelectMsg(UID, 2, -1, 40070, NPC, 10, -1);
 	end
 
 elseif (Num > 41000 and Num < 43000) then
@@ -120,14 +120,14 @@ local HellY = {91, 226, 351, 477, 94, 225, 348, 458, 90, 225, 354, 475, 102, 224
 	if (EVENT == 30077) then
 		ItemA = HowmuchItem(UID, 389200000);  
 		if (ItemA == 0) then
-			SelectMsg(UID, 2, -1, 43603, NPC, 10, 241);
+			SelectMsg(UID, 2, -1, 43603, NPC, 10, -1);
 		else
 			SelectMsg(UID, 2, -1, 43602, NPC, 40077, 30112, 40060, 30077);
 		end
 	end
 
 	if (EVENT == 30112) then
-		RobItem(UID, 389200000, 1)
+		RobItem(UID, 389200000, 1);
 		ZoneChangeParty(UID, 34, 112, 15)
 	end
 
@@ -144,34 +144,34 @@ local HellY = {91, 226, 351, 477, 94, 225, 348, 458, 90, 225, 354, 475, 102, 224
 		ItemA = HowmuchItem(UID, 379083000);
 		ItemB = HowmuchItem(UID, 379084000);
 		if (ItemA > 0 and ItemB > 0) then
-			SelectMsg(UID, 3, -1, 40055, NPC, 40063, 30170, 40064, 30171, 40060, 241);
+			SelectMsg(UID, 3, -1, 40055, NPC, 40063, 30170, 40064, 30171, 40060, -1);
 		elseif (ItemA > 0 and ItemB == 0) then
-			SelectMsg(UID, 2, -1, 40054, NPC, 40063, 30170, 40060, 241);
+			SelectMsg(UID, 2, -1, 40054, NPC, 40063, 30170, 40060, -1);
 		elseif (ItemA == 0 and ItemB > 0) then
-			SelectMsg(UID, 2, -1, 40052, NPC, 40064, 30171, 40060, 241);
+			SelectMsg(UID, 2, -1, 40052, NPC, 40064, 30171, 40060, -1);
 		else
-			SelectMsg(UID, 2, -1, 40022, NPC, 10, 241);
+			SelectMsg(UID, 2, -1, 40022, NPC, 10, -1);
 		end
 	end
 
 	if (EVENT == 30170) then
-		RobItem(UID, 379083000, 1)
+		RobItem(UID, 379083000, 1);
 		ZoneChangeParty(UID, 33, 189, 458)
 	end
 
 	if (EVENT == 30171) then
-		RobItem(UID, 379084000, 1)
+		RobItem(UID, 379084000, 1);
 		ZoneChangeParty(UID, 33, 444, 458)
 	end
 
 	if (EVENT == 30111) then
 		ItemA = HowmuchItem(UID, 379080000);  
 		if (ItemA > 0) then
-			RobItem(UID, 379080000, 1)
+			RobItem(UID, 379080000, 1);
 			i = Num - 41999
 			ZoneChangeParty(UID, 33, HellX[i], HellY[i])
 		else
-			SelectMsg(UID, 2, -1, 40021, NPC, 10, 241);
+			SelectMsg(UID, 2, -1, 40021, NPC, 10, -1);
 		end
 	end
 
@@ -191,7 +191,7 @@ local HellY = {91, 226, 351, 477, 94, 225, 348, 458, 90, 225, 354, 475, 102, 224
 else
 
 	if (EVENT == 43601) then 
-		SelectMsg(UID, 3, -1, 43601, NPC, 4071, 30096,  4072, 241);
+		SelectMsg(UID, 3, -1, 43601, NPC, 4071, 30096,  4072, -1);
 	end
 
 	if (EVENT == 30096) then

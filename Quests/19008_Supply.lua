@@ -1,8 +1,7 @@
-local Ret = 0;
 local NPC = 19008;
 
 if (EVENT == 100) then
-	SelectMsg(UID, 2, -1, 8903, NPC, 4519, 9999);
+	SelectMsg(UID, 2, -1, 8903, NPC, 4519, 9999)
 end   
 
 if(EVENT == 101) then
@@ -82,13 +81,13 @@ if(EVENT == 104) then --Warrior
 	SelectMsg(UID,2,-1,8900,NPC,10,1000)
 	else
 	if( LEVEL > 59 and COIN > 29999999 ) then
-		GiveItem(UID, 906001548, 1, 1)
-		GiveItem(UID, 906002549, 1, 1)
-		GiveItem(UID, 906003550, 1, 1)
-		GiveItem(UID, 906004551, 1, 1)
-		GiveItem(UID, 906005552, 1, 1)
-		GiveItem(UID, 956210544, 1, 1)
-		GoldLose(UID, 30000000)
+		GiveItem(UID, 906001548, 1, 1);
+		GiveItem(UID, 906002549, 1, 1);
+		GiveItem(UID, 906003550, 1, 1);
+		GiveItem(UID, 906004551, 1, 1);
+		GiveItem(UID, 906005552, 1, 1);
+		GiveItem(UID, 956210544, 1, 1);
+		GoldLose(UID, 30000000);
 	else
 		SelectMsg(UID, 2, -1, 8893, NPC, 4466, 106, 3019, 193 )
 	end
@@ -103,12 +102,12 @@ if(EVENT == 105) then
 	SelectMsg(UID,2,-1,8900,NPC,10,1000)
 	else
 	if( LEVEL > 35 and LEVEL < 60 and COIN > 29999999 ) then
-		GiveItem(UID, 956112518, 1, 1)
-		GiveItem(UID, 905001524, 1, 1)
-		GiveItem(UID, 905002525, 1, 1)
-		GiveItem(UID, 905003526, 1, 1)
-		GiveItem(UID, 905004527, 1, 1)
-		GiveItem(UID, 905005528, 1, 1)
+		GiveItem(UID, 956112518, 1, 1);
+		GiveItem(UID, 905001524, 1, 1);
+		GiveItem(UID, 905002525, 1, 1);
+		GiveItem(UID, 905003526, 1, 1);
+		GiveItem(UID, 905004527, 1, 1);
+		GiveItem(UID, 905005528, 1, 1);
 		GoldLose(UID, 30000000)
 	else
 		SelectMsg(UID, 2, -1, 8893, NPC, 4466, 106, 3019, 193 )
@@ -147,14 +146,14 @@ if(EVENT == 115) then
 	SelectMsg(UID,2,-1,8900,NPC,10,1000)
 	else
 	if( LEVEL > 35 and LEVEL < 60 and COIN > 29999999 ) then
-		GiveItem(UID, 911110519, 1, 1)
-		GiveItem(UID, 911110519, 1, 1)
-		GiveItem(UID, 960450520, 1, 1)		
-		GiveItem(UID, 945001529, 1, 1)
-		GiveItem(UID, 945002530, 1, 1)
-		GiveItem(UID, 945003531, 1, 1)
-		GiveItem(UID, 945004532, 1, 1)
-		GiveItem(UID, 945005533, 1, 1)
+		GiveItem(UID, 911110519, 1, 1);
+		GiveItem(UID, 911110519, 1, 1);
+		GiveItem(UID, 960450520, 1, 1);	
+		GiveItem(UID, 945001529, 1, 1);
+		GiveItem(UID, 945002530, 1, 1);
+		GiveItem(UID, 945003531, 1, 1);
+		GiveItem(UID, 945004532, 1, 1);
+		GiveItem(UID, 945005533, 1, 1);
 		GoldLose(UID, 30000000);
 	else
 		SelectMsg(UID, 2, -1, 8893, NPC, 4466, 106, 3019, 193 )
@@ -193,15 +192,15 @@ if(EVENT == 125) then
 	SelectMsg(UID,2,-1,8900,NPC,10,1000)
 	else
 	if( LEVEL > 35 and LEVEL < 60 and COIN > 29999999 ) then
-		GiveItem(UID, 980812521, 1, 1)
-		GiveItem(UID, 980812568, 1, 1)
-		GiveItem(UID, 980812569, 1, 1)
-		GiveItem(UID, 965001534, 1, 1)
-		GiveItem(UID, 965002535, 1, 1)
-		GiveItem(UID, 965003536, 1, 1)
-		GiveItem(UID, 965004537, 1, 1)
-		GiveItem(UID, 965005538, 1, 1)
-		GoldLose(UID, 30000000)
+		GiveItem(UID, 980812521, 1, 1);
+		GiveItem(UID, 980812568, 1, 1);
+		GiveItem(UID, 980812569, 1, 1);
+		GiveItem(UID, 965001534, 1, 1);
+		GiveItem(UID, 965002535, 1, 1);
+		GiveItem(UID, 965003536, 1, 1);
+		GiveItem(UID, 965004537, 1, 1);
+		GiveItem(UID, 965005538, 1, 1);
+		GoldLose(UID, 30000000);
 	else
 		SelectMsg(UID, 2, -1, 8893, NPC, 4466, 106, 3019, 193 )
 	end
@@ -233,8 +232,8 @@ end
 if(EVENT == 135) then
 	LEVEL = GetLevel(UID)
 	COIN = HowmuchItem(UID, 900000000); 
-	ThykeSlot = CheckGiveSlot(UID, 7)
-	if ThykeSlot == false then
+	SlotCheck = CheckGiveSlot(UID, 7)
+	if SlotCheck == false then
 	SelectMsg(UID,2,-1,8900,NPC,10,1000)
 	else	
 	if( LEVEL > 35 and LEVEL < 60 and COIN > 29999999 ) then

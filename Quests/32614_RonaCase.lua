@@ -1,4 +1,3 @@
-local Ret = 0;
 local NPC = 32614;
 
 if (EVENT == 100) then

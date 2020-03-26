@@ -1,19 +1,14 @@
-local Ret = 0;
 local NPC = 18010;
 
 if (EVENT == 100) then
 	QuestNum = SearchQuest(UID, NPC);
 	if (QuestNum == 0) then
-		SelectMsg(UID, 2, -1, 9727, NPC, 10, 101);
+		SelectMsg(UID, 2, -1, 9727, NPC, 10, -1);
 	elseif (QuestNum > 1 and  QuestNum < 100) then
 		NpcMsg(UID, 9727, NPC)
 	else
 		EVENT = QuestNum
 	end
-end
-
-if (EVENT == 101) then
-	Ret = 1;
 end
 
 local savenum = 813;
@@ -39,20 +34,28 @@ if (EVENT == 1003) then
 end
 
 if (EVENT == 1004) then
-	MonsterCount01 = QuestMonsterCount(UID, 813, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 813, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 813, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 813, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 813, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 813, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 813, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 813, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1006, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1006, 3008, -1);
 	else
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1006) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 813, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 813, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 813, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 813, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2806);
 	ZoneChange(UID, 21, 817, 448);
+		else
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 814;
@@ -78,20 +81,28 @@ if (EVENT == 1103) then
 end
 
 if (EVENT == 1104) then
-	MonsterCount01 = QuestMonsterCount(UID, 814, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 814, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 814, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 814, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 814, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 814, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 814, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 814, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1106, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1106, 3008, -1);
 	else
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1106) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 814, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 814, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 814, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 814, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2811);
 	ZoneChange(UID, 21, 817, 448);
+		else
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 815;
@@ -117,20 +128,28 @@ if (EVENT == 1203) then
 end
 
 if (EVENT == 1204) then
-	MonsterCount01 = QuestMonsterCount(UID, 815, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 815, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 815, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 815, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 815, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 815, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 815, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 815, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1206, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1206, 3008, -1);
 	else
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1206) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 815, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 815, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 815, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 815, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2816);
 	ZoneChange(UID, 21, 817, 448);
+		else
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 816;
@@ -156,20 +175,28 @@ if (EVENT == 1303) then
 end
 
 if (EVENT == 1304) then
-	MonsterCount01 = QuestMonsterCount(UID, 816, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 816, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 816, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 816, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 816, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 816, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 816, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 816, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1306, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1306, 3008, -1);
 	else	
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1306) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 816, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 816, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 816, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 816, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2821);
 	ZoneChange(UID, 21, 817, 448);
+		else	
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+end
 end
 
 local savenum = 817;
@@ -195,20 +222,28 @@ if (EVENT == 1403) then
 end
 
 if (EVENT == 1404) then
-	MonsterCount01 = QuestMonsterCount(UID, 817, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 817, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 817, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 817, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 817, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 817, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 817, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 817, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1406, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1406, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1406) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 817, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 817, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 817, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 817, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2826);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 818;
@@ -234,20 +269,28 @@ if (EVENT == 1503) then
 end
 
 if (EVENT == 1504) then
-	MonsterCount01 = QuestMonsterCount(UID, 818, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 818, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 818, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 818, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 818, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 818, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 818, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 818, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1506, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1506, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1506) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 818, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 818, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 818, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 818, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2831);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 819;
@@ -273,20 +316,28 @@ if (EVENT == 1603) then
 end
 
 if (EVENT == 1604) then
-	MonsterCount01 = QuestMonsterCount(UID, 819, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 819, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 819, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 819, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 819, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 819, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 819, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 819, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1606, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1606, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1606) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 819, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 819, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 819, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 819, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2836);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 820;
@@ -312,20 +363,28 @@ if (EVENT == 1703) then
 end
 
 if (EVENT == 1704) then
-	MonsterCount01 = QuestMonsterCount(UID, 820, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 820, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 820, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 820, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 820, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 820, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 820, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 820, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1706, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1706, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1706) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 820, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 820, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 820, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 820, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2841);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 821;
@@ -351,20 +410,28 @@ if (EVENT == 1803) then
 end
 
 if (EVENT == 1804) then
-	MonsterCount01 = QuestMonsterCount(UID, 821, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 821, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 821, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 821, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 821, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 821, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 821, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 821, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1806, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1806, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1806) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 821, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 821, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 821, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 821, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2846);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 822;
@@ -390,20 +457,28 @@ if (EVENT == 1903) then
 end
 
 if (EVENT == 1904) then
-	MonsterCount01 = QuestMonsterCount(UID, 822, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 822, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 822, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 822, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 822, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 822, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 822, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 822, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1906, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 1906, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 1906) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 822, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 822, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 822, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 822, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2851);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 823;
@@ -429,20 +504,28 @@ if (EVENT == 2003) then
 end
 
 if (EVENT == 2004) then
-	MonsterCount01 = QuestMonsterCount(UID, 823, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 823, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 823, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 823, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 823, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 823, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 823, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 823, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 2006, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 2006, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 2006) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 823, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 823, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 823, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 823, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2856);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 824;
@@ -468,20 +551,28 @@ if (EVENT == 2103) then
 end
 
 if (EVENT == 2104) then
-	MonsterCount01 = QuestMonsterCount(UID, 824, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 824, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 824, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 824, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 824, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 824, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 824, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 824, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 2106, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 2106, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 2106) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 824, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 824, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 824, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 824, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2861);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 825;
@@ -507,20 +598,28 @@ if (EVENT == 2203) then
 end
 
 if (EVENT == 2204) then
-	MonsterCount01 = QuestMonsterCount(UID, 825, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 825, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 825, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 825, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 825, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 825, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 825, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 825, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 2206, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 2206, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 2206) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 825, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 825, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 825, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 825, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2866);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 826;
@@ -546,20 +645,28 @@ if (EVENT == 2303) then
 end
 
 if (EVENT == 2304) then
-	MonsterCount01 = QuestMonsterCount(UID, 826, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 826, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 826, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 826, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 826, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 826, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 826, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 826, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 2306, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9729, NPC, 3006, 2306, 3008, -1);
 	else		
-		SelectMsg(UID, 2, savenum, 9728, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 2306) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 826, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 826, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 826, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 826, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2871);
 	ZoneChange(UID, 21, 817, 448);
+		else		
+		SelectMsg(UID, 2, savenum, 9728, NPC, 10, -1);
+	end
 end
 
 local savenum = 827;
@@ -585,20 +692,28 @@ if (EVENT == 2403) then
 end
 
 if (EVENT == 2404) then
-	MonsterCount01 = QuestMonsterCount(UID, 827, 1);
-	MonsterCount02 = QuestMonsterCount(UID, 827, 2);
-	MonsterCount03 = QuestMonsterCount(UID, 827, 3);
-	MonsterCount04 = QuestMonsterCount(UID, 827, 4);
+	MonsterCount01 = CountMonsterQuestSub(UID, 827, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 827, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 827, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 827, 4);
 	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
-		SelectMsg(UID, 4, savenum, 9740, NPC, 3006, 2406, 3008, 101);
+		SelectMsg(UID, 4, savenum, 9740, NPC, 3006, 2406, 3008, -1);
 	else	
-		SelectMsg(UID, 2, savenum, 9741, NPC, 10, 101);
+		SelectMsg(UID, 2, savenum, 9741, NPC, 10, -1);
 	end
 end
 
 if (EVENT == 2406) then
+	MonsterCount01 = CountMonsterQuestSub(UID, 827, 1);
+	MonsterCount02 = CountMonsterQuestSub(UID, 827, 2);
+	MonsterCount03 = CountMonsterQuestSub(UID, 827, 3);
+	MonsterCount04 = CountMonsterQuestSub(UID, 827, 4);
+	if (MonsterCount01 > 9 and MonsterCount02 > 9 and MonsterCount03 > 9 and MonsterCount04 > 9) then
 	SaveEvent(UID, 2876);
 	ZoneChange(UID, 21, 817, 448);
+		else	
+		SelectMsg(UID, 2, savenum, 9741, NPC, 10, -1);
+	end
 end
 
 local savenum1 = 829;
@@ -613,13 +728,18 @@ if (EVENT == 2500) then
 end
 
 if (EVENT == 2501) then
+	STICK = HowmuchItem(UID, 900705000);
+	if (STICK == 0) then
+		else
+		SelectMsg(UID, 2, savenum1, 9740, NPC, 18, 5000);
 STICKSLOT = CheckGiveSlot(UID, 2)
 	if STICKSLOT == false then
 	SelectMsg(UID,2,-1,8900,NPC,10,5000)
 	else
-		RobItem(UID, 900705000, 1)
-		GiveItem(UID, 900356000,1,7)
-		GiveItem(UID, 900706000,1)
+		RobItem(UID, 900705000, 1);
+		GiveItem(UID, 900356000,1,7);
+		GiveItem(UID, 900706000,1);
+	end
 	end
 	end
 	

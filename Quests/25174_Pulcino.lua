@@ -1,24 +1,27 @@
-local Ret = 0;
 local NPC = 25174;
 
 if (EVENT == 100) then
-	SelectMsg(UID, 3, -1, 12009, NPC, 8707, 3100);
+	SelectMsg(UID, 2, -1, 9088, NPC, 8707, 115);
+end
+if (EVENT == 115) then 
+	SelectMsg(UID, 2, -1, 12133, NPC, 8708, 116);
 end
 
-if (EVENT == 101) then
-	Ret = 1;
-end
-
--- Returnee Knight
-if (EVENT == 3100) then
-	SelectMsg(UID, 2, -1, 12131, NPC, 8708, 3101)
-end
-
-if (EVENT == 3101) then
-	ITEM = HowmuchItem(UID, 810552000);
-	if (ITEM > 0) then
-		GiveItemLua(UID,810552000,1,1, 810554924,1,1, 810512000,1,1, 0,0,0, 0,0,0, 810552000,1, 0,0, 0,0, 0,0, 0,0);
+if (EVENT == 116) then
+	EMBLEM = HowmuchItem(UID, 910553000);
+	if (EMBLEM < 1) then
+		SelectMsg(UID, 2, -1, 12133, NPC, 10, -1);
 	else
-	SelectMsg(UID, 2, -1, 12133, NPC, 8708, 101)
+		SelectMsg(UID, 2, -1, 12060, NPC, 4006, 117, 4005, -1);
+	end
+end
+
+if (EVENT == 117) then
+	EMBLEM = HowmuchItem(UID, 910553000);
+		if (EMBLEM < 1) then
+			SelectMsg(UID, 2, -1, 12133, NPC, 10, -1);
+		else
+			RobItem(UID, 910553000, 1);
+			GiveItem(UID, 810554924, 1,15);
 	end
 end
